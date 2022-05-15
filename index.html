@@ -11,309 +11,561 @@
 </head>
 <body>
     <!-- Header section with navigation -->
-    <header class="container">
+    <header>
 
         <!-- Cookies panel -->
         <div class="cookies">
             <p class="cookies-text"> By using our website you are connecting to our use of cookies in accordance with our <strong> Cookie policy </strong></p>
         </div>
 
-        <!-- Company's logo -->
-        <div class="company-logo">
-            Logo
-        </div>
+        <div class="container">
+            <!-- Company's logo -->
+            <div class="company-logo">
+                Logo
+            </div>
 
-        <!-- Site navigation -->
-        <nav class="main-nav">
-            <ul class="main-nav__list">
+            <!-- Site navigation -->
+            <nav class="main-nav">
+                <ul class="main-nav__list">
 
-                <!-- Link to about -->
-                <li class="main-nav__item">
-                    <a class="main-nav__link" href=""> About us </a> 
-                </li>
-    
-                <!-- Sub-navigation for services -->
-                <li class="main-nav__item main-nav__services">
-                    Services 
-                    <i class="fa-solid fa-angle-down"></i>
-                    
-                    <!-- Container for services items -->
-                    <div class="main-nav__services-list services-list">
+                    <!-- Link to about -->
+                    <li class="main-nav__item">
+                        <a class="main-nav__link link--bold" href=""> About us </a> 
+                    </li>
+        
+                    <!-- Sub-navigation for services -->
+                    <li class="main-nav__item main-nav__services link--bold">
+                        Services 
+                        <i class="fa-solid fa-angle-down"></i>
                         
-                        <!-- Item 1 - Property management -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M13.75 17.9176L31.25 5.5647V54.9765H13.75V17.9176Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M31.25 16.6824L48.75 29.0353V54.9765" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 54.9766H55" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>
+                        <!-- Container for services items -->
+                        <div class="main-nav__services-list services-list">
+                            
+                            <!-- Item 1 - Property management -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M13.75 17.9176L31.25 5.5647V54.9765H13.75V17.9176Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M31.25 16.6824L48.75 29.0353V54.9765" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 54.9766H55" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>
+                                </div>
+                                <h3 class="services-list__heading"> Property management </h2>
+                                <p class="services-list__text">
+                                    Unifying specialists from various areas 
+                                    in one unit under one management...
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Property management </h2>
-                            <p class="services-list__text">
-                                Unifying specialists from various areas 
-                                in one unit under one management...
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
-                        </div>
 
-                        <!-- Item 2 - Construction -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="60" height="59.647" transform="translate(0 0.811523)" fill="white"/>
-                                    <path fill-rule="evenodd" clip-rule="evenodd" d="M55.3987 13.8034L52.4737 13.1174L44.5687 20.9312L40.0912 16.398L47.8012 8.35684L47.1262 5.40431C45.497 4.86245 43.7929 4.57571 42.075 4.55434C40.201 4.52569 38.3411 4.88101 36.6112 5.59816C34.941 6.34975 33.4312 7.41277 32.1637 8.72963C30.7528 10.0583 29.6354 11.6643 28.8825 13.4455C27.4329 16.9903 27.4329 20.9577 28.8825 24.5025C21.0646 32.1485 13.3477 39.8959 5.73373 47.7425C4.94623 48.7677 4.57123 50.0464 4.66873 51.3325C4.74557 52.7158 5.37136 54.0123 6.40873 54.9375C6.87373 55.4407 7.42873 55.8583 8.04748 56.1602C8.68498 56.4398 9.37123 56.6001 10.065 56.6337C11.25 56.6113 12.3862 56.1639 13.2675 55.3773C19.0725 49.9457 30.195 38.788 36.5137 32.2492C38.2275 32.9724 40.0687 33.3452 41.9287 33.3415C43.801 33.34 45.654 32.9655 47.3783 32.24C49.1025 31.5146 50.663 30.4529 51.9675 29.1177C54.647 26.401 56.1436 22.7452 56.1337 18.9405C56.1771 17.1994 55.9287 15.4633 55.3987 13.8034ZM10.9987 52.7342C10.8544 52.8617 10.6804 52.9513 10.4925 52.9952C10.3076 53.027 10.1186 53.027 9.93373 52.9952C9.73989 52.9658 9.55527 52.8932 9.39373 52.7827C9.22039 52.6818 9.07382 52.5412 8.96623 52.3726C8.44123 51.8395 7.94998 50.8255 8.44123 50.2552C13.5787 44.8235 24.1575 34.2064 30.7725 27.716C31.1475 28.2081 31.56 28.6778 32.0025 29.1177C32.445 29.5763 32.9212 30.0013 33.4275 30.389C27.03 36.9129 16.5975 47.4033 11.0025 52.7342H10.9987ZM52.6912 18.9405C52.6987 21.7923 51.5812 24.5324 49.5712 26.5753C47.5654 28.5313 44.8678 29.6271 42.0581 29.6271C39.2484 29.6271 36.5508 28.5313 34.545 26.5753C33.0749 25.0502 32.0707 23.1414 31.6491 21.0711C31.2276 19.0009 31.406 16.8541 32.1637 14.8807C32.6681 13.5377 33.4504 12.3148 34.46 11.2912C35.4696 10.2676 36.6841 9.46606 38.025 8.9384C39.2981 8.40869 40.6649 8.13744 42.045 8.14062H42.9975L36.1837 15.123V17.7177L43.29 24.7486H45.765L52.6912 17.9787V18.9405ZM12.15 25.744H17.8912L20.535 28.4169L23.0775 25.9043L20.5837 23.3767V23.2164L20.7975 17.069L19.9725 15.4399L9.24748 8.42394L7.03123 8.66999L3.91498 11.835L3.66748 14.068L10.56 24.9462L12.15 25.7477V25.744ZM8.60623 12.2041L17.2837 17.8855L17.1375 22.0719H13.1025L7.50748 13.2665L8.60623 12.2041ZM35.25 38.1505L37.7775 35.6416L49.425 47.5151C50.4061 48.5401 50.9532 49.9009 50.9532 51.3158C50.9532 52.7306 50.4061 54.0914 49.425 55.1164C48.6873 55.8693 47.7387 56.384 46.7026 56.5934C45.6666 56.8029 44.5911 56.6974 43.6162 56.2907C42.994 56.0163 42.436 55.6165 41.9775 55.1164L30.195 43.1758L32.7412 40.6483L44.4862 52.5553C44.6442 52.7285 44.8406 52.8625 45.06 52.9467C45.4916 53.121 45.9746 53.121 46.4062 52.9467C46.6255 52.8624 46.822 52.7284 46.98 52.5553C47.1441 52.3937 47.2719 52.1993 47.355 51.9849C47.441 51.7662 47.4867 51.5338 47.49 51.299C47.4862 51.0645 47.4418 50.8325 47.3587 50.613C47.2757 50.3987 47.1479 50.2043 46.9837 50.0427L35.25 38.1505Z" fill="black"/>
-                                </svg>    
+                            <!-- Item 2 - Construction -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="60" height="59.647" transform="translate(0 0.811523)" fill="white"/>
+                                        <path fill-rule="evenodd" clip-rule="evenodd" d="M55.3987 13.8034L52.4737 13.1174L44.5687 20.9312L40.0912 16.398L47.8012 8.35684L47.1262 5.40431C45.497 4.86245 43.7929 4.57571 42.075 4.55434C40.201 4.52569 38.3411 4.88101 36.6112 5.59816C34.941 6.34975 33.4312 7.41277 32.1637 8.72963C30.7528 10.0583 29.6354 11.6643 28.8825 13.4455C27.4329 16.9903 27.4329 20.9577 28.8825 24.5025C21.0646 32.1485 13.3477 39.8959 5.73373 47.7425C4.94623 48.7677 4.57123 50.0464 4.66873 51.3325C4.74557 52.7158 5.37136 54.0123 6.40873 54.9375C6.87373 55.4407 7.42873 55.8583 8.04748 56.1602C8.68498 56.4398 9.37123 56.6001 10.065 56.6337C11.25 56.6113 12.3862 56.1639 13.2675 55.3773C19.0725 49.9457 30.195 38.788 36.5137 32.2492C38.2275 32.9724 40.0687 33.3452 41.9287 33.3415C43.801 33.34 45.654 32.9655 47.3783 32.24C49.1025 31.5146 50.663 30.4529 51.9675 29.1177C54.647 26.401 56.1436 22.7452 56.1337 18.9405C56.1771 17.1994 55.9287 15.4633 55.3987 13.8034ZM10.9987 52.7342C10.8544 52.8617 10.6804 52.9513 10.4925 52.9952C10.3076 53.027 10.1186 53.027 9.93373 52.9952C9.73989 52.9658 9.55527 52.8932 9.39373 52.7827C9.22039 52.6818 9.07382 52.5412 8.96623 52.3726C8.44123 51.8395 7.94998 50.8255 8.44123 50.2552C13.5787 44.8235 24.1575 34.2064 30.7725 27.716C31.1475 28.2081 31.56 28.6778 32.0025 29.1177C32.445 29.5763 32.9212 30.0013 33.4275 30.389C27.03 36.9129 16.5975 47.4033 11.0025 52.7342H10.9987ZM52.6912 18.9405C52.6987 21.7923 51.5812 24.5324 49.5712 26.5753C47.5654 28.5313 44.8678 29.6271 42.0581 29.6271C39.2484 29.6271 36.5508 28.5313 34.545 26.5753C33.0749 25.0502 32.0707 23.1414 31.6491 21.0711C31.2276 19.0009 31.406 16.8541 32.1637 14.8807C32.6681 13.5377 33.4504 12.3148 34.46 11.2912C35.4696 10.2676 36.6841 9.46606 38.025 8.9384C39.2981 8.40869 40.6649 8.13744 42.045 8.14062H42.9975L36.1837 15.123V17.7177L43.29 24.7486H45.765L52.6912 17.9787V18.9405ZM12.15 25.744H17.8912L20.535 28.4169L23.0775 25.9043L20.5837 23.3767V23.2164L20.7975 17.069L19.9725 15.4399L9.24748 8.42394L7.03123 8.66999L3.91498 11.835L3.66748 14.068L10.56 24.9462L12.15 25.7477V25.744ZM8.60623 12.2041L17.2837 17.8855L17.1375 22.0719H13.1025L7.50748 13.2665L8.60623 12.2041ZM35.25 38.1505L37.7775 35.6416L49.425 47.5151C50.4061 48.5401 50.9532 49.9009 50.9532 51.3158C50.9532 52.7306 50.4061 54.0914 49.425 55.1164C48.6873 55.8693 47.7387 56.384 46.7026 56.5934C45.6666 56.8029 44.5911 56.6974 43.6162 56.2907C42.994 56.0163 42.436 55.6165 41.9775 55.1164L30.195 43.1758L32.7412 40.6483L44.4862 52.5553C44.6442 52.7285 44.8406 52.8625 45.06 52.9467C45.4916 53.121 45.9746 53.121 46.4062 52.9467C46.6255 52.8624 46.822 52.7284 46.98 52.5553C47.1441 52.3937 47.2719 52.1993 47.355 51.9849C47.441 51.7662 47.4867 51.5338 47.49 51.299C47.4862 51.0645 47.4418 50.8325 47.3587 50.613C47.2757 50.3987 47.1479 50.2043 46.9837 50.0427L35.25 38.1505Z" fill="black"/>
+                                    </svg>    
+                                </div>
+                                <h3 class="services-list__heading"> Construction - repair works </h2>
+                                <p class="services-list__text">
+                                    Some text
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Construction - repair works </h2>
-                            <p class="services-list__text">
-                                Some text
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
-                        </div>
 
-                        <!--  Item 3 - Ventilation -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M7.5 20.3882H25C26.4834 20.3882 27.9334 19.9535 29.1668 19.1391C30.4001 18.3247 31.3614 17.1671 31.9291 15.8128C32.4968 14.4585 32.6453 12.9682 32.3559 11.5305C32.0665 10.0928 31.3522 8.77211 30.3033 7.73556C29.2544 6.699 27.918 5.9931 26.4632 5.70712C25.0083 5.42113 23.5003 5.56791 22.1299 6.12889C20.7594 6.68987 19.5881 7.63985 18.764 8.85871C17.9399 10.0776 17.5 11.5106 17.5 12.9765" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M10 40.1528H37.5C38.9834 40.1528 40.4334 40.5875 41.6668 41.4019C42.9001 42.2164 43.8614 43.3739 44.4291 44.7282C44.9968 46.0826 45.1453 47.5728 44.8559 49.0106C44.5665 50.4483 43.8522 51.769 42.8033 52.8055C41.7544 53.8421 40.418 54.548 38.9632 54.8339C37.5083 55.1199 36.0003 54.9732 34.6299 54.4122C33.2594 53.8512 32.0881 52.9012 31.264 51.6824C30.4399 50.4635 30 49.0305 30 47.5646" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M5 30.2706H47.5C48.9834 30.2706 50.4334 29.8359 51.6668 29.0214C52.9001 28.207 53.8614 27.0495 54.4291 25.6951C54.9968 24.3408 55.1453 22.8506 54.8559 21.4128C54.5665 19.9751 53.8522 18.6544 52.8033 17.6179C51.7544 16.5813 50.418 15.8754 48.9632 15.5894C47.5083 15.3035 46.0003 15.4502 44.6299 16.0112C43.2594 16.5722 42.0881 17.5222 41.264 18.741C40.4399 19.9599 40 21.3929 40 22.8588" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                                                                   
+                            <!--  Item 3 - Ventilation -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M7.5 20.3882H25C26.4834 20.3882 27.9334 19.9535 29.1668 19.1391C30.4001 18.3247 31.3614 17.1671 31.9291 15.8128C32.4968 14.4585 32.6453 12.9682 32.3559 11.5305C32.0665 10.0928 31.3522 8.77211 30.3033 7.73556C29.2544 6.699 27.918 5.9931 26.4632 5.70712C25.0083 5.42113 23.5003 5.56791 22.1299 6.12889C20.7594 6.68987 19.5881 7.63985 18.764 8.85871C17.9399 10.0776 17.5 11.5106 17.5 12.9765" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M10 40.1528H37.5C38.9834 40.1528 40.4334 40.5875 41.6668 41.4019C42.9001 42.2164 43.8614 43.3739 44.4291 44.7282C44.9968 46.0826 45.1453 47.5728 44.8559 49.0106C44.5665 50.4483 43.8522 51.769 42.8033 52.8055C41.7544 53.8421 40.418 54.548 38.9632 54.8339C37.5083 55.1199 36.0003 54.9732 34.6299 54.4122C33.2594 53.8512 32.0881 52.9012 31.264 51.6824C30.4399 50.4635 30 49.0305 30 47.5646" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M5 30.2706H47.5C48.9834 30.2706 50.4334 29.8359 51.6668 29.0214C52.9001 28.207 53.8614 27.0495 54.4291 25.6951C54.9968 24.3408 55.1453 22.8506 54.8559 21.4128C54.5665 19.9751 53.8522 18.6544 52.8033 17.6179C51.7544 16.5813 50.418 15.8754 48.9632 15.5894C47.5083 15.3035 46.0003 15.4502 44.6299 16.0112C43.2594 16.5722 42.0881 17.5222 41.264 18.741C40.4399 19.9599 40 21.3929 40 22.8588" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                                                   
+                                </div>
+                                <h3 class="services-list__heading"> Ventilation and air conditioning </h2>
+                                <p class="services-list__text">
+                                    Some text
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Ventilation and air conditioning </h2>
-                            <p class="services-list__text">
-                                Some text
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
-                        </div>
 
-                        <!-- Item 4 - Cleaning -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M56.13 5.37442C56.4811 5.72185 56.6783 6.1928 56.6783 6.68383C56.6783 7.17486 56.4811 7.64581 56.13 7.99324L38.81 25.1119C40.933 27.8466 41.9778 31.2506 41.7497 34.69C41.5215 38.1294 40.0361 41.3695 37.57 43.8069L35.49 45.8624L28.5225 56.1895C28.3687 56.4175 28.1657 56.6091 27.928 56.7503C27.6903 56.8914 27.4239 56.9788 27.148 57.0059C26.872 57.0331 26.5934 56.9995 26.3322 56.9074C26.071 56.8154 25.8338 56.6672 25.6375 56.4736L4.42248 35.5082C4.22657 35.3142 4.07665 35.0797 3.9835 34.8216C3.89035 34.5635 3.85629 34.2881 3.88379 34.0154C3.91129 33.7427 3.99966 33.4795 4.14252 33.2446C4.28539 33.0097 4.47919 32.8091 4.70998 32.6571L15.16 25.7716L17.24 23.7161C19.7064 21.279 22.9851 19.811 26.4654 19.5856C29.9457 19.3601 33.3903 20.3926 36.1575 22.4907L53.48 5.37442C53.8315 5.02742 54.3081 4.83252 54.805 4.83252C55.3019 4.83252 55.7784 5.02742 56.13 5.37442V5.37442ZM19.0075 27.2119L34.0325 42.0602L34.9175 41.1881C36.8717 39.2113 37.9586 36.5528 37.9423 33.7893C37.926 31.0257 36.8079 28.38 34.8305 26.4258C32.8531 24.4716 30.1758 23.3667 27.3794 23.3506C24.5829 23.3345 21.8928 24.4086 19.8925 26.3398L19.0075 27.2119V27.2119ZM16.1175 29.5961L8.69248 34.4878L26.67 52.2538L31.62 44.9162L16.1175 29.5961Z" fill="black"/>
-                                </svg>                                                                    
+                            <!-- Item 4 - Cleaning -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M56.13 5.37442C56.4811 5.72185 56.6783 6.1928 56.6783 6.68383C56.6783 7.17486 56.4811 7.64581 56.13 7.99324L38.81 25.1119C40.933 27.8466 41.9778 31.2506 41.7497 34.69C41.5215 38.1294 40.0361 41.3695 37.57 43.8069L35.49 45.8624L28.5225 56.1895C28.3687 56.4175 28.1657 56.6091 27.928 56.7503C27.6903 56.8914 27.4239 56.9788 27.148 57.0059C26.872 57.0331 26.5934 56.9995 26.3322 56.9074C26.071 56.8154 25.8338 56.6672 25.6375 56.4736L4.42248 35.5082C4.22657 35.3142 4.07665 35.0797 3.9835 34.8216C3.89035 34.5635 3.85629 34.2881 3.88379 34.0154C3.91129 33.7427 3.99966 33.4795 4.14252 33.2446C4.28539 33.0097 4.47919 32.8091 4.70998 32.6571L15.16 25.7716L17.24 23.7161C19.7064 21.279 22.9851 19.811 26.4654 19.5856C29.9457 19.3601 33.3903 20.3926 36.1575 22.4907L53.48 5.37442C53.8315 5.02742 54.3081 4.83252 54.805 4.83252C55.3019 4.83252 55.7784 5.02742 56.13 5.37442V5.37442ZM19.0075 27.2119L34.0325 42.0602L34.9175 41.1881C36.8717 39.2113 37.9586 36.5528 37.9423 33.7893C37.926 31.0257 36.8079 28.38 34.8305 26.4258C32.8531 24.4716 30.1758 23.3667 27.3794 23.3506C24.5829 23.3345 21.8928 24.4086 19.8925 26.3398L19.0075 27.2119V27.2119ZM16.1175 29.5961L8.69248 34.4878L26.67 52.2538L31.62 44.9162L16.1175 29.5961Z" fill="black"/>
+                                    </svg>                                                                    
+                                </div>
+                                <h3 class="services-list__heading"> Daily and general cleaning </h2>
+                                <p class="services-list__text">
+                                    Some text
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Daily and general cleaning </h2>
-                            <p class="services-list__text">
-                                Some text
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
-                        </div>
 
-                        <!-- Item 5 - Networks -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M30 54.9765C43.8075 54.9765 55 43.9156 55 30.2706C55 16.6255 43.8075 5.5647 30 5.5647C16.1925 5.5647 5 16.6255 5 30.2706C5 43.9156 16.1925 54.9765 30 54.9765Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M35 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M25 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M30 40.1529C32.6522 40.1529 35.1957 39.1118 37.0711 37.2585C38.9464 35.4052 40 32.8915 40 30.2706V26.5647H20V30.2706C20 32.8915 21.0536 35.4052 22.9289 37.2585C24.8043 39.1118 27.3478 40.1529 30 40.1529Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                    <path d="M30 54.9764V40.1528" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                                </svg>                                                                  
+                            <!-- Item 5 - Networks -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M30 54.9765C43.8075 54.9765 55 43.9156 55 30.2706C55 16.6255 43.8075 5.5647 30 5.5647C16.1925 5.5647 5 16.6255 5 30.2706C5 43.9156 16.1925 54.9765 30 54.9765Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M35 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M25 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M30 40.1529C32.6522 40.1529 35.1957 39.1118 37.0711 37.2585C38.9464 35.4052 40 32.8915 40 30.2706V26.5647H20V30.2706C20 32.8915 21.0536 35.4052 22.9289 37.2585C24.8043 39.1118 27.3478 40.1529 30 40.1529Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                        <path d="M30 54.9764V40.1528" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                    </svg>                                                                  
+                                </div>
+                                <h3 class="services-list__heading"> Electrical & low-voltage networks </h2>
+                                <p class="services-list__text">
+                                    Some text
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Electrical & low-voltage networks </h2>
-                            <p class="services-list__text">
-                                Some text
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
-                        </div>
 
-                        <!-- Item 6 - Power suply -->
-                        <div class="services-list__item">
-                            <div class="services-list_logo">
-                                <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <path d="M36.6092 6.46129L36.4027 6.27838C35.971 5.94387 35.4299 5.77641 34.8812 5.80828C34.3321 5.84017 33.8145 6.06937 33.4255 6.45179L33.2406 6.65562C32.9027 7.08134 32.7342 7.61401 32.7663 8.1534C32.7986 8.6953 33.0311 9.20718 33.4206 9.59163C33.4206 9.59164 33.4206 9.59165 33.4206 9.59166L36.6681 12.796L37.1018 13.2239H36.4925H22.4996L21.9037 13.2338C17.436 13.3846 13.2027 15.2439 10.0961 18.4189C6.98909 21.5943 5.25191 25.8374 5.25 30.2532L36.6092 6.46129ZM36.6092 6.46129L44.1168 13.8757L44.1169 13.8757C44.5064 14.2602 44.7389 14.7721 44.7712 15.314C44.8033 15.8537 44.6346 16.3866 44.2965 16.8124L44.1139 17.0163L36.6044 24.43L36.6043 24.43L36.6016 24.4328C36.1986 24.8432 35.6503 25.0846 35.0708 25.1057C34.4912 25.1269 33.9263 24.9261 33.4936 24.5461C33.061 24.1662 32.7941 23.6365 32.7475 23.0678C32.7011 22.5011 32.877 21.9381 33.2393 21.4953L33.4256 21.29L36.6632 18.0905L37.0961 17.6626H36.4875H22.5001H22.5V17.9126M36.6092 6.46129L7.9725 39.8861M22.5 17.9126C20.3023 17.9115 18.1431 18.4833 16.2405 19.5705C14.3379 20.6576 12.7591 22.2214 11.6636 24.1043C10.5681 25.9871 9.99461 28.1222 10.001 30.294C10.0074 32.4659 10.5934 34.5977 11.7 36.4742L12.0375 37.0128C12.4231 37.5455 12.5787 38.2077 12.4702 38.8538C12.3616 39.4999 11.9978 40.077 11.4587 40.458C10.9197 40.839 10.2496 40.9928 9.59576 40.8856C8.94196 40.7783 8.35806 40.4188 7.9725 39.8861M22.5 17.9126H36.1318H22.5ZM7.9725 39.8861L8.17885 39.7449C8.1782 39.744 8.17756 39.743 8.17691 39.7421C8.17628 39.7412 8.17565 39.7403 8.17502 39.7395L7.9725 39.8861ZM51.715 20.6228V20.7864H51.8379C53.5236 23.2801 54.5136 26.1699 54.7069 29.1639C54.9032 32.2043 54.2708 35.2412 52.8754 37.9582C51.4799 40.6752 49.3724 42.973 46.7722 44.6119C44.1727 46.2503 41.176 47.1701 38.0942 47.2752L37.5 47.2825H37.4985H23.51H22.901L23.3343 47.7104L26.5889 50.9242L26.7713 51.1279C27.1075 51.5527 27.2756 52.0834 27.2446 52.6211C27.2135 53.1611 26.9836 53.6717 26.5976 54.0568C26.2115 54.4419 25.6957 54.6747 25.1472 54.7106C24.6014 54.7464 24.0614 54.5847 23.6281 54.2563L23.4027 54.0594L15.9011 46.651L15.7186 46.4472C15.4109 46.0592 15.2428 45.5815 15.2403 45.0892C15.2379 44.5971 15.4012 44.1179 15.7049 43.7271L15.9017 43.5044L23.4029 36.0965L23.6117 35.9135C24.0051 35.6089 24.4904 35.4419 24.9911 35.4395C25.4915 35.4371 25.9781 35.5992 26.3744 35.8996L26.5934 36.0911L26.7709 36.2915C27.0783 36.6794 27.2463 37.1569 27.2487 37.6489C27.2511 38.1407 27.088 38.6196 26.7847 39.0103L26.5879 39.2352L23.3595 42.4157L22.925 42.8438H23.535H37.505C39.8059 42.8437 42.0639 42.2278 44.0394 41.0613C46.0149 39.8947 47.6342 38.221 48.725 36.2175C49.8159 34.214 50.3374 31.9557 50.234 29.6825C50.1306 27.4093 49.4062 25.2065 48.1379 23.3079L48.136 23.3052C47.8935 22.9524 47.75 22.5246 47.75 22.0608V22.06C47.7486 21.5981 47.8934 21.1471 48.1645 20.77C48.4356 20.3928 48.8196 20.1084 49.2631 19.9571C49.7067 19.8058 50.1871 19.7952 50.637 19.927C51.0584 20.0505 51.4328 20.2928 51.715 20.6228Z" fill="black" stroke="black" stroke-width="0.5"/>
-                                </svg>                                                                                                                           
+                            <!-- Item 6 - Power suply -->
+                            <div class="services-list__item">
+                                <div class="services-list_logo">
+                                    <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M36.6092 6.46129L36.4027 6.27838C35.971 5.94387 35.4299 5.77641 34.8812 5.80828C34.3321 5.84017 33.8145 6.06937 33.4255 6.45179L33.2406 6.65562C32.9027 7.08134 32.7342 7.61401 32.7663 8.1534C32.7986 8.6953 33.0311 9.20718 33.4206 9.59163C33.4206 9.59164 33.4206 9.59165 33.4206 9.59166L36.6681 12.796L37.1018 13.2239H36.4925H22.4996L21.9037 13.2338C17.436 13.3846 13.2027 15.2439 10.0961 18.4189C6.98909 21.5943 5.25191 25.8374 5.25 30.2532L36.6092 6.46129ZM36.6092 6.46129L44.1168 13.8757L44.1169 13.8757C44.5064 14.2602 44.7389 14.7721 44.7712 15.314C44.8033 15.8537 44.6346 16.3866 44.2965 16.8124L44.1139 17.0163L36.6044 24.43L36.6043 24.43L36.6016 24.4328C36.1986 24.8432 35.6503 25.0846 35.0708 25.1057C34.4912 25.1269 33.9263 24.9261 33.4936 24.5461C33.061 24.1662 32.7941 23.6365 32.7475 23.0678C32.7011 22.5011 32.877 21.9381 33.2393 21.4953L33.4256 21.29L36.6632 18.0905L37.0961 17.6626H36.4875H22.5001H22.5V17.9126M36.6092 6.46129L7.9725 39.8861M22.5 17.9126C20.3023 17.9115 18.1431 18.4833 16.2405 19.5705C14.3379 20.6576 12.7591 22.2214 11.6636 24.1043C10.5681 25.9871 9.99461 28.1222 10.001 30.294C10.0074 32.4659 10.5934 34.5977 11.7 36.4742L12.0375 37.0128C12.4231 37.5455 12.5787 38.2077 12.4702 38.8538C12.3616 39.4999 11.9978 40.077 11.4587 40.458C10.9197 40.839 10.2496 40.9928 9.59576 40.8856C8.94196 40.7783 8.35806 40.4188 7.9725 39.8861M22.5 17.9126H36.1318H22.5ZM7.9725 39.8861L8.17885 39.7449C8.1782 39.744 8.17756 39.743 8.17691 39.7421C8.17628 39.7412 8.17565 39.7403 8.17502 39.7395L7.9725 39.8861ZM51.715 20.6228V20.7864H51.8379C53.5236 23.2801 54.5136 26.1699 54.7069 29.1639C54.9032 32.2043 54.2708 35.2412 52.8754 37.9582C51.4799 40.6752 49.3724 42.973 46.7722 44.6119C44.1727 46.2503 41.176 47.1701 38.0942 47.2752L37.5 47.2825H37.4985H23.51H22.901L23.3343 47.7104L26.5889 50.9242L26.7713 51.1279C27.1075 51.5527 27.2756 52.0834 27.2446 52.6211C27.2135 53.1611 26.9836 53.6717 26.5976 54.0568C26.2115 54.4419 25.6957 54.6747 25.1472 54.7106C24.6014 54.7464 24.0614 54.5847 23.6281 54.2563L23.4027 54.0594L15.9011 46.651L15.7186 46.4472C15.4109 46.0592 15.2428 45.5815 15.2403 45.0892C15.2379 44.5971 15.4012 44.1179 15.7049 43.7271L15.9017 43.5044L23.4029 36.0965L23.6117 35.9135C24.0051 35.6089 24.4904 35.4419 24.9911 35.4395C25.4915 35.4371 25.9781 35.5992 26.3744 35.8996L26.5934 36.0911L26.7709 36.2915C27.0783 36.6794 27.2463 37.1569 27.2487 37.6489C27.2511 38.1407 27.088 38.6196 26.7847 39.0103L26.5879 39.2352L23.3595 42.4157L22.925 42.8438H23.535H37.505C39.8059 42.8437 42.0639 42.2278 44.0394 41.0613C46.0149 39.8947 47.6342 38.221 48.725 36.2175C49.8159 34.214 50.3374 31.9557 50.234 29.6825C50.1306 27.4093 49.4062 25.2065 48.1379 23.3079L48.136 23.3052C47.8935 22.9524 47.75 22.5246 47.75 22.0608V22.06C47.7486 21.5981 47.8934 21.1471 48.1645 20.77C48.4356 20.3928 48.8196 20.1084 49.2631 19.9571C49.7067 19.8058 50.1871 19.7952 50.637 19.927C51.0584 20.0505 51.4328 20.2928 51.715 20.6228Z" fill="black" stroke="black" stroke-width="0.5"/>
+                                    </svg>                                                                                                                           
+                                </div>
+                                <h3 class="services-list__heading"> Guaranteed uninterruptible power supply </h2>
+                                <p class="services-list__text">
+                                    Some text
+                                    <a href="" class="services-list__link"> see more </a>
+                                </p>
                             </div>
-                            <h3 class="services-list__heading"> Guaranteed uninterruptible power supply </h2>
-                            <p class="services-list__text">
-                                Some text
-                                <a href="" class="services-list__link"> see more </a>
-                            </p>
                         </div>
-                    </div>
+                    </li>
+
+                    <!-- Link to portfolio page -->
+                    <li class="main-nav__item">
+                        <a class="main-nav__link link--bold" href=""> Portfolio </a> 
+                    </li>
+
+                    <!-- Link to contacts -->
+                    <li class="main-nav__item">
+                        <a class="main-nav__link link--bold" href=""> Contacts </a> 
+                    </li>
+                </ul>
+            </nav>
+
+            <!-- Email -->
+            <a class="email-link" href="mailto:company@company.com"> company@company.com </a>
+
+            <ul class="language-selector">
+                <li class="language-selector__item">
+                    <a href="" class="language-selector__link"> EN </a>
                 </li>
-
-                <!-- Link to portfolio page -->
-                <li class="main-nav__item">
-                    <a class="main-nav__link" href=""> Portfolio </a> 
+                <li class="language-selector__item">
+                    <a href="" class="language-selector__link"> LV </a>
                 </li>
-
-                <!-- Link to contacts -->
-                <li class="main-nav__item">
-                    <a class="main-nav__link" href=""> Contacts </a> 
+                <li class="language-selector__item">
+                    <a href="" class="language-selector__link"> RU </a>
                 </li>
             </ul>
-        </nav>
-
-        <!-- Email -->
-        <a class="email-link" href="mailto:company@company.com"> company@company.com </a>
-
-        <ul class="language-selector">
-            <li class="language-selector__item">
-                <a href="" class="language-selector__link"> EN </a>
-            </li>
-            <li class="language-selector__item">
-                <a href="" class="language-selector__link"> LV </a>
-            </li>
-            <li class="language-selector__item">
-                <a href="" class="language-selector__link"> RU </a>
-            </li>
-        </ul>
+        </div>
     </header>
 
     <!-- Main content of the website -->
     <main>
 
         <!-- Section with introduction -->
-        <section class="container container-full-width introduction">
-            <div class="introduction__content">
-                <h1 class="introduction__heading"> 
-                    <span class="introduction__heading--blue"> One contractor </span>
-                    <span class="introduction__heading--black"> for all property services </span>
-                </h1>
+        <section>
+            <div class="container container-full-width introduction">
+                <div class="introduction__content">
+                    <h1 class="introduction__heading"> 
+                        <span class="introduction__heading accent--blue"> One contractor </span>
+                        <span class="introduction__heading"> for all property services </span>
+                    </h1>
 
-                <p class="introduction__text">
-                    The basis of our concept for property management complex package - 
-                    unifying specialists from various areas in one unit under one management. 
-                </p>
+                    <p class="introduction__text">
+                        The basis of our concept for property management complex package - 
+                        unifying specialists from various areas in one unit under one management. 
+                    </p>
 
-                <div class="introduction__button">
-                    <a href="" class="introduction__link"> More </a>
+                    <div class="introduction__button more-button">
+                        <a href="" class="introduction__link more-button__link"> More </a>
+                    </div>
                 </div>
-            </div>
 
-            <div class="introduction__image">
-                <img src="./media/images/view.png" alt="">
+                <div class="introduction__image">
+                    <img src="./media/images/view.png" alt="">
+                </div>
             </div>
         </section>
 
         <!-- Section with services -->
-        <section class="container services">
-            <div class="services-list">
-                        
-                <!-- Item 1 - Property management -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M13.75 17.9176L31.25 5.5647V54.9765H13.75V17.9176Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M31.25 16.6824L48.75 29.0353V54.9765" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M5 54.9766H55" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>
+        <section>
+            <div class="container services"></div>
+                <div class="services-list">
+                            
+                    <!-- Item 1 - Property management -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M13.75 17.9176L31.25 5.5647V54.9765H13.75V17.9176Z" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M31.25 16.6824L48.75 29.0353V54.9765" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 54.9766H55" stroke="black" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="services-list__heading"> Property management </h2>
+                        <p class="services-list__text">
+                            Unifying specialists from various areas 
+                            in one unit under one management...
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Property management </h2>
-                    <p class="services-list__text">
-                        Unifying specialists from various areas 
-                        in one unit under one management...
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
-                </div>
 
-                <!-- Item 2 - Construction -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <rect width="60" height="59.647" transform="translate(0 0.811523)" fill="white"/>
-                            <path fill-rule="evenodd" clip-rule="evenodd" d="M55.3987 13.8034L52.4737 13.1174L44.5687 20.9312L40.0912 16.398L47.8012 8.35684L47.1262 5.40431C45.497 4.86245 43.7929 4.57571 42.075 4.55434C40.201 4.52569 38.3411 4.88101 36.6112 5.59816C34.941 6.34975 33.4312 7.41277 32.1637 8.72963C30.7528 10.0583 29.6354 11.6643 28.8825 13.4455C27.4329 16.9903 27.4329 20.9577 28.8825 24.5025C21.0646 32.1485 13.3477 39.8959 5.73373 47.7425C4.94623 48.7677 4.57123 50.0464 4.66873 51.3325C4.74557 52.7158 5.37136 54.0123 6.40873 54.9375C6.87373 55.4407 7.42873 55.8583 8.04748 56.1602C8.68498 56.4398 9.37123 56.6001 10.065 56.6337C11.25 56.6113 12.3862 56.1639 13.2675 55.3773C19.0725 49.9457 30.195 38.788 36.5137 32.2492C38.2275 32.9724 40.0687 33.3452 41.9287 33.3415C43.801 33.34 45.654 32.9655 47.3783 32.24C49.1025 31.5146 50.663 30.4529 51.9675 29.1177C54.647 26.401 56.1436 22.7452 56.1337 18.9405C56.1771 17.1994 55.9287 15.4633 55.3987 13.8034ZM10.9987 52.7342C10.8544 52.8617 10.6804 52.9513 10.4925 52.9952C10.3076 53.027 10.1186 53.027 9.93373 52.9952C9.73989 52.9658 9.55527 52.8932 9.39373 52.7827C9.22039 52.6818 9.07382 52.5412 8.96623 52.3726C8.44123 51.8395 7.94998 50.8255 8.44123 50.2552C13.5787 44.8235 24.1575 34.2064 30.7725 27.716C31.1475 28.2081 31.56 28.6778 32.0025 29.1177C32.445 29.5763 32.9212 30.0013 33.4275 30.389C27.03 36.9129 16.5975 47.4033 11.0025 52.7342H10.9987ZM52.6912 18.9405C52.6987 21.7923 51.5812 24.5324 49.5712 26.5753C47.5654 28.5313 44.8678 29.6271 42.0581 29.6271C39.2484 29.6271 36.5508 28.5313 34.545 26.5753C33.0749 25.0502 32.0707 23.1414 31.6491 21.0711C31.2276 19.0009 31.406 16.8541 32.1637 14.8807C32.6681 13.5377 33.4504 12.3148 34.46 11.2912C35.4696 10.2676 36.6841 9.46606 38.025 8.9384C39.2981 8.40869 40.6649 8.13744 42.045 8.14062H42.9975L36.1837 15.123V17.7177L43.29 24.7486H45.765L52.6912 17.9787V18.9405ZM12.15 25.744H17.8912L20.535 28.4169L23.0775 25.9043L20.5837 23.3767V23.2164L20.7975 17.069L19.9725 15.4399L9.24748 8.42394L7.03123 8.66999L3.91498 11.835L3.66748 14.068L10.56 24.9462L12.15 25.7477V25.744ZM8.60623 12.2041L17.2837 17.8855L17.1375 22.0719H13.1025L7.50748 13.2665L8.60623 12.2041ZM35.25 38.1505L37.7775 35.6416L49.425 47.5151C50.4061 48.5401 50.9532 49.9009 50.9532 51.3158C50.9532 52.7306 50.4061 54.0914 49.425 55.1164C48.6873 55.8693 47.7387 56.384 46.7026 56.5934C45.6666 56.8029 44.5911 56.6974 43.6162 56.2907C42.994 56.0163 42.436 55.6165 41.9775 55.1164L30.195 43.1758L32.7412 40.6483L44.4862 52.5553C44.6442 52.7285 44.8406 52.8625 45.06 52.9467C45.4916 53.121 45.9746 53.121 46.4062 52.9467C46.6255 52.8624 46.822 52.7284 46.98 52.5553C47.1441 52.3937 47.2719 52.1993 47.355 51.9849C47.441 51.7662 47.4867 51.5338 47.49 51.299C47.4862 51.0645 47.4418 50.8325 47.3587 50.613C47.2757 50.3987 47.1479 50.2043 46.9837 50.0427L35.25 38.1505Z" fill="black"/>
-                        </svg>    
+                    <!-- Item 2 - Construction -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect width="60" height="59.647" transform="translate(0 0.811523)" fill="white"/>
+                                <path fill-rule="evenodd" clip-rule="evenodd" d="M55.3987 13.8034L52.4737 13.1174L44.5687 20.9312L40.0912 16.398L47.8012 8.35684L47.1262 5.40431C45.497 4.86245 43.7929 4.57571 42.075 4.55434C40.201 4.52569 38.3411 4.88101 36.6112 5.59816C34.941 6.34975 33.4312 7.41277 32.1637 8.72963C30.7528 10.0583 29.6354 11.6643 28.8825 13.4455C27.4329 16.9903 27.4329 20.9577 28.8825 24.5025C21.0646 32.1485 13.3477 39.8959 5.73373 47.7425C4.94623 48.7677 4.57123 50.0464 4.66873 51.3325C4.74557 52.7158 5.37136 54.0123 6.40873 54.9375C6.87373 55.4407 7.42873 55.8583 8.04748 56.1602C8.68498 56.4398 9.37123 56.6001 10.065 56.6337C11.25 56.6113 12.3862 56.1639 13.2675 55.3773C19.0725 49.9457 30.195 38.788 36.5137 32.2492C38.2275 32.9724 40.0687 33.3452 41.9287 33.3415C43.801 33.34 45.654 32.9655 47.3783 32.24C49.1025 31.5146 50.663 30.4529 51.9675 29.1177C54.647 26.401 56.1436 22.7452 56.1337 18.9405C56.1771 17.1994 55.9287 15.4633 55.3987 13.8034ZM10.9987 52.7342C10.8544 52.8617 10.6804 52.9513 10.4925 52.9952C10.3076 53.027 10.1186 53.027 9.93373 52.9952C9.73989 52.9658 9.55527 52.8932 9.39373 52.7827C9.22039 52.6818 9.07382 52.5412 8.96623 52.3726C8.44123 51.8395 7.94998 50.8255 8.44123 50.2552C13.5787 44.8235 24.1575 34.2064 30.7725 27.716C31.1475 28.2081 31.56 28.6778 32.0025 29.1177C32.445 29.5763 32.9212 30.0013 33.4275 30.389C27.03 36.9129 16.5975 47.4033 11.0025 52.7342H10.9987ZM52.6912 18.9405C52.6987 21.7923 51.5812 24.5324 49.5712 26.5753C47.5654 28.5313 44.8678 29.6271 42.0581 29.6271C39.2484 29.6271 36.5508 28.5313 34.545 26.5753C33.0749 25.0502 32.0707 23.1414 31.6491 21.0711C31.2276 19.0009 31.406 16.8541 32.1637 14.8807C32.6681 13.5377 33.4504 12.3148 34.46 11.2912C35.4696 10.2676 36.6841 9.46606 38.025 8.9384C39.2981 8.40869 40.6649 8.13744 42.045 8.14062H42.9975L36.1837 15.123V17.7177L43.29 24.7486H45.765L52.6912 17.9787V18.9405ZM12.15 25.744H17.8912L20.535 28.4169L23.0775 25.9043L20.5837 23.3767V23.2164L20.7975 17.069L19.9725 15.4399L9.24748 8.42394L7.03123 8.66999L3.91498 11.835L3.66748 14.068L10.56 24.9462L12.15 25.7477V25.744ZM8.60623 12.2041L17.2837 17.8855L17.1375 22.0719H13.1025L7.50748 13.2665L8.60623 12.2041ZM35.25 38.1505L37.7775 35.6416L49.425 47.5151C50.4061 48.5401 50.9532 49.9009 50.9532 51.3158C50.9532 52.7306 50.4061 54.0914 49.425 55.1164C48.6873 55.8693 47.7387 56.384 46.7026 56.5934C45.6666 56.8029 44.5911 56.6974 43.6162 56.2907C42.994 56.0163 42.436 55.6165 41.9775 55.1164L30.195 43.1758L32.7412 40.6483L44.4862 52.5553C44.6442 52.7285 44.8406 52.8625 45.06 52.9467C45.4916 53.121 45.9746 53.121 46.4062 52.9467C46.6255 52.8624 46.822 52.7284 46.98 52.5553C47.1441 52.3937 47.2719 52.1993 47.355 51.9849C47.441 51.7662 47.4867 51.5338 47.49 51.299C47.4862 51.0645 47.4418 50.8325 47.3587 50.613C47.2757 50.3987 47.1479 50.2043 46.9837 50.0427L35.25 38.1505Z" fill="black"/>
+                            </svg>    
+                        </div>
+                        <h3 class="services-list__heading"> Construction - repair works </h2>
+                        <p class="services-list__text">
+                            Some text
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Construction - repair works </h2>
-                    <p class="services-list__text">
-                        Some text
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
-                </div>
 
-                <!--  Item 3 - Ventilation -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M7.5 20.3882H25C26.4834 20.3882 27.9334 19.9535 29.1668 19.1391C30.4001 18.3247 31.3614 17.1671 31.9291 15.8128C32.4968 14.4585 32.6453 12.9682 32.3559 11.5305C32.0665 10.0928 31.3522 8.77211 30.3033 7.73556C29.2544 6.699 27.918 5.9931 26.4632 5.70712C25.0083 5.42113 23.5003 5.56791 22.1299 6.12889C20.7594 6.68987 19.5881 7.63985 18.764 8.85871C17.9399 10.0776 17.5 11.5106 17.5 12.9765" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M10 40.1528H37.5C38.9834 40.1528 40.4334 40.5875 41.6668 41.4019C42.9001 42.2164 43.8614 43.3739 44.4291 44.7282C44.9968 46.0826 45.1453 47.5728 44.8559 49.0106C44.5665 50.4483 43.8522 51.769 42.8033 52.8055C41.7544 53.8421 40.418 54.548 38.9632 54.8339C37.5083 55.1199 36.0003 54.9732 34.6299 54.4122C33.2594 53.8512 32.0881 52.9012 31.264 51.6824C30.4399 50.4635 30 49.0305 30 47.5646" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M5 30.2706H47.5C48.9834 30.2706 50.4334 29.8359 51.6668 29.0214C52.9001 28.207 53.8614 27.0495 54.4291 25.6951C54.9968 24.3408 55.1453 22.8506 54.8559 21.4128C54.5665 19.9751 53.8522 18.6544 52.8033 17.6179C51.7544 16.5813 50.418 15.8754 48.9632 15.5894C47.5083 15.3035 46.0003 15.4502 44.6299 16.0112C43.2594 16.5722 42.0881 17.5222 41.264 18.741C40.4399 19.9599 40 21.3929 40 22.8588" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                                                                   
+                    <!--  Item 3 - Ventilation -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M7.5 20.3882H25C26.4834 20.3882 27.9334 19.9535 29.1668 19.1391C30.4001 18.3247 31.3614 17.1671 31.9291 15.8128C32.4968 14.4585 32.6453 12.9682 32.3559 11.5305C32.0665 10.0928 31.3522 8.77211 30.3033 7.73556C29.2544 6.699 27.918 5.9931 26.4632 5.70712C25.0083 5.42113 23.5003 5.56791 22.1299 6.12889C20.7594 6.68987 19.5881 7.63985 18.764 8.85871C17.9399 10.0776 17.5 11.5106 17.5 12.9765" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M10 40.1528H37.5C38.9834 40.1528 40.4334 40.5875 41.6668 41.4019C42.9001 42.2164 43.8614 43.3739 44.4291 44.7282C44.9968 46.0826 45.1453 47.5728 44.8559 49.0106C44.5665 50.4483 43.8522 51.769 42.8033 52.8055C41.7544 53.8421 40.418 54.548 38.9632 54.8339C37.5083 55.1199 36.0003 54.9732 34.6299 54.4122C33.2594 53.8512 32.0881 52.9012 31.264 51.6824C30.4399 50.4635 30 49.0305 30 47.5646" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M5 30.2706H47.5C48.9834 30.2706 50.4334 29.8359 51.6668 29.0214C52.9001 28.207 53.8614 27.0495 54.4291 25.6951C54.9968 24.3408 55.1453 22.8506 54.8559 21.4128C54.5665 19.9751 53.8522 18.6544 52.8033 17.6179C51.7544 16.5813 50.418 15.8754 48.9632 15.5894C47.5083 15.3035 46.0003 15.4502 44.6299 16.0112C43.2594 16.5722 42.0881 17.5222 41.264 18.741C40.4399 19.9599 40 21.3929 40 22.8588" stroke="black" stroke-width="3.3" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                                                   
+                        </div>
+                        <h3 class="services-list__heading"> Ventilation and air conditioning </h2>
+                        <p class="services-list__text">
+                            Some text
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Ventilation and air conditioning </h2>
-                    <p class="services-list__text">
-                        Some text
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
-                </div>
 
-                <!-- Item 4 - Cleaning -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M56.13 5.37442C56.4811 5.72185 56.6783 6.1928 56.6783 6.68383C56.6783 7.17486 56.4811 7.64581 56.13 7.99324L38.81 25.1119C40.933 27.8466 41.9778 31.2506 41.7497 34.69C41.5215 38.1294 40.0361 41.3695 37.57 43.8069L35.49 45.8624L28.5225 56.1895C28.3687 56.4175 28.1657 56.6091 27.928 56.7503C27.6903 56.8914 27.4239 56.9788 27.148 57.0059C26.872 57.0331 26.5934 56.9995 26.3322 56.9074C26.071 56.8154 25.8338 56.6672 25.6375 56.4736L4.42248 35.5082C4.22657 35.3142 4.07665 35.0797 3.9835 34.8216C3.89035 34.5635 3.85629 34.2881 3.88379 34.0154C3.91129 33.7427 3.99966 33.4795 4.14252 33.2446C4.28539 33.0097 4.47919 32.8091 4.70998 32.6571L15.16 25.7716L17.24 23.7161C19.7064 21.279 22.9851 19.811 26.4654 19.5856C29.9457 19.3601 33.3903 20.3926 36.1575 22.4907L53.48 5.37442C53.8315 5.02742 54.3081 4.83252 54.805 4.83252C55.3019 4.83252 55.7784 5.02742 56.13 5.37442V5.37442ZM19.0075 27.2119L34.0325 42.0602L34.9175 41.1881C36.8717 39.2113 37.9586 36.5528 37.9423 33.7893C37.926 31.0257 36.8079 28.38 34.8305 26.4258C32.8531 24.4716 30.1758 23.3667 27.3794 23.3506C24.5829 23.3345 21.8928 24.4086 19.8925 26.3398L19.0075 27.2119V27.2119ZM16.1175 29.5961L8.69248 34.4878L26.67 52.2538L31.62 44.9162L16.1175 29.5961Z" fill="black"/>
-                        </svg>                                                                    
+                    <!-- Item 4 - Cleaning -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M56.13 5.37442C56.4811 5.72185 56.6783 6.1928 56.6783 6.68383C56.6783 7.17486 56.4811 7.64581 56.13 7.99324L38.81 25.1119C40.933 27.8466 41.9778 31.2506 41.7497 34.69C41.5215 38.1294 40.0361 41.3695 37.57 43.8069L35.49 45.8624L28.5225 56.1895C28.3687 56.4175 28.1657 56.6091 27.928 56.7503C27.6903 56.8914 27.4239 56.9788 27.148 57.0059C26.872 57.0331 26.5934 56.9995 26.3322 56.9074C26.071 56.8154 25.8338 56.6672 25.6375 56.4736L4.42248 35.5082C4.22657 35.3142 4.07665 35.0797 3.9835 34.8216C3.89035 34.5635 3.85629 34.2881 3.88379 34.0154C3.91129 33.7427 3.99966 33.4795 4.14252 33.2446C4.28539 33.0097 4.47919 32.8091 4.70998 32.6571L15.16 25.7716L17.24 23.7161C19.7064 21.279 22.9851 19.811 26.4654 19.5856C29.9457 19.3601 33.3903 20.3926 36.1575 22.4907L53.48 5.37442C53.8315 5.02742 54.3081 4.83252 54.805 4.83252C55.3019 4.83252 55.7784 5.02742 56.13 5.37442V5.37442ZM19.0075 27.2119L34.0325 42.0602L34.9175 41.1881C36.8717 39.2113 37.9586 36.5528 37.9423 33.7893C37.926 31.0257 36.8079 28.38 34.8305 26.4258C32.8531 24.4716 30.1758 23.3667 27.3794 23.3506C24.5829 23.3345 21.8928 24.4086 19.8925 26.3398L19.0075 27.2119V27.2119ZM16.1175 29.5961L8.69248 34.4878L26.67 52.2538L31.62 44.9162L16.1175 29.5961Z" fill="black"/>
+                            </svg>                                                                    
+                        </div>
+                        <h3 class="services-list__heading"> Daily and general cleaning </h2>
+                        <p class="services-list__text">
+                            Some text
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Daily and general cleaning </h2>
-                    <p class="services-list__text">
-                        Some text
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
-                </div>
 
-                <!-- Item 5 - Networks -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M30 54.9765C43.8075 54.9765 55 43.9156 55 30.2706C55 16.6255 43.8075 5.5647 30 5.5647C16.1925 5.5647 5 16.6255 5 30.2706C5 43.9156 16.1925 54.9765 30 54.9765Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M35 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M25 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M30 40.1529C32.6522 40.1529 35.1957 39.1118 37.0711 37.2585C38.9464 35.4052 40 32.8915 40 30.2706V26.5647H20V30.2706C20 32.8915 21.0536 35.4052 22.9289 37.2585C24.8043 39.1118 27.3478 40.1529 30 40.1529Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                            <path d="M30 54.9764V40.1528" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
-                        </svg>                                                                  
+                    <!-- Item 5 - Networks -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M30 54.9765C43.8075 54.9765 55 43.9156 55 30.2706C55 16.6255 43.8075 5.5647 30 5.5647C16.1925 5.5647 5 16.6255 5 30.2706C5 43.9156 16.1925 54.9765 30 54.9765Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M35 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M25 26.5647V20.3882" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M30 40.1529C32.6522 40.1529 35.1957 39.1118 37.0711 37.2585C38.9464 35.4052 40 32.8915 40 30.2706V26.5647H20V30.2706C20 32.8915 21.0536 35.4052 22.9289 37.2585C24.8043 39.1118 27.3478 40.1529 30 40.1529Z" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M30 54.9764V40.1528" stroke="black" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>                                                                  
+                        </div>
+                        <h3 class="services-list__heading"> Electrical & low-voltage networks </h2>
+                        <p class="services-list__text">
+                            Some text
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Electrical & low-voltage networks </h2>
-                    <p class="services-list__text">
-                        Some text
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
-                </div>
 
-                <!-- Item 6 - Power suply -->
-                <div class="services-list__item">
-                    <div class="services-list_logo">
-                        <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
-                            <path d="M36.6092 6.46129L36.4027 6.27838C35.971 5.94387 35.4299 5.77641 34.8812 5.80828C34.3321 5.84017 33.8145 6.06937 33.4255 6.45179L33.2406 6.65562C32.9027 7.08134 32.7342 7.61401 32.7663 8.1534C32.7986 8.6953 33.0311 9.20718 33.4206 9.59163C33.4206 9.59164 33.4206 9.59165 33.4206 9.59166L36.6681 12.796L37.1018 13.2239H36.4925H22.4996L21.9037 13.2338C17.436 13.3846 13.2027 15.2439 10.0961 18.4189C6.98909 21.5943 5.25191 25.8374 5.25 30.2532L36.6092 6.46129ZM36.6092 6.46129L44.1168 13.8757L44.1169 13.8757C44.5064 14.2602 44.7389 14.7721 44.7712 15.314C44.8033 15.8537 44.6346 16.3866 44.2965 16.8124L44.1139 17.0163L36.6044 24.43L36.6043 24.43L36.6016 24.4328C36.1986 24.8432 35.6503 25.0846 35.0708 25.1057C34.4912 25.1269 33.9263 24.9261 33.4936 24.5461C33.061 24.1662 32.7941 23.6365 32.7475 23.0678C32.7011 22.5011 32.877 21.9381 33.2393 21.4953L33.4256 21.29L36.6632 18.0905L37.0961 17.6626H36.4875H22.5001H22.5V17.9126M36.6092 6.46129L7.9725 39.8861M22.5 17.9126C20.3023 17.9115 18.1431 18.4833 16.2405 19.5705C14.3379 20.6576 12.7591 22.2214 11.6636 24.1043C10.5681 25.9871 9.99461 28.1222 10.001 30.294C10.0074 32.4659 10.5934 34.5977 11.7 36.4742L12.0375 37.0128C12.4231 37.5455 12.5787 38.2077 12.4702 38.8538C12.3616 39.4999 11.9978 40.077 11.4587 40.458C10.9197 40.839 10.2496 40.9928 9.59576 40.8856C8.94196 40.7783 8.35806 40.4188 7.9725 39.8861M22.5 17.9126H36.1318H22.5ZM7.9725 39.8861L8.17885 39.7449C8.1782 39.744 8.17756 39.743 8.17691 39.7421C8.17628 39.7412 8.17565 39.7403 8.17502 39.7395L7.9725 39.8861ZM51.715 20.6228V20.7864H51.8379C53.5236 23.2801 54.5136 26.1699 54.7069 29.1639C54.9032 32.2043 54.2708 35.2412 52.8754 37.9582C51.4799 40.6752 49.3724 42.973 46.7722 44.6119C44.1727 46.2503 41.176 47.1701 38.0942 47.2752L37.5 47.2825H37.4985H23.51H22.901L23.3343 47.7104L26.5889 50.9242L26.7713 51.1279C27.1075 51.5527 27.2756 52.0834 27.2446 52.6211C27.2135 53.1611 26.9836 53.6717 26.5976 54.0568C26.2115 54.4419 25.6957 54.6747 25.1472 54.7106C24.6014 54.7464 24.0614 54.5847 23.6281 54.2563L23.4027 54.0594L15.9011 46.651L15.7186 46.4472C15.4109 46.0592 15.2428 45.5815 15.2403 45.0892C15.2379 44.5971 15.4012 44.1179 15.7049 43.7271L15.9017 43.5044L23.4029 36.0965L23.6117 35.9135C24.0051 35.6089 24.4904 35.4419 24.9911 35.4395C25.4915 35.4371 25.9781 35.5992 26.3744 35.8996L26.5934 36.0911L26.7709 36.2915C27.0783 36.6794 27.2463 37.1569 27.2487 37.6489C27.2511 38.1407 27.088 38.6196 26.7847 39.0103L26.5879 39.2352L23.3595 42.4157L22.925 42.8438H23.535H37.505C39.8059 42.8437 42.0639 42.2278 44.0394 41.0613C46.0149 39.8947 47.6342 38.221 48.725 36.2175C49.8159 34.214 50.3374 31.9557 50.234 29.6825C50.1306 27.4093 49.4062 25.2065 48.1379 23.3079L48.136 23.3052C47.8935 22.9524 47.75 22.5246 47.75 22.0608V22.06C47.7486 21.5981 47.8934 21.1471 48.1645 20.77C48.4356 20.3928 48.8196 20.1084 49.2631 19.9571C49.7067 19.8058 50.1871 19.7952 50.637 19.927C51.0584 20.0505 51.4328 20.2928 51.715 20.6228Z" fill="black" stroke="black" stroke-width="0.5"/>
-                        </svg>                                                                                                                           
+                    <!-- Item 6 - Power suply -->
+                    <div class="services-list__item">
+                        <div class="services-list_logo">
+                            <svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M36.6092 6.46129L36.4027 6.27838C35.971 5.94387 35.4299 5.77641 34.8812 5.80828C34.3321 5.84017 33.8145 6.06937 33.4255 6.45179L33.2406 6.65562C32.9027 7.08134 32.7342 7.61401 32.7663 8.1534C32.7986 8.6953 33.0311 9.20718 33.4206 9.59163C33.4206 9.59164 33.4206 9.59165 33.4206 9.59166L36.6681 12.796L37.1018 13.2239H36.4925H22.4996L21.9037 13.2338C17.436 13.3846 13.2027 15.2439 10.0961 18.4189C6.98909 21.5943 5.25191 25.8374 5.25 30.2532L36.6092 6.46129ZM36.6092 6.46129L44.1168 13.8757L44.1169 13.8757C44.5064 14.2602 44.7389 14.7721 44.7712 15.314C44.8033 15.8537 44.6346 16.3866 44.2965 16.8124L44.1139 17.0163L36.6044 24.43L36.6043 24.43L36.6016 24.4328C36.1986 24.8432 35.6503 25.0846 35.0708 25.1057C34.4912 25.1269 33.9263 24.9261 33.4936 24.5461C33.061 24.1662 32.7941 23.6365 32.7475 23.0678C32.7011 22.5011 32.877 21.9381 33.2393 21.4953L33.4256 21.29L36.6632 18.0905L37.0961 17.6626H36.4875H22.5001H22.5V17.9126M36.6092 6.46129L7.9725 39.8861M22.5 17.9126C20.3023 17.9115 18.1431 18.4833 16.2405 19.5705C14.3379 20.6576 12.7591 22.2214 11.6636 24.1043C10.5681 25.9871 9.99461 28.1222 10.001 30.294C10.0074 32.4659 10.5934 34.5977 11.7 36.4742L12.0375 37.0128C12.4231 37.5455 12.5787 38.2077 12.4702 38.8538C12.3616 39.4999 11.9978 40.077 11.4587 40.458C10.9197 40.839 10.2496 40.9928 9.59576 40.8856C8.94196 40.7783 8.35806 40.4188 7.9725 39.8861M22.5 17.9126H36.1318H22.5ZM7.9725 39.8861L8.17885 39.7449C8.1782 39.744 8.17756 39.743 8.17691 39.7421C8.17628 39.7412 8.17565 39.7403 8.17502 39.7395L7.9725 39.8861ZM51.715 20.6228V20.7864H51.8379C53.5236 23.2801 54.5136 26.1699 54.7069 29.1639C54.9032 32.2043 54.2708 35.2412 52.8754 37.9582C51.4799 40.6752 49.3724 42.973 46.7722 44.6119C44.1727 46.2503 41.176 47.1701 38.0942 47.2752L37.5 47.2825H37.4985H23.51H22.901L23.3343 47.7104L26.5889 50.9242L26.7713 51.1279C27.1075 51.5527 27.2756 52.0834 27.2446 52.6211C27.2135 53.1611 26.9836 53.6717 26.5976 54.0568C26.2115 54.4419 25.6957 54.6747 25.1472 54.7106C24.6014 54.7464 24.0614 54.5847 23.6281 54.2563L23.4027 54.0594L15.9011 46.651L15.7186 46.4472C15.4109 46.0592 15.2428 45.5815 15.2403 45.0892C15.2379 44.5971 15.4012 44.1179 15.7049 43.7271L15.9017 43.5044L23.4029 36.0965L23.6117 35.9135C24.0051 35.6089 24.4904 35.4419 24.9911 35.4395C25.4915 35.4371 25.9781 35.5992 26.3744 35.8996L26.5934 36.0911L26.7709 36.2915C27.0783 36.6794 27.2463 37.1569 27.2487 37.6489C27.2511 38.1407 27.088 38.6196 26.7847 39.0103L26.5879 39.2352L23.3595 42.4157L22.925 42.8438H23.535H37.505C39.8059 42.8437 42.0639 42.2278 44.0394 41.0613C46.0149 39.8947 47.6342 38.221 48.725 36.2175C49.8159 34.214 50.3374 31.9557 50.234 29.6825C50.1306 27.4093 49.4062 25.2065 48.1379 23.3079L48.136 23.3052C47.8935 22.9524 47.75 22.5246 47.75 22.0608V22.06C47.7486 21.5981 47.8934 21.1471 48.1645 20.77C48.4356 20.3928 48.8196 20.1084 49.2631 19.9571C49.7067 19.8058 50.1871 19.7952 50.637 19.927C51.0584 20.0505 51.4328 20.2928 51.715 20.6228Z" fill="black" stroke="black" stroke-width="0.5"/>
+                            </svg>                                                                                                                           
+                        </div>
+                        <h3 class="services-list__heading"> Guaranteed uninterruptible power supply </h2>
+                        <p class="services-list__text">
+                            Some text
+                            <a href="" class="services-list__link"> see more </a>
+                        </p>
                     </div>
-                    <h3 class="services-list__heading"> Guaranteed uninterruptible power supply </h2>
-                    <p class="services-list__text">
-                        Some text
-                        <a href="" class="services-list__link"> see more </a>
-                    </p>
                 </div>
             </div>
         </section>
 
         <!-- Section with text about numbers -->
-        <section class="container number-info">
-            <div class="number-info__years">
-                <span class="number-info__number"> 25 </span>
-                <span class="number-info__text"> years in market </span>
-            </div>
+        <section >
+            <div class="container number-info">
+                <div class="number-info__years">
+                    <span class="number-info__number accent--blue"> 25 </span>
+                    <span class="number-info__text"> years in market </span>
+                </div>
 
-            <div class="number-info__collegues">
-                <span class="number-info__number"> 200 </span>
-                <span class="number-info__text"> professional collegues </span>
-            </div>
+                <div class="number-info__collegues">
+                    <span class="number-info__number accent--blue"> 200 </span>
+                    <span class="number-info__text"> professional collegues </span>
+                </div>
 
-            <div class="number-info__years">
-                <span class="number-info__number"> 50 000 m<span class="cubic-meters">2</span> </span>
-                <span class="number-info__text"> property area </span>
+                <div class="number-info__years">
+                    <span class="number-info__number accent--blue"> 50 000 m<span class="cubic-meters">2</span> </span>
+                    <span class="number-info__text"> property area </span>
+                </div>
             </div>
         </section>
         <hr>
 
-        <section class="container clients-logos">
-            <div class="clients-logos__rimi">
+        <!-- Clients logos section -->
+        <section>
+            <div class="container clients-logos">
+                <h2 class="clients-logos__heading"></h2>
 
+                <!-- Container for carousel with images -->
+                <div class="clients-logos__carousel">
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                    <div class="clients-logos__item">
+                        <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                    </div>
+                </div>
+
+                <!-- Controls for carousel -->
+                <div class="clients-logos__controls">
+                    <i class="fa-solid fa-angle-left "></i>
+                    <i class="fa-solid fa-angle-right"></i>
+                </div>
             </div>
         </section>
+
+        <!-- Section with wideo -->
+        <section class="accent--light-blue">
+            <div class="container video-section">
+
+                <!-- Container for text in video section -->
+                <div class="video-section__content">
+                    <h2 class="video-section__heading"> Header about our services </h2>
+                    <p class="video-section__text"> 
+                        We are arranging all necessary calculations, 
+                        negotiations, installation, comission, re-construction, construction, 
+                        guarantee and afterguarantee technical maintenance
+                    </p>
+                </div>
+
+                <!-- Video container -->
+                <div class="video-section__video">
+                    <img class="clients-logos__image" src="./media/images/logos/rectangle.png" alt="">
+                </div>
+            </div>
+        </section>
+
+        <!-- Section for porfolio -->
+        <section>
+            <div class="container portfolio">
+
+                <!-- Container for text in portfolion section -->
+                <div class="portfolio__content">
+                    <h2 class="portfolio__heading"> Portfolio </h2>
+                    <p class="portfolio__text">
+                        Design project is more than just a picture, 
+                        it's comfort zone on which depends the well-being 
+                        and performance to get the desired result 
+                    </p>
+
+                    <div class="portfolio__button more-button">
+                        <a href="" class="portfolio__link more-button__link"> More </a>
+                    </div>
+                </div>
+
+                <!-- Container for images in portfolio section -->
+                <div class="portfolio__images">
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Section for clients reviews -->
+        <section class="accent--light-blue">
+        
+            <div class="cotainer reviews">
+                <h2 class="reviews__headig"> Clients reviews </h2>
+
+                <div class="reviews__carousel">
+
+                    <!-- Item 1 -->
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <h3> Apgaismojuma modernizācija ēkas renovācijas projektā </h3>
+                            <p class="reviews__text">
+                                “There are many variations of passages of Lorem Ipsum available, 
+                                but the majority have suffered alteration in some form, by injected humour, 
+                                or randomised words which don't look even slightly believable”
+                            </p>
+                        </div>
+
+                        <div class="reviews__credidentials">
+                            <div class="review__photo">
+                                <img src="./media/images/face-png-42678.png" alt="" class="reviews__image">
+                            </div>
+                            <div class="reviews__company-name">
+                                <h4> Anna Zelča </h4>
+                                <p> AS Swedbank Īpašumu departamenta vadītāja </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 2 -->
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <h3> Apgaismojuma modernizācija ēkas renovācijas projektā </h3>
+                            <p class="reviews__text">
+                                “There are many variations of passages of Lorem Ipsum available, 
+                                but the majority have suffered alteration in some form, by injected humour, 
+                                or randomised words which don't look even slightly believable”
+                            </p>
+                        </div>
+
+                        <div class="reviews__credidentials">
+                            <div class="review__photo">
+                                <img src="./media/images/face-png-42678.png" alt="" class="reviews__image">
+                            </div>
+                            <div class="reviews__company-name">
+                                <h4> Anna Zelča </h4>
+                                <p> AS Swedbank Īpašumu departamenta vadītāja </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Item 3 -->
+                    <div class="reviews__item">
+                        <div class="reviews__content">
+                            <h3> Apgaismojuma modernizācija ēkas renovācijas projektā </h3>
+                            <p class="reviews__text">
+                                “There are many variations of passages of Lorem Ipsum available, 
+                                but the majority have suffered alteration in some form, by injected humour, 
+                                or randomised words which don't look even slightly believable”
+                            </p>
+                        </div>
+
+                        <div class="reviews__credidentials">
+                            <div class="review__photo">
+                                <img src="./media/images/face-png-42678.png" alt="" class="reviews__image">
+                            </div>
+                            <div class="reviews__company-name">
+                                <h4> Anna Zelča </h4>
+                                <p> AS Swedbank Īpašumu departamenta vadītāja </p>
+                            </div>
+                        </div>
+                    </div>                
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <nav class="container footer-nav">
+                <div class="footer-nav__logo">
+                    Logo
+                </div>
+
+                <!-- About us block -->
+                <div class="footer-nav__block">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link link--bold"> About us</a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Clients </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Clients reviews </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Services block -->
+                <div class="footer-nav__block">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link link--bold"> Services </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Property managment </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Construction-repair works </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Ventilation and air conditioning </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Daily and general cleaning </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Electrical & low voltage networks  </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Guaranteed uniterraptable power supply  </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Portfolio block -->
+                <div class="footer-nav__block">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link link--bold"> Portfolio </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Projects </a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Contacts block -->
+                <div class="footer-nav__block">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link link--bold"> Contacts </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a class="footer-nav__link" href="tel:+371 67248491"> +371 67248491 </a>
+                        </li>
+                        <li class="footer-nav__item">
+                            <a href="" class="footer-nav__link"> Maskavas street 81, Riga </a>
+                        </li>
+                    </ul>
+                </div>         
+                
+                <!-- Contact page button -->
+                <div class="footer-nav__block">
+                    <ul class="footer-nav__list">
+                        <li class="footer-nav__item">
+                            <a class="more-button__link" href=""></a>
+                        </li>
+                    </ul>
+                </div>
+
+            </nav>
+
+            <div class="container copyright">
+                Copyright &copy
+            </div>
+        </footer>
+
     </main>
 </body>
 </html>
