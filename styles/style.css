@@ -1,11 +1,80 @@
+/*  accent blue - #0D318D 
+    accent light-blue - #F5F8FE
+*/
+
+/* Fonts */
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+/* font-family: 'Montserrat', sans-serif; */
+
 /*---- Main setting for website ----*/
+* {
+    font-family: 'Montserrat', sans-serif;
+    text-decoration: none;
+}
+
+.container {
+    width: 84%;
+    margin: 0 auto;
+}
+
+/* Setting for cookies panel */
+
+.cookies {
+    position: sticky;
+    top: 0;
+    width: 100%;
+    height: 100px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #0D318D;
+    color: #ffffff;
+    font-size: 1.5rem;
+}
+
+.cookies__text {
+    padding: 0 15%;
+    text-align: center;
+}
+
+.cookies a {
+    color: #ffffff;
+}
 
 
+.cookies__close {
+    position: absolute;
+    right: 10%;
+    font-weight: 700;
+}
 
+.cookies__close:hover {
+    cursor: pointer;
+}
+
+/* Setting for header */
+
+header {
+    width: 100%;
+    border: 1px black solid;
+}
+
+.navigation-panel {
+    height: 47px;
+    /* display: inline-block; */
+    border: 1px solid rgb(255, 0, 0);
+}
+
+.company-logo {
+    background-color: aquamarine;
+    width: 200px;
+    height: 100%;
+}
 
 /*---- Navigation ----*/
 
-/* It is tem */
+/* It is temp */
 .main-nav__services-list {
     display: none;
 }
