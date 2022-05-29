@@ -6,14 +6,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&display=swap');
 /* font-family: 'Montserrat', sans-serif; */
 
-/*---- Main setting for website ----*/
+/*---- General setting for the site----*/
 * {
     font-family: 'Montserrat', sans-serif;
     text-decoration: none;
 }
 
 a {
-    color: black;
+    color: #000000;
+}
+
+li, ul {
+    margin: 0;
+    padding: 0;
 }
 
 .container {
@@ -25,6 +30,29 @@ a {
     font-weight: 600;
 }
 
+.accent--blue {
+    color: #0D318D;
+}
+
+/*---- Buttons ----*/
+
+.more-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    height: 60px;
+    background-color: #0D318D;
+    color: #ffffff;
+    border-radius: 12px;
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+.more-button__link {
+    color: #ffffff;
+}
+
 /* Setting for cookies panel */
 
 .cookies {
@@ -33,6 +61,7 @@ a {
     top: 0;
     width: 100%;
     height: 100px;
+    z-index: 999;
     display: inline-flex;
     justify-content: center;
     align-items: center;
@@ -52,11 +81,14 @@ a {
 
 
 .cookies__close {
+    /* width: 80px; */
     position: absolute;
-    right: 8%;
+    right: 7.5%;
     font-weight: 700;
     text-align: center;
 }
+
+
 
 .cookies__close:hover {
     cursor: pointer;
@@ -65,15 +97,297 @@ a {
 /* Setting for header */
 
 header {
+    position: relative;
+    width: 100%;
+    font-size: 1.375rem;
     margin-top: 40px;
-    border: 1px black solid;
+    /* border: 1px black solid; */
 }
+
+
 
 
 /*---- Navigation ----*/
 
-
-
-.main-nav__services-list {
-    display: none;
+.navigation-panel {
+    font-weight: 600;
 }
+
+.arrow-down {
+    display: inline-block;
+    background-color: #000000; /* defines the background color of the image */
+    mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
+    -webkit-mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
+    width: 15px;
+    height: 15px;
+}
+
+
+/*---- Grid system for navigation ----*/
+.navigation-panel {
+    width: 100%;
+    height: 50px;
+    display: grid;
+    grid-template-columns: 8% minmax(150px, 275px) minmax(420px, 620px) minmax(370px, auto) minmax(100px, 160px) 5%;
+    grid-template-areas: 
+        ". logo main-nav email lang .";
+}
+
+.navigation-panel > * {
+    padding-top: 10px;
+}
+
+.logo {
+    grid-area: logo;
+}
+
+.main-nav {
+    grid-area: main-nav;
+}
+
+.email-contact {
+    grid-area: email;
+    justify-self: end;
+    margin: 0 40px;
+}
+
+.lang-selector {
+    grid-area: lang;
+}
+
+/*---- Navigation ----*/
+
+.main-nav__list {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Animations */
+
+.main-nav__item:hover > * {
+    color: #0D318D;
+}
+
+.main-nav__item:hover .arrow-down {
+    background-color: #0D318D;
+}
+
+/*---- Email contact ----*/
+
+.email-contact {
+    color: #0D318D;
+    text-decoration: underline;
+}
+
+/*---- Language selector ----*/
+
+.lang-selector {
+    position: relative;
+    z-index: 999;
+}
+
+.lang-selector__list {
+    top: 0;
+    padding-top: 10px;
+    position: absolute;
+    overflow: hidden;
+    font-size: 1.5rem;
+    width: 100%;
+    min-width: 120px;
+    height: 50px;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    transition: all 0.2s ease-in-out;
+    -webkit-transition: all 0.2s ease-in-out;
+    -moz-transition: all 0.2s ease-in-out;
+    -ms-transition: all 0.2s ease-in-out;
+    -o-transition: all 0.2s ease-in-out;
+}
+
+.lang-selector__item {
+
+    width: 100px;
+    margin: 0 25% 10px 25%;
+}
+
+.lang-selector .arrow-down {
+    width: 22px;
+    margin: 0 10px;
+    padding-right: 10px;
+}
+
+/* Animations */
+
+.lang-selector__list:hover {
+    background-color: #0D318D;
+    height: 160px;
+    color: #ffffff;
+}
+
+.lang-selector__list:hover .lang-selector__link {
+    color: #ffffff;
+}
+
+.lang-selector__list:hover .arrow-down {
+    background-color: #ffffff;
+}
+
+
+
+/*---- Navigation section for services list ----*/
+
+/* Settings for whole section */
+
+.services-list {
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+    /* justify-content: space-between; */
+    margin-left: 8%;
+    width: 92%;
+}
+
+/* Settings for item */
+
+.services-list__item {
+    padding: 14px 25px 30px 14px;
+    margin-right: 10px;
+    margin-top: 20px;
+    width: 235px;
+    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+}
+
+.services-list__logo {
+    background-color: #000000;
+    width: 50px;
+    height: 50px;
+}
+
+/* Icons for services items */
+
+.services-list__logo.building {
+    mask: url(../media/images/icons/building.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/building.svg) no-repeat center / contain;
+}
+
+.services-list__logo.repairs {
+    mask: url(../media/images/icons/repairs.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/repairs.svg) no-repeat center / contain;
+}
+
+.services-list__logo.conditioning {
+    mask: url(../media/images/icons/conditioning.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/conditioning.svg) no-repeat center / contain;
+}
+
+.services-list__logo.water {
+    mask: url(../media/images/icons/water.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/water.svg) no-repeat center / contain;
+}
+
+.services-list__logo.cleaning {
+    mask: url(../media/images/icons/cleaning.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/cleaning.svg) no-repeat center / contain;
+}
+
+.services-list__logo.electricity {
+    mask: url(../media/images/icons/electricity.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/electricity.svg) no-repeat center / contain;
+}
+
+.services-list__logo.power-supply {
+    mask: url(../media/images/icons/power-supply.svg) no-repeat center  / contain;
+    -webkit-mask: url(../media/images/icons/power-supply.svg) no-repeat center / contain;
+}
+
+/* Settings for text in services items */
+
+.services-list__content {
+    margin-top: 22px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between
+}
+
+.services-list__item h3 {
+    line-height: 26px;
+    font-size: 1.375rem;
+    height: 80px;
+}
+
+.services-list__item p {
+    margin-top: 14px;
+    font-size: 1.125rem;
+    line-height: 22px;
+}
+
+.services-list__item a {
+    font-weight: 600;
+    text-decoration: underline;
+}
+
+/* Setting for animation */
+
+.services-list__item:hover,
+.services-list__item:hover a {
+    background-color: #0D318D;
+    color: #ffffff;
+}
+
+.services-list__item:hover .services-list__logo {
+    background-color: #ffffff;
+}
+
+
+/*---- Section with introduction ----*/
+
+.container.introduction {
+    height: 320px;
+    width: 92%;
+    margin-left: 8%;
+    margin-top: 80px;
+    display: flex;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.introduction__content {
+    flex-basis: 700px;
+    flex-shrink: 0;
+    padding-right: 40px;
+}
+
+.introduction__heading {
+    padding-right: 5%;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 49px;
+}
+
+.introduction__heading.accent--blue {
+    font-size: 2.5rem;
+}
+
+.introduction__text {
+    margin: 12px 0;
+    font-size: 1.25rem;
+    line-height: 27px;
+}
+
+.introduction__image {
+    height: 320px;
+}
+
+
+.introduction__image img {
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
+/* Temp */
