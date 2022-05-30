@@ -14,11 +14,16 @@
 
 a {
     color: #000000;
+    text-underline-offset: 3px;
 }
 
 li, ul {
     margin: 0;
     padding: 0;
+}
+
+header, section {
+    margin-bottom: 60px;
 }
 
 .container {
@@ -32,6 +37,10 @@ li, ul {
 
 .accent--blue {
     color: #0D318D;
+}
+
+.accent--light-blue {
+    background-color: #F5F8FE;
 }
 
 /*---- Buttons ----*/
@@ -51,6 +60,14 @@ li, ul {
 
 .more-button__link {
     color: #ffffff;
+}
+
+.arrow-symbol {
+    cursor: pointer;
+    display: inline-block;
+    background-color: #000000; /* defines the background color of the image */
+    mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
+    -webkit-mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
 }
 
 /* Setting for cookies panel */
@@ -114,10 +131,6 @@ header {
 }
 
 .arrow-down {
-    display: inline-block;
-    background-color: #000000; /* defines the background color of the image */
-    mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
-    -webkit-mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
     width: 15px;
     height: 15px;
 }
@@ -237,15 +250,60 @@ header {
 
 
 
+
+/*---- Section with introduction ----*/
+
+.container.introduction {
+    height: 320px;
+    width: 92%;
+    margin-left: 8%;
+    display: flex;
+    transition: all 0.3s ease;
+    overflow: hidden;
+}
+
+.introduction__content {
+    flex-basis: 700px;
+    flex-shrink: 0;
+    padding-right: 40px;
+}
+
+.introduction__heading {
+    padding-right: 5%;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 49px;
+}
+
+.introduction__heading.accent--blue {
+    font-size: 2.5rem;
+}
+
+.introduction__text {
+    margin: 12px 0;
+    font-size: 1.25rem;
+    line-height: 27px;
+}
+
+.introduction__image {
+    height: 320px;
+}
+
+
+.introduction__image img {
+    position: relative;
+    height: 100%;
+    object-fit: cover;
+    object-position: 0 0;
+}
+
 /*---- Navigation section for services list ----*/
 
 /* Settings for whole section */
 
 .services-list {
-    margin-top: 40px;
     display: flex;
     flex-wrap: wrap;
-    /* justify-content: space-between; */
     margin-left: 8%;
     width: 92%;
 }
@@ -345,49 +403,262 @@ header {
 
 /*---- Section with introduction ----*/
 
-.container.introduction {
-    height: 320px;
-    width: 92%;
-    margin-left: 8%;
-    margin-top: 80px;
+.number-info {
     display: flex;
-    transition: all 0.3s ease;
-    overflow: hidden;
+    justify-content: space-between;
 }
 
-.introduction__content {
-    flex-basis: 700px;
+.number-info__item {
+    width: 30%;
+    min-width: fit-content;
+    padding-right: 10px;
+}
+
+.number-info__number {
+    font-weight: 600;
+    font-size: 3.625rem;
+}
+
+.number-info__text {
+    font-size: 1.25rem;
+}
+
+
+/*---- Section with logos ----*/
+
+
+.clients-logos__heading {
+    font-size: 2.25rem;
+    font-weight: 700;
+}
+
+.clients-logos__carousel {
+    margin-top: 40px;
+    overflow: hidden;
+    display: flex;
+    max-width: 1620px;
+}
+
+.clients-logos__item {
     flex-shrink: 0;
+    min-width: 400px;
+}
+
+.clients-logos__controls {
+    width: fit-content;
+    margin-left: auto;
+    right: 0;
+    margin-top: 60px;
+}
+
+.arrow-left, 
+.arrow-right {
+    width: 40px;
+    height: 40px;
+    background-color: #C4C4C4;
+}
+
+.arrow-left {
+    transform: rotate(90deg);
+    margin-right: 40px;
+}
+
+.arrow-right {
+    transform: rotate(-90deg);
+}
+
+.arrow-left:hover, 
+.arrow-right:hover {
+    background-color: #0D318D;
+}
+
+/*---- Section with video ----*/
+
+.container.video-section {
+    width: 92%;
+    margin-left: 8%;
+    display: flex;
+    padding: 80px 0 100px;
+}
+
+.video-section__content {
+    flex-basis: 700px;
+    flex-shrink: 1;
     padding-right: 40px;
 }
 
-.introduction__heading {
+.video-section__heading {
     padding-right: 5%;
     font-weight: 700;
     font-size: 2.25rem;
     line-height: 49px;
 }
 
-.introduction__heading.accent--blue {
-    font-size: 2.5rem;
-}
 
-.introduction__text {
+.video-section__text {
     margin: 12px 0;
     font-size: 1.25rem;
     line-height: 27px;
 }
 
-.introduction__image {
-    height: 320px;
+/*---- Section with portfolio ----*/
+
+.container.portfolio {
+    width: 92%;
+    margin-left: 8%;
+    display: flex;
+    padding: 80px 0 100px;
 }
 
+.portfolio__content {
+    flex-basis: 500px;
+    flex-shrink: 1;
+    padding-right: 40px;
+}
 
-.introduction__image img {
-    position: relative;
-    height: 100%;
+.portfolio__heading {
+    padding-right: 5%;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 49px;
+}
+
+.portfolio__text {
+    margin: 12px 0;
+    font-size: 1.25rem;
+    line-height: 27px;
+}
+
+.portfolio__button {
+    margin-top: 40px;
+}
+
+/* Grid system for images */
+
+.portfolio__images {
+    display: grid;
+    gap: 10px;
+    padding-right: 50px;
+    grid-template-columns: 34% 18% 18% 10% 20%;
+    grid-template-areas: 
+        "one two two two three"
+        "one four four five five";
+}
+
+.portfolio__item {
+    border-radius: 10px;
     object-fit: cover;
-    object-position: 0 0;
+    height: 100%;
+    width: 100%;
 }
 
-/* Temp */
+.portfolio__item.item-1 {
+    grid-area: one;
+}
+
+.portfolio__item.item-2 {
+    grid-area: two;
+}
+
+.portfolio__item.item-3 {
+    grid-area: three;
+}
+
+.portfolio__item.item-4 {
+    grid-area: four;
+}
+
+.portfolio__item.item-5 {
+    grid-area: five;
+}
+
+/*---- Section with clients reviews ----*/
+
+.container.reviews {
+    width: 92%;
+    margin-left: 8%;
+    padding: 55px 0;
+}
+
+.reviews__headig {
+    padding-right: 5%;
+    font-weight: 700;
+    font-size: 2.25rem;
+    line-height: 49px;
+}
+
+.reviews__carousel {
+    overflow: hidden;
+    margin-top: 40px;
+    display: flex;
+    position: relative;
+}
+
+.reviews__item {
+    flex-shrink: 0;
+    background-color: #ffffff;
+    width: 600px;
+    height: 450px;
+    margin-right: 40px;
+    padding: 45px 80px 45px 20px;
+    border-radius: 10px;
+    box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
+}
+
+.reviews__content {
+    position: relative;
+}
+
+.reviews__content h3 {
+    font-size: 1.375rem;
+    height: 80px;
+}
+
+.reviews__text {
+    font-size: 1.25rem;
+    text-align: justify;
+}
+
+.review__info {
+    position: absolute;
+    bottom: 45px;
+}
+
+.reviews__text--item-3 {
+    margin-top: 40px;
+}
+
+.reviews__credidentials {
+    display: flex;
+    margin-bottom: 10px;
+}
+
+.reviews__company-name h4 {
+    font-size: 1.375rem;
+    font-weight: 600;
+}
+
+.reviews__company-name p {
+    font-size: 1.25rem;
+}
+
+.review__photo {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.review__photo h4 {
+    font-size: 1.25rem;
+    font-weight: 600;
+}
+
+.reviews__link a {
+    font-size: 20px;
+    text-decoration: underline;
+    color:#0D318D;
+}
