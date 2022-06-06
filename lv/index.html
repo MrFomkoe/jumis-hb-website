@@ -19,7 +19,7 @@
     
     <!-- Header section with navigation -->
     
-    <header>
+    <header class="site-header">
 
         <!-- Section with all navigation controls -->
         <div class="navigation-panel">
@@ -36,10 +36,9 @@
                         <a href="" class="main-nav__link link--bold"> Par mums </a>
                     </li>
                     
-                    <li class="main-nav__item">
-                        <a href="" class="main-nav__link link--bold"> Pakalpojumi
-                            <div class="arrow-symbol arrow-down"></div>
-                        </a>
+                    <li class="main-nav__item main-nav__services-list link--bold">
+                        Pakalpojumi
+                        <div class="arrow-symbol arrow-down"></div>
                     </li>
 
                     <li class="main-nav__item">
@@ -59,10 +58,8 @@
             <nav class="lang-selector">
                 <ul class="lang-selector__list">
                     <li class="lang-selector__item">
-                        <a href="" class="lang-selector__link link--bold">
-                            LV
+                            <span class="lang-selector__link link--bold"> LV </span> 
                             <div class="arrow-symbol arrow-down"></div>
-                        </a>
                     </li>
 
                     <li class="lang-selector__item">
@@ -81,7 +78,6 @@
 
         </div>
 
-        <!-- Container for services items -->
 
     </header>
 
@@ -105,14 +101,14 @@
                 </div>
 
                 <div class="introduction__image">
-                    <img  src="../media/images/photos/city-view.svg" alt="">
+                    <img  src="../media/images/photos/city-view.jpg" alt="">
                 </div>
             </div>
         </section>
 
     <!-- Section with list of services -->
     <section>
-        <div class="services-list">
+        <div class="container services-list">
             <!-- Item 1 - Property management -->
             <div class="services-list__item">
                 <div class="services-list__logo building"></div>
@@ -279,8 +275,8 @@
             </div>
 
             <!-- Video container -->
-            <div class="video-section__video">
-                <img class="clients-logos__image" src="../media/images/video/video-image.svg" alt="">
+            <div class="video-section__video-container">
+                <iframe class="video-section__video" src="https://www.youtube.com/embed/LnGuf7ajUII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
     </section>
@@ -303,11 +299,21 @@
 
             <!-- Container for images in portfolio section -->
             <div class="portfolio__images">
-                <img src="../media/images/photos/portfolio-1.svg" alt="" class="portfolio__item item-1">
-                <img src="../media/images/photos/portfolio-5.svg" alt="" class="portfolio__item item-2">
-                <img src="../media/images/photos/portfolio-3.svg" alt="" class="portfolio__item item-3">
-                <img src="../media/images/photos/portfolio-4.svg" alt="" class="portfolio__item item-4">
-                <img src="../media/images/photos/portfolio-2.svg" alt="" class="portfolio__item item-5">
+                <div class="portfolio__item item-1">
+                    <img class="portfolio__image" src="../media/images/photos/portfolio-1.svg" alt="" >
+                </div>
+                <div class="portfolio__item item-2">
+                    <img class="portfolio__image" src="../media/images/photos/portfolio-5.svg" alt="">
+                </div>
+                <div class="portfolio__item item-3">
+                    <img class="portfolio__image" src="../media/images/photos/portfolio-3.svg" alt="">
+                </div>
+                <div class="portfolio__item item-4">
+                    <img class="portfolio__image" src="../media/images/photos/portfolio-4.svg" alt="">
+                </div>
+                <div class="portfolio__item item-5">
+                    <img class="portfolio__image" src="../media/images/photos/portfolio-2.svg" alt="">
+                </div>
             </div>
         </div>
     </section>
@@ -397,12 +403,111 @@
                         </div>
                     </div>
                 </div>
-
             </div>
+
+            <div class="reviews__controls">
+                <div class="arrow-symbol arrow-left"></div>
+                <div class="arrow-symbol arrow-right"></div>
+            </div>
+
         </div>
     </section>
-
-
     </main>
+
+    <footer>
+        <nav class="container footer-nav">
+            <div class="footer-nav__logo footer-nav__block">
+                Logo
+            </div>
+    
+            <!-- About us block -->
+            <div class="footer-nav__block">
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link link--bold"> Par mums </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Klienti </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Atsauksmes </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Services block -->
+            <div class="footer-nav__block">
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link link--bold"> Pakalpojumi </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Īpašuma apsaimniekošana </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Celtniecības-remonta darbi </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Apkure, ventilācija, kondicionēšana </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Ūdensapgāde un kanalizācija </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Ikdienas un ģenerālā tīrīšana </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Elektrība un vājstrāvas tīkli </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Nepārtrauktās barošanas avoti </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Portfolio block -->
+            <div class="footer-nav__block">
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link link--bold"> Portfolio </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link"> Projekti </a>
+                    </li>
+                </ul>
+            </div>
+    
+            <!-- Contacts block -->
+            <div class="footer-nav__block">
+                <ul class="footer-nav__list">
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link link--bold"> Kontakti </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a class="footer-nav__link" href="tel:+371 67248491"> +371 67248491 </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <a href="" class="footer-nav__link link-map"> Maskavas street 81, Riga </a>
+                    </li>
+                    <li class="footer-nav__item">
+                        <button class="more-button">
+                            <a class="more-button__link" href=""> Sazināties </a>
+                        </button>
+                    </li>
+                </ul>
+            </div>         
+            
+            <!-- Contact page button -->
+            <button class="footer-nav__block more-button">
+                <a class="more-button__link" href=""> Sazināties </a>
+            </button>
+    
+        </nav>
+    
+        <div class="container copyright">
+            Copyright &copy
+        </div>
+    </footer>
+    <script src="../scripts/script.js"></script>
 </body>
 </html>
