@@ -142,13 +142,13 @@ header {
     width: 100%;
     height: 50px;
     display: grid;
-    grid-template-columns: 8% minmax(150px, 16%) minmax(350px, 650px) minmax(370px, auto) minmax(100px, 160px) 5%;
+    grid-template-columns: 8% minmax(130px, 16%) minmax(350px, 650px) minmax(320px, auto) minmax(100px, 160px) 5%;
     grid-template-areas: 
         ". logo main-nav email lang .";
 }
 
 .navigation-panel > * {
-    border: #000000 2px solid;
+    /* border: #000000 2px solid; */
 }
 
 
@@ -241,10 +241,7 @@ header {
 .lang-selector__item {
     width: 100px;
     margin: 0 25% 10px 25%;
-}
 
-.lang-selector__link {
-    background-color: #C4C4C4;
 }
 
 .lang-selector__link.link--bold {
@@ -332,7 +329,6 @@ header {
     flex-wrap: wrap;
     /* margin-left: 8%; */
     width: 92%;
-    border: #000000 2px solid;
 }
 
 /* Settings for item */
@@ -609,6 +605,7 @@ header {
     grid-area: five;
 }
 
+
 /*---- Section with clients reviews ----*/
 
 .container.reviews {
@@ -712,12 +709,13 @@ header {
 /*---- Footer settings ----*/
 
 .footer-nav {
+    overflow:visible;
     display: flex;
     justify-content: space-between;
 }
 
 .footer-nav__block {
-    margin-right: 20px;
+    margin-right: 10px;
     min-width: fit-content;
 }
 
@@ -758,9 +756,23 @@ header {
     .main-nav__item {
         width: 50%;
     }
+
+    .email-contact {
+        margin: 0 10px;
+    }
 }
 
-@media screen and (max-width: 1270px) {
+@media screen and (max-width: 1200px) {
+    /* Introduction section */
+    .introduction__image {
+        display: none;
+    }
+    .container.introduction {
+        justify-content: center;
+    }
+
+
+
     .footer-nav__block.more-button {
         display: none;
     }
@@ -778,16 +790,16 @@ header {
 
     /* Navigation */
     .navigation-panel {
-        /* grid-template-columns: 100px minmax(350px, 650px) minmax(370px, auto) minmax(100px, 160px); */
-        grid-template-columns: 100px 350px 320px 100px;        
+        /* grid-template-columns: 8% minmax(130px, 16%) minmax(350px, 650px) minmax(320px, auto) minmax(100px, 160px) 5%; */
+        /* grid-template-columns: 130px minmax(350px, 650px) minmax(370px, auto) minmax(100px, 160px); */
+        grid-template-columns: 130px 350px 320px 100px;        
         grid-template-areas: 
             "logo main-nav email lang";
     }
 
-    .email-contact {
-        justify-self: auto;
-        margin: 0 10px;
-    }
+}
+
+@media screen and (max-width: 768px) {
 
 }
 
