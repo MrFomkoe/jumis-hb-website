@@ -12,6 +12,10 @@
     text-decoration: none;
 }
 
+main {
+    max-width: 1920px;
+}
+
 a {
     color: #000000;
     text-underline-offset: 3px;
@@ -43,6 +47,10 @@ header, section {
 
 .accent--light-blue {
     background-color: #F5F8FE;
+}
+
+[data-carousel] {
+    transition: transform 0.3s ease-in-out;
 }
 
 /*---- Buttons ----*/
@@ -140,15 +148,12 @@ header {
 /*---- Grid system for navigation ----*/
 .navigation-panel {
     width: 100%;
+    max-width: 1920px;
     height: 50px;
     display: grid;
     grid-template-columns: 8% minmax(130px, 16%) minmax(350px, 650px) minmax(320px, auto) minmax(100px, 160px) 5%;
     grid-template-areas: 
         ". logo main-nav email lang .";
-}
-
-.navigation-panel > * {
-    /* border: #000000 2px solid; */
 }
 
 
@@ -458,7 +463,6 @@ header {
 
 .clients-logos__carousel {
     margin-top: 40px;
-    overflow: hidden;
     display: flex;
     max-width: 1620px;
 }
@@ -605,7 +609,6 @@ header {
     grid-area: five;
 }
 
-
 /*---- Section with clients reviews ----*/
 
 .container.reviews {
@@ -622,7 +625,6 @@ header {
 }
 
 .reviews__carousel {
-    overflow: hidden;
     margin-top: 40px;
     display: flex;
     position: relative;

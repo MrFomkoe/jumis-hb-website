@@ -1,5 +1,9 @@
 /*--- Variables ---*/
 
+// Cookies section
+const cookies = document.querySelectorAll('.cookies');
+const closeCookiesBtn = document.querySelectorAll('.cookies__close');
+
 // Section with company introduction
 const introduction = document.querySelector('.introduction');
 // Link "services"
@@ -17,6 +21,18 @@ const langSelector = document.querySelector('.lang-selector__list');
 
 // Portfolio photos
 const portfolioPhotos = document.querySelectorAll('.portfolio__item')
+
+/*--- Controls for Cookies section */
+closeCookiesBtn.forEach(element => {
+    element.addEventListener('click', closeCookies);
+});
+
+function closeCookies () {
+    cookies.forEach(element => {
+        element.style.display = 'none';
+    });
+};
+
 
 /*--- Controls for introduction section ---*/
 
@@ -50,12 +66,3 @@ langSelector.addEventListener('click', () => {
 })
 
 // Fulscreen photo controls
-portfolioPhotos.forEach(element => {
-    element.addEventListener('click', makeFullscreen);
-});
-
-function makeFullscreen (element) {
-    console.log('click');
-    element.currentTarget.classList.toggle('fullscreen-photo');
-    console.log(element.currentTarget)
-}

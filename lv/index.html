@@ -232,31 +232,43 @@
             </h2>
 
             <!-- Container for carousel with images -->
-            <div class="clients-logos__carousel">
-                <div class="clients-logos__item">
+            <div class="clients-logos__carousel" data-carousel>
+
+                <!-- Item 1 -->
+                <div class="clients-logos__item" data-carousel__item data-active>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
-                <div class="clients-logos__item">
+
+                <!-- Item 2 -->
+                <div class="clients-logos__item" data-carousel__item>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
-                <div class="clients-logos__item">
+
+                <!-- Item 3 -->
+                <div class="clients-logos__item" data-carousel__item>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
-                <div class="clients-logos__item">
+
+                <!-- Item 4 -->
+                <div class="clients-logos__item" data-carousel__item>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
-                <div class="clients-logos__item">
+
+                <!-- Item 5 -->
+                <div class="clients-logos__item" data-carousel__item>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
-                <div class="clients-logos__item">
+
+                <!-- Item 6 -->
+                <div class="clients-logos__item" data-carousel__item>
                     <img class="clients-logos__image" src="../media/images/photos/logos/rimi-logo.svg" alt="">
                 </div>
             </div>
 
             <!-- Controls for carousel -->
             <div class="clients-logos__controls carousel-controls">
-                <div class="arrow-symbol arrow-left"></div>
-                <div class="arrow-symbol arrow-right"></div>
+                <div class="arrow-symbol arrow-left" data-carousel-btn></div>
+                <div class="arrow-symbol arrow-right" data-carousel-btn></div>
             </div>
         </div>
     </section>
@@ -315,6 +327,8 @@
                     <img class="portfolio__image" src="../media/images/photos/portfolio-2.svg" alt="">
                 </div>
             </div>
+
+            <div class="portfolio__modal"></div>
         </div>
     </section>
 
@@ -324,10 +338,10 @@
         <div class="container reviews">
             <h2 class="reviews__headig"> Klientu atsauksmes </h2>
 
-            <div class="reviews__carousel">
+            <div class="reviews__carousel" data-carousel>
 
                 <!-- Item 1 -->
-                <div class="reviews__item">
+                <div class="reviews__item" data-carousel__item data-active>
                     <div class="reviews__content">
                         <h3> Tirdzniecības centra biroju telpu pārbūve </h3>
                         <p class="reviews__text">
@@ -353,7 +367,7 @@
                 </div>
 
                 <!-- Item 2 -->
-                <div class="reviews__item">
+                <div class="reviews__item" data-carousel__item>
                     <div class="reviews__content">
                         <h3> Nekustāmā īpašuma kompleksa apsaimniekošana </h3>
                         <p class="reviews__text">
@@ -379,7 +393,7 @@
                 </div>
 
                 <!-- Item 3 -->
-                <div class="reviews__item">
+                <div class="reviews__item" data-carousel__item>
                     <div class="reviews__content">
                         <h3> Nepārtraukto barošanas iekārtu piegāde, uzstādīšana, apkalpošana. Elektrotehnisko mērījumu veikšana.  </h3>
                         <p class="reviews__text reviews__text--item-3">
@@ -406,8 +420,8 @@
             </div>
 
             <div class="reviews__controls">
-                <div class="arrow-symbol arrow-left"></div>
-                <div class="arrow-symbol arrow-right"></div>
+                <div class="arrow-symbol arrow-left" data-carousel-btn></div>
+                <div class="arrow-symbol arrow-right" data-carousel-btn></div>
             </div>
 
         </div>
@@ -509,5 +523,6 @@
         </div>
     </footer>
     <script src="../scripts/script.js"></script>
+    <script src="../scripts/carousel.js" defer></script>
 </body>
 </html>
