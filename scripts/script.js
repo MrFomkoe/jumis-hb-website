@@ -19,8 +19,7 @@ const aboutUs = document.querySelector('.about-us');
 // Language selector
 const langSelector = document.querySelector('.lang-selector__list');
 
-// Portfolio photos
-const portfolioPhotos = document.querySelectorAll('.portfolio__item')
+
 
 /*--- Controls for Cookies section */
 closeCookiesBtn.forEach(element => {
