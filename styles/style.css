@@ -65,6 +65,7 @@ header, section {
     border-radius: 12px;
     font-size: 1.375rem;
     font-weight: 600;
+    margin-top: 40px;
 }
 
 .more-button__link {
@@ -310,6 +311,10 @@ header {
     margin: 12px 0;
     font-size: 1.25rem;
     line-height: 27px;
+}
+
+.introduction__button {
+    margin-top: 0;
 }
 
 .introduction__image {
@@ -564,10 +569,6 @@ header {
     line-height: 27px;
 }
 
-.portfolio__button {
-    margin-top: 40px;
-}
-
 /* Grid system for images */
 
 .portfolio__images {
@@ -754,6 +755,7 @@ header {
 
 .footer-nav__block {
     min-width: fit-content;
+    margin-top: 0;
 }
 
 .footer-nav__item {
@@ -781,11 +783,9 @@ header {
 } 
 
 .footer-nav__item .more-button {
-    margin-top: 40px;
     display: none;
 }
 
-/*--- Settings for the  */
 
 
 

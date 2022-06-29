@@ -1,0 +1,30 @@
+h1.heading {
+    font-weight: 700;
+    font-size: 2rem;
+    margin-bottom: 42px;
+}
+
+h3.heading {
+    font-weight: 600;
+    font-size: 1.25rem;
+}
+
+.content {
+    max-width: 900px;
+    line-height: 32px;
+    font-size: 1.25rem;
+    text-align: justify;
+}
+
+.subsection {
+    margin-top: 32px;
+}
+
+.subsection ul {
+    list-style-type: disc;
+    list-style-position: inside;
+}
+
+.subsection ul li::marker {
+    font-size: 0.75rem;
+}
