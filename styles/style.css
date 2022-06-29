@@ -12,7 +12,7 @@
     text-decoration: none;
 }
 
-main {
+main, footer, header {
     max-width: 1920px;
 }
 
@@ -31,8 +31,7 @@ header, section {
 }
 
 .container {
-    width: 84%;
-    margin: 0 8%;
+    padding-left: 8%;
     overflow: hidden;
 }
 
@@ -80,6 +79,14 @@ header, section {
     -webkit-mask: url(../media/images/icons/arrow-down.svg) no-repeat center / contain;
 }
 
+.carousel-controls {
+    position: relative;
+    width: fit-content;
+    margin-left: auto;
+    right: 8%;
+    margin-top: 60px;
+}
+
 /* Setting for cookies panel */
 
 .cookies {
@@ -108,7 +115,6 @@ header, section {
 
 
 .cookies__close {
-    /* width: 80px; */
     position: absolute;
     right: 7.5%;
     font-weight: 700;
@@ -129,8 +135,6 @@ header {
     font-size: 1.375rem;
     margin-top: 40px;
 }
-
-
 
 
 /*---- Navigation ----*/
@@ -219,7 +223,7 @@ header {
 
 .lang-selector {
     position: relative;
-    z-index: 998;
+    z-index: 20;
 }
 
 .lang-selector__list {
@@ -246,7 +250,6 @@ header {
 .lang-selector__item {
     width: 100px;
     margin: 0 25% 10px 25%;
-
 }
 
 .lang-selector__link.link--bold {
@@ -282,10 +285,8 @@ header {
 
 .container.introduction {
     height: 320px;
-    width: 92%;
     display: flex;
     transition: all 0.3s ease;
-
 }
 
 .introduction__content {
@@ -330,11 +331,20 @@ header {
 /* Settings for whole section */
 
 .services-list {
+    transition: max-height 0.5s ease-in-out;
     display: flex;
     flex-wrap: wrap;
-    /* margin-left: 8%; */
-    width: 92%;
 }
+
+.services-list.not-index-page {
+    margin-top: 40px;
+    max-height: 0;
+}
+
+.services-list.collapsed {
+    max-height: 1100px;
+}
+
 
 /* Settings for item */
 
@@ -342,8 +352,9 @@ header {
     padding: 14px 25px 30px 14px;
     margin-right: 10px;
     margin-top: 10px;
+    margin-bottom: 15px;
     width: 235px;
-    box-shadow: 0px 15px 20px 0px rgba(0, 0, 0, 0.1);
+    box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
 }
 
@@ -433,14 +444,14 @@ header {
 
 .number-info {
     display: flex;
+    gap: 10px;
     justify-content: space-between;
     flex-wrap: wrap;
+    padding: 0 8%;
 }
 
 .number-info__item {
-    /* width: 30%; */
     min-width: fit-content;
-    padding-right: 10px;
 }
 
 .number-info__number {
@@ -464,20 +475,14 @@ header {
 .clients-logos__carousel {
     margin-top: 40px;
     display: flex;
+    gap: 120px;
     max-width: 1620px;
 }
 
 .clients-logos__item {
     flex-shrink: 0;
-    min-width: 400px;
 }
 
-.clients-logos__controls {
-    width: fit-content;
-    margin-left: auto;
-    right: 0;
-    margin-top: 60px;
-}
 
 .arrow-left, 
 .arrow-right {
@@ -503,9 +508,9 @@ header {
 /*---- Section with video ----*/
 
 .container.video-section {
-    width: 92%;
     display: flex;
-    padding: 80px 0 100px;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .video-section__content {
@@ -537,9 +542,7 @@ header {
 /*---- Section with portfolio ----*/
 
 .container.portfolio {
-    width: 92%;
     display: flex;
-    padding: 80px 0 100px;
 }
 
 .portfolio__content {
@@ -609,17 +612,11 @@ header {
     grid-area: five;
 }
 
-/* .modal {
-    position: fixed;
-    top: 100px;
-    height: 20vh;
-    width: 100vw;
-    background-color: black;
-
-} */
-
-.fullscreen-image {
-    display: flex;
+.modal__fullscreen {
+    transition: all 0.2s ease;
+    display: none;
+    justify-content: center;
+    align-items: center;
     position: fixed;
     width: 100%;
     height: 100vh;
@@ -627,14 +624,39 @@ header {
     top: 0;
     left: 0;
     z-index: 99;
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+.modal__fullscreen--active {
+    display: flex;
+}
+
+.modal__fullscreen-photo {
+    width: 50%;
+    max-height: 80%;
+    object-fit: fill;
+}
+
+.modal__close {
+    display: none;
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    font-size: 5rem;
+    z-index: 100;
+    color: white;
+}
+
+.modal__close:hover {
+    color: black;
+    cursor: pointer;
 }
 
 /*---- Section with clients reviews ----*/
 
 .container.reviews {
-    width: 92%;
-    /* margin-left: 8%; */
-    padding: 55px 0;
+    padding-top: 60px;
+    padding-bottom: 60px;
 }
 
 .reviews__headig {
@@ -647,6 +669,7 @@ header {
 .reviews__carousel {
     margin-top: 40px;
     display: flex;
+    gap: 40px;
     position: relative;
 }
 
@@ -655,7 +678,6 @@ header {
     background-color: #ffffff;
     width: 600px;
     height: 450px;
-    margin-right: 40px;
     padding: 45px 80px 45px 20px;
     border-radius: 10px;
     box-shadow: 0px 15px 20px rgba(0, 0, 0, 0.1);
@@ -715,29 +737,22 @@ header {
 }
 
 .reviews__link a {
-    font-size: 20px;
+    font-size: 1.25rem;
     text-decoration: underline;
     color:#0D318D;
-}
-
-.reviews__controls {
-    position: relative;
-    width: fit-content;
-    margin-left: auto;
-    right: 8%;
-    margin-top: 60px;
 }
 
 /*---- Footer settings ----*/
 
 .footer-nav {
-    overflow:visible;
     display: flex;
+    gap: 10px;
     justify-content: space-between;
+    padding-right: 8%;
+    padding-top: 60px;
 }
 
 .footer-nav__block {
-    margin-right: 10px;
     min-width: fit-content;
 }
 
@@ -769,6 +784,14 @@ header {
     margin-top: 40px;
     display: none;
 }
+
+/*--- Settings for the  */
+
+
+
+
+
+
 
 
 
@@ -808,6 +831,7 @@ header {
     *.container {
         width: 100% !important;
         margin: 0;
+        padding: 0;
     }
 
     /* Navigation */

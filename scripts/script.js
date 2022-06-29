@@ -19,8 +19,6 @@ const aboutUs = document.querySelector('.about-us');
 // Language selector
 const langSelector = document.querySelector('.lang-selector__list');
 
-
-
 /*--- Controls for Cookies section */
 closeCookiesBtn.forEach(element => {
     element.addEventListener('click', closeCookies);
@@ -37,18 +35,34 @@ function closeCookies () {
 
 // Function that hides introduction section
 function hideIntro () {
+    if (!introduction) {
+        return
+    }
     introduction.style.height = '0';
     introduction.parentElement.style.marginBottom = '0';
 };
 
 // Function that restores introduction section
 function restoreIntro () {
+    if (!introduction) {
+        return
+    }
     introduction.style.height = '320px';
     introduction.parentElement.style.marginBottom = '60px';
 };
 
+function collapseServicesList () {
+    if (servicesContainer.classList.contains('not-index-page')) {
+        // servicesContainer.style.maxHeight = '1000px';
+        servicesContainer.classList.toggle('collapsed');
+    };
+};
+
+
 // Event listener for services link to hide intro section
 servicesLink.addEventListener('click', hideIntro);
+servicesLink.addEventListener('click', collapseServicesList);
+
 
 // Event listener for restoring the intro section
 // mainNavLinks.forEach(element => {

@@ -11,6 +11,12 @@
     <title>Jumis-HB</title>
 </head>
 <body>
+    <!-- Modal that will host a fullscreen photo -->
+    <div class="modal__fullscreen">
+        <img src="" alt="" class="modal__fullscreen-photo">
+        <span class="modal__close">&times;</span>
+    </div>
+
     <!-- Cookies panel -->
     <div class="cookies">
         <p class="cookies__text"> By using our website you are connecting to our use of cookies in accordance with our <strong> <a href=""> Cookie policy </a></strong> </p>
@@ -266,7 +272,7 @@
             </div>
 
             <!-- Controls for carousel -->
-            <div class="clients-logos__controls carousel-controls">
+            <div class="carousel-controls">
                 <div class="arrow-symbol arrow-left" data-carousel-btn></div>
                 <div class="arrow-symbol arrow-right" data-carousel-btn></div>
             </div>
@@ -311,26 +317,22 @@
 
             <!-- Container for images in portfolio section -->
             <div class="portfolio__images">
-                <div class="portfolio__item item-1">
-                    <img class="portfolio__image" src="../media/images/photos/portfolio-1.svg" alt="" >
+                <div class="portfolio__item item-1" data-fullsreen-photo>
+                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-1.svg" alt="" >
                 </div>
-                <div class="portfolio__item item-2">
-                    <img class="portfolio__image" src="../media/images/photos/portfolio-5.svg" alt="">
+                <div class="portfolio__item item-2" data-fullsreen-photo>
+                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-5.svg" alt="">
                 </div>
-                <div class="portfolio__item item-3">
-                    <img class="portfolio__image" src="../media/images/photos/portfolio-3.svg" alt="">
+                <div class="portfolio__item item-3" data-fullsreen-photo>
+                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-3.svg" alt="">
                 </div>
-                <div class="portfolio__item item-4">
-                    <img class="portfolio__image" src="../media/images/photos/portfolio-4.svg" alt="">
+                <div class="portfolio__item item-4" data-fullsreen-photo >
+                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-4.svg" alt="">
                 </div>
-                <div class="portfolio__item item-5">
-                    <img class="portfolio__image" src="../media/images/photos/portfolio-2.svg" alt="">
+                <div class="portfolio__item item-5" data-fullsreen-photo>
+                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-2.svg" alt="">
                 </div>
-            </div>
-
-            <div class="modal">
-                <span class="modal__close">&times;</span>
-                <img class="modal__image" src="" alt="">
+                
             </div>
         </div>
     </section>
@@ -422,7 +424,7 @@
                 </div>
             </div>
 
-            <div class="reviews__controls">
+            <div class="carousel-controls">
                 <div class="arrow-symbol arrow-left" data-carousel-btn></div>
                 <div class="arrow-symbol arrow-right" data-carousel-btn></div>
             </div>

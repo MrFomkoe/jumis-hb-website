@@ -18,6 +18,9 @@ function scrollImage (element) {
     let carouselSlides = container.querySelectorAll('[data-carousel__item]');
     // Defining slide width for scroll animation
     const slideWidth = carouselSlides[0].clientWidth;
+    // Defining gap between images
+    let slideGap = window.getComputedStyle(carouselContainer).getPropertyValue('gap');
+    slideGap = parseInt(slideGap.replace(/\D/g,''));
     // Offset to scroll to next or prev
     let offset = button.classList.contains('arrow-right') ? 1 : -1;
     // Slide to be shown the first
@@ -31,6 +34,8 @@ function scrollImage (element) {
     carouselSlides[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
 
+    // Calculation of widht to be moved
+    let widthToBeMoved = -(slideWidth + slideGap) * newIndex;
     // Animation for scroll
-    carouselContainer.style.transform = `translateX(${-slideWidth * newIndex}px)`;
+    carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
 }
