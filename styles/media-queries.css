@@ -1,0 +1,73 @@
+/*---- Media queries ----*/
+@media screen and (max-width: 1870px) { 
+    /* Services list settings */
+    .services-list {
+        justify-content: space-around;
+    }
+
+    .services-list__item {
+        width: 20%;
+        min-width: 235px;
+    }
+}
+
+
+@media screen and (max-width: 1350px) {
+    /* Navigation panel settings */
+    .navigation-panel {
+        grid-template-columns: minmax(130px, 12%) minmax(550px, 700px) minmax(125px, 160px);
+        grid-template-areas: 
+            "logo main-nav lang";
+    }
+    .email-contact {
+        display: none;
+    }
+
+    /* Section with numbers settings */
+    .number-info {
+        justify-content: center;
+        gap: 0;
+    }
+
+    .number-info__item {
+        text-align: center;
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 1250px) {
+    /* Introduction section settings */
+
+    .introduction__image {
+        display: none;
+    }
+
+    /* Video section */
+    .container.video-section {
+        flex-wrap: wrap;
+    }
+    .video-section__video-container {
+        margin: 40px auto 0;
+        padding: 0;
+    }
+
+    /* Footer settings */
+    .footer-nav__item .more-button {
+        display: block;
+    }
+
+    .footer-nav__block.more-button {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    .services-list {
+        display: none;
+    }
+
+    .services-list__mobile {
+        display: flex;
+    }
+
+}

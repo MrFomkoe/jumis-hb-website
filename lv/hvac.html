@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css-reset.css">
     <link rel="stylesheet" href="../styles/style.css">
+    <link rel="stylesheet" href="../styles/media-queries.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../styles/services-styles.css">
     <title>Document</title>
@@ -15,7 +16,7 @@
     <header class="site-header">
 
         <!-- Section with all navigation controls -->
-        <div class="navigation-panel">
+        <div class="container navigation-panel">
 
             <!-- Logo -->
             <div class="logo">
@@ -26,7 +27,7 @@
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="" class="main-nav__link link--bold about-us"> Par mums </a>
+                        <a href="../lv/index.html" class="main-nav__link link--bold about-us"> Par mums </a>
                     </li>
                     
                     <li class="main-nav__item main-nav__services-list link--bold">
@@ -39,7 +40,7 @@
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="" class="main-nav__link link--bold"> Kontakti </a>
+                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
                     </li>
                 </ul>
             </nav>
@@ -68,9 +69,10 @@
                     </li>
                 </ul>
             </nav>
+
         </div>
 
-        <!-- Services list navigation -->
+        <!-- Section with list of services -->
         <section>
             <div class="container services-list not-index-page">
                 <!-- Item 1 - Property management -->
@@ -81,11 +83,11 @@
                             Nekustamā īpašuma apsaimniekošana
                         </h3>
                         <p class="services-list__text">
-                            Dažādu nozaru speciālisti  īpašumu apsaimniekošanas pakalpojuma...<span><a href="" class="services-list__link">see more</a></span>
+                            Dažādu nozaru speciālisti  īpašumu apsaimniekošanas pakalpojuma...<span><a href="../lv/property-service.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Item 2 - Repairs -->
                 <div class="services-list__item">
                     <div class="services-list__logo repairs"></div>
@@ -94,11 +96,11 @@
                             Celtniecības-remonta darbi
                         </h3>
                         <p class="services-list__text">
-                            Visa veida remontdarbi, atjaunošanas darbi, dokumentācijas...<span><a href="" class="services-list__link">see more</a></span>
+                            Visa veida remontdarbi, atjaunošanas darbi, dokumentācijas...<span><a href="../lv/construction-repairs.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Item 3 - Conditioning -->
                 <div class="services-list__item">
                     <div class="services-list__logo conditioning"></div>
@@ -107,11 +109,11 @@
                             Apkure, ventilācija, kondicionēšana
                         </h3>
                         <p class="services-list__text">
-                            Pilna spektra ventilācijas un kondicionēšanas sistēmu izbūve...<span><a href="" class="services-list__link">see more</a></span>
+                            Pilna spektra ventilācijas un kondicionēšanas sistēmu izbūve...<span><a href="../lv/hvac.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Item 4 - Water supply -->
                 <div class="services-list__item">
                     <div class="services-list__logo water"></div>
@@ -120,7 +122,7 @@
                             Ūdensapgāde un kanalizācija
                         </h3>
                         <p class="services-list__text">
-                            Ūdensapgādes  un kanalizācijas sistēmu apkalpošana, remonts, izbūves darbi...<span><a href="" class="services-list__link">see more</a></span>
+                            Ūdensapgādes  un kanalizācijas sistēmu apkalpošana, remonts, izbūves darbi...<span><a href="../lv/water-supply.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
@@ -133,11 +135,11 @@
                             Ikdienas un ģenerālā uzkopšana
                         </h3>
                         <p class="services-list__text">
-                            Ikdienas uzkopšanas un ģenerāltīrīšanas pakalpojumi, izmantojot...<span><a href="" class="services-list__link">see more</a></span>
+                            Ikdienas uzkopšanas un ģenerāltīrīšanas pakalpojumi, izmantojot...<span><a href="../lv/cleaning.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Item 6 - Electrical works -->
                 <div class="services-list__item">
                     <div class="services-list__logo electricity"></div>
@@ -146,11 +148,11 @@
                             Elektrība un vājstrāvas tīkli
                         </h3>
                         <p class="services-list__text">
-                            Elektrības darbi līdz 1 kV, vājstrāvas darbi, elektrotehnisko mērījumu veikšana...<span><a href="" class="services-list__link">see more</a></span>
+                            Elektrības darbi līdz 1 kV, vājstrāvas darbi, elektrotehnisko mērījumu veikšana...<span><a href="../lv/electricity.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
+
                 <!-- Item 7 - Power supply -->
                 <div class="services-list__item">
                     <div class="services-list__logo power-supply"></div>
@@ -159,12 +161,10 @@
                             Nepārtrauktās barošanas avoti
                         </h3>
                         <p class="services-list__text">
-                            Barošanas  avotu piegāde, montāža, remonts un  apkalpošana...<span><a href="" class="services-list__link">see more</a></span>
+                            Barošanas  avotu piegāde, montāža, remonts un  apkalpošana...<span><a href="../lv/power-supply.html" class="services-list__link">see more</a></span>
                         </p>
                     </div>
                 </div>
-    
-                
             </div>
         </section>
     </header>
@@ -234,8 +234,8 @@
         </section>
     </main>
 
-    <!-- Footer section -->
-    <footer>
+    <!-- Site footer -->
+    <footer id="footer-navigation" class="not-index-page">
         <nav class="container footer-nav">
             <div class="footer-nav__logo footer-nav__block">
                 Logo
@@ -244,14 +244,14 @@
             <!-- About us block -->
             <div class="footer-nav__block">
                 <ul class="footer-nav__list">
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link link--bold"> Par mums </a>
+                    <li class="footer-nav__item item--bold">
+                        Par mums
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Klienti </a>
+                        <a href="#klienti" class="footer-nav__link"> Klienti </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Atsauksmes </a>
+                        <a href="#atsauksmes" class="footer-nav__link"> Atsauksmes </a>
                     </li>
                 </ul>
             </div>
@@ -259,29 +259,29 @@
             <!-- Services block -->
             <div class="footer-nav__block">
                 <ul class="footer-nav__list">
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link link--bold"> Pakalpojumi </a>
+                    <li class="footer-nav__item item--bold">
+                        Pakalpojumi
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Īpašuma apsaimniekošana </a>
+                        <a href="../lv/property-service.html" class="footer-nav__link"> Īpašuma apsaimniekošana </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Celtniecības-remonta darbi </a>
+                        <a href="../lv/construction-repairs.html" class="footer-nav__link"> Celtniecības-remonta darbi </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Apkure, ventilācija, kondicionēšana </a>
+                        <a href="../lv/hvac.html" class="footer-nav__link"> Apkure, ventilācija, kondicionēšana </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Ūdensapgāde un kanalizācija </a>
+                        <a href="../lv/water-supply.html" class="footer-nav__link"> Ūdensapgāde un kanalizācija </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Ikdienas un ģenerālā tīrīšana </a>
+                        <a href="../lv/cleaning.html" class="footer-nav__link"> Ikdienas un ģenerālā tīrīšana </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Elektrība un vājstrāvas tīkli </a>
+                        <a href="../lv/electricity.html" class="footer-nav__link"> Elektrība un vājstrāvas tīkli </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Nepārtrauktās barošanas avoti </a>
+                        <a href="../lv/power-supply.html" class="footer-nav__link"> Nepārtrauktās barošanas avoti </a>
                     </li>
                 </ul>
             </div>
@@ -289,11 +289,11 @@
             <!-- Portfolio block -->
             <div class="footer-nav__block">
                 <ul class="footer-nav__list">
-                    <li class="footer-nav__item">
-                        <a href="../lv/portfolio.html" class="footer-nav__link link--bold"> Portfolio </a>
+                    <li class="footer-nav__item item--bold">
+                        Portfolio
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link"> Projekti </a>
+                        <a href="../lv/portfolio.html" class="footer-nav__link"> Projekti </a>
                     </li>
                 </ul>
             </div>
@@ -301,14 +301,14 @@
             <!-- Contacts block -->
             <div class="footer-nav__block">
                 <ul class="footer-nav__list">
-                    <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link link--bold"> Kontakti </a>
+                    <li class="footer-nav__item item--bold">
+                        Kontakti
                     </li>
                     <li class="footer-nav__item">
-                        <a class="footer-nav__link" href="tel:+371 67248491"> +371 67248491 </a>
+                        <a class="footer-nav__link" href="tel:+371 67271683"> +371 67271683 </a>
                     </li>
                     <li class="footer-nav__item">
-                        <a href="" class="footer-nav__link link-map"> Maskavas street 81, Riga </a>
+                        <a href="" class="footer-nav__link link-map"> Maskavas iela 81C, Rīga </a>
                     </li>
                     <li class="footer-nav__item">
                         <button class="more-button">
@@ -329,6 +329,7 @@
             Copyright &copy
         </div>
     </footer>
+
     <!-- Scripts -->
     <script src="../scripts/script.js"></script>
 </body>
