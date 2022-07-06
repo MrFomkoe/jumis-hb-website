@@ -28,16 +28,7 @@ function scrollImage (element) {
     // Index of the above slide
     let newIndex = [...carouselSlides].indexOf(activeSlide) + offset;
     // Check of indexes so it won't exceed/subceed amount of elements in nodelist
-    let windowWidth = window.innerWidth;
-    if ((slideWidth+slideGap)/windowWidth >= 0.40) {
-        if (newIndex < 0 || newIndex >= carouselSlides.length) return;
-    } else if (((slideWidth+slideGap)/windowWidth >= 0.30) && ((slideWidth+slideGap)/windowWidth < 0.40)) {
-        if (newIndex < 0 || newIndex >= carouselSlides.length - 1) return;
-    } else {
-        if (newIndex < 0 || newIndex >= carouselSlides.length - 2) return;
-    }
-
-    console.log(windowWidth)
+    if (newIndex < 0 || newIndex >= carouselSlides.length - 1) return;
 
     // Change of the "active slide"
     carouselSlides[newIndex].dataset.active = true;

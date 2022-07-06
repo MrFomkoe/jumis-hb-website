@@ -1,40 +1,71 @@
 // All photos on website that may be fullscreened
-const photosToFullscreen = document.querySelectorAll('[data-fullsreen-photo]');
+const photosToFullscreen = Array.from(document.querySelectorAll('[data-fullsreen-photo]')); 
 
-// Function that works with all photos
-photosToFullscreen.forEach(element => {
-    element.addEventListener('click', (e) => {
-        // Image that has been pressed
-        let currentImage = e.target;
-        // Image's source
-        let currentImageSrc = currentImage.src;
-        // Modal that will host a photo
-        let currentModal = document.querySelector('.modal__fullscreen');
-        // Image inside this modal
-        let fullscreenImage = currentModal.querySelector('.modal__fullscreen-photo');
-        // Close button
-        let closeBtn = currentModal.querySelector('.modal__close');
-        
-        // Check for mobile devices so close button wouldn't appear
-        if(!/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)){
-            closeBtn.style.display = 'block';
-        }
+for (let i = 0; i < photosToFullscreen.length; i++) {
+    photosToFullscreen[i].id = `photo_${i}`;
+}
 
-        // Putting the photo source inside the host modal
-        fullscreenImage.src = currentImageSrc;
-
-        // Making modal visible
-        currentModal.classList.add('modal__fullscreen--active');
-
-        // Controls for closure of the modal
-        currentModal.addEventListener('click', closeModal);
-        closeBtn.addEventListener('click', closeModal);
-
-        // Function to close the modal
-        function closeModal() {
-            currentModal.classList.remove('modal__fullscreen--active');
-            closeBtn.style.display = 'none';
-        };
-    });
+// Function to populate the modal with photos
+photosToFullscreen.forEach((item) => {
+    item.addEventListener('click', openModal);
 });
 
+function openModal (element) {
+    let pressedImage = element.currentTarget;
+    let pressedImageId = pressedImage.id;
+    console.log(pressedImageId);
+
+    const carouselContainer = element.currentTarget.closest('[data-carousel]').cloneNode(true);
+    carouselContainer.style.transition = 'none';
+
+    const fullsreenModal = document.querySelector('.modal__fullscreen');
+    const closeBtn = fullsreenModal.querySelector('.modal__close');
+
+    fullsreenModal.appendChild(carouselContainer);
+    fullsreenModal.classList.add('modal__fullscreen--active');
+
+    const currentPhotos = Array.from(fullsreenModal.querySelectorAll('[data-carousel__item]'));
+    if (carouselContainer.classList.contains('portfolio__images')) {
+        carouselContainer.classList.remove('portfolio__images');
+        carouselContainer.classList.add('photo-carousel');
+        currentPhotos.forEach(photo => {
+            photo.classList.remove('portfolio__item');
+            photo.classList.add('photo-carousel__item');
+        });
+    };
+
+    let currentIndex = currentPhotos.findIndex(item => {
+        if (item.id === pressedImageId) {
+            return true
+        }
+    })
+
+    console.log(currentIndex);
+
+    // Defining slide width for scroll animation
+    const slideWidth = currentPhotos[0].clientWidth;
+    // Slide to be shown the first
+    const activeSlide = carouselContainer.querySelector('[data-active]'); 
+
+
+    // Change of the "active slide"
+    currentPhotos[currentIndex].dataset.active = true;
+    if (activeSlide.id != currentPhotos[currentIndex].id) {
+        delete activeSlide.dataset.active;
+    }
+
+    // Calculation of widht to be moved
+    let widthToBeMoved = -(slideWidth) * currentIndex;
+    // Animation for scroll
+    carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
+    setTimeout(() => {
+        carouselContainer.style.transition = 'all 0.3s ease-in-out';
+    }, 100);
+
+    closeBtn.addEventListener('click', () => {
+        fullsreenModal.classList.remove('modal__fullscreen--active');
+        carouselContainer.remove();
+    });
+
+    let left
+}

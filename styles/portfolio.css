@@ -8,6 +8,7 @@
 
 .content {
     max-width: 900px;
+    margin-bottom: 75px;
 }
 
 .links {
@@ -46,10 +47,8 @@
 
 /*--- Image carousel controls ---*/
 
-/* Temp */
 .photo-carousel {
-    margin-top: 75px;
-    display: flex;
+    display: inline-flex;
     flex-wrap: nowrap;
     gap: 24px;
 } 

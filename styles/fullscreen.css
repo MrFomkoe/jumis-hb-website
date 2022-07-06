@@ -1,0 +1,76 @@
+.modal__fullscreen {
+    transition: all 0.2s ease;
+    display: none;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    left: 0;
+    z-index: 99;
+    background-color: rgba(0, 0, 0, 0.8);
+    overflow:visible;
+    user-select: none;
+}
+
+.modal__fullscreen--active {
+    display: inline-flex;
+}
+
+.modal__fullscreen [data-carousel] {
+    gap: 0;
+}
+
+.modal__fullscreen [data-carousel__item] {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+.modal__fullscreen img {
+    border-radius: 0;
+    width: 60%;
+    max-height: 80%;
+    object-fit: contain;
+}
+
+.modal__close {
+    position: fixed;
+    top: 50px;
+    right: 100px;
+    font-size: 5rem;
+    z-index: 100;
+    color: white;
+}
+
+.modal__close:hover {
+    color: black;
+    cursor: pointer;
+}
+
+
+.fullscreen-controls {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: absolute;
+    height: 100%;
+    width: 80%;
+    padding: 0;
+    margin: 0 auto;
+    right: 0;
+    left: 0;
+}
+
+.fullscreen-controls .arrow-symbol {
+    height: 100px;
+    width: 100px;
+    z-index: 100;
+}
+
+.fullscreen-controls .arrow-symbol:hover {
+    background-color: #000;
+}

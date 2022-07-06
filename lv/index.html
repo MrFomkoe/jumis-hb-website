@@ -8,13 +8,19 @@
     <link rel="stylesheet" href="../styles/style.css">
     <link rel="stylesheet" href="../styles/media-queries.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../styles/portfolio.css">
+    <link rel="stylesheet" href="../styles/fullscreen.css">
     <title>Jumis-HB</title>
 </head>
 <body>
     <!-- Modal that will host a fullscreen photo -->
-    <div class="modal__fullscreen">
-        <img src="" alt="" class="modal__fullscreen-photo">
+    <div class="modal__fullscreen container">
         <span class="modal__close">&times;</span>
+        <!-- Controls for carousel -->
+        <div class="carousel-controls fullscreen-controls">
+            <div class="arrow-symbol arrow-left" data-carousel-btn></div>
+            <div class="arrow-symbol arrow-right" data-carousel-btn></div>
+        </div>
     </div>
 
     <!-- Cookies panel -->
@@ -370,20 +376,20 @@
             </div>
 
             <!-- Container for images in portfolio section -->
-            <div class="portfolio__images">
-                <div class="portfolio__item item-1" data-fullsreen-photo>
+            <div class="portfolio__images" data-carousel>
+                <div class="portfolio__item item-1" data-fullsreen-photo data-carousel__item data-active>
                     <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-1.svg" alt="" >
                 </div>
-                <div class="portfolio__item item-2" data-fullsreen-photo>
+                <div class="portfolio__item item-2" data-fullsreen-photo data-carousel__item>
                     <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-5.svg" alt="">
                 </div>
-                <div class="portfolio__item item-3" data-fullsreen-photo>
+                <div class="portfolio__item item-3" data-fullsreen-photo data-carousel__item>
                     <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-3.svg" alt="">
                 </div>
-                <div class="portfolio__item item-4" data-fullsreen-photo >
+                <div class="portfolio__item item-4" data-fullsreen-photo data-carousel__item>
                     <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-4.svg" alt="">
                 </div>
-                <div class="portfolio__item item-5" data-fullsreen-photo>
+                <div class="portfolio__item item-5" data-fullsreen-photo data-carousel__item>
                     <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-2.svg" alt="">
                 </div>
                 
