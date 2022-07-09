@@ -42,12 +42,12 @@
             <div class="logo">
                 logo
             </div>
-
+            
             <!-- Main navigation -->
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="../lv/index.html" class="main-nav__link link--bold about-us"> Par mums </a>
+                        <a href="../lv/index.html" class="main-nav__link link--bold" data-restore-intro> Par mums </a>
                     </li>
                     
                     <li class="main-nav__item main-nav__services-list link--bold">
@@ -56,11 +56,11 @@
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold" data-restore-intro>  Portfolio </a>
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                        <a href="#footer-navigation" class="main-nav__link link--bold" data-restore-intro> Kontakti </a>
                     </li>
                 </ul>
             </nav>
@@ -71,7 +71,7 @@
             <!-- Language selector -->
             <nav class="lang-selector">
                 <ul class="lang-selector__list">
-                    <li class="lang-selector__item">
+                    <li class="lang-selector__item" data-collapse-selector>
                             <span class="lang-selector__link link--bold"> LV </span> 
                             <span class="arrow-symbol arrow-down"></span>
                     </li>
@@ -91,6 +91,66 @@
             </nav>
 
         </div>
+
+        <!-- Mobile navigation controls -->
+        <div class="container mobile-navigation">
+            <div class="mobile-nav-controls">
+                <!-- Logo -->
+                <div class="logo">
+                    LOGO
+                </div>
+
+                <!-- Selector to call navigation -->
+                <div id="mobile-selector">
+                    <span>☰</span>
+                </div>
+
+                <!-- Language selector -->
+                <nav class="lang-selector">
+                    <ul class="lang-selector__list">
+                        <li class="lang-selector__item" data-collapse-selector>
+                                <span class="lang-selector__link link--bold"> LV </span> 
+                                <span class="arrow-symbol arrow-down"></span>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                EN
+                            </a>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                RU
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item">
+                        <a href="../lv/index.html" class="mobile-nav__link link--bold"> Par mums </a>
+                    </li>
+                    
+                    <li class="mobile-nav__item link--bold">
+                        <span> Pakalpojumi </span>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                    </li>
+                </ul>
+                <span class="mobile-nav__close">&times;</span>
+            </nav>
+            
+        </div>
+
     </header>
 
     <main>
@@ -103,6 +163,24 @@
                         visiem saimnieciski-tehniskiem pakalpojumiem
                     </h1>
 
+                    <div class="overlay__image">
+                        <img  src="../media/images/photos/city-view.jpg" alt="">
+                        <div class="ovelay-text">
+                            <div class="ovelay-text__item">
+                                <span class="ovelay-text__number"> 25 </span>
+                                <span class="ovelay-text__text"> gadi </span>
+                            </div>
+                            <div class="ovelay-text__item">
+                                <span class="ovelay-text__number"> 200 </span>
+                                <span class="ovelay-text__text"> kolēģi </span>
+                            </div>
+                            <div class="ovelay-text__item">
+                                <span class="ovelay-text__number"> >50 000 m<sup>2 </sup></span>
+                                <span class="ovelay-text__text"> projektu </span>
+                            </div>
+                        </div>
+                    </div>
+
                     <p class="introduction__text">
                         Uzņēmuma pamata koncepcija- apvienot dažādu nozaru speciālistus kompleksa īpašumu apsaimniekošanas pakalpojuma ietvaros   
                     </p>
@@ -114,11 +192,6 @@
 
                 <div class="introduction__image">
                     <img  src="../media/images/photos/city-view.jpg" alt="">
-                    <div class="ovelay-text">
-                        <div class="ovelay-text__item">
-
-                        </div>
-                    </div>
                 </div>
             </div>
         </section>

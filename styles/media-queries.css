@@ -23,24 +23,40 @@
         display: none;
     }
 
-    /* Section with numbers settings */
-    .number-info {
-        justify-content: center;
-        gap: 0;
+    /* Setting for introduction section */
+    .introduction__content {
+        flex-basis: 550px;
+        flex-shrink: 0;
+        padding-right: 20px;
     }
 
-    .number-info__item {
-        text-align: center;
-        width: 50%;
+    .introduction__heading {
+        font-weight: 700;
+        font-size: 2rem;
+        line-height: 49px;
+    }
+    
+    .introduction__heading.accent--blue {
+        font-size: 2rem;
+    }
+
+    /* Section with numbers settings */
+    .number-info {
+        display: flex;
+        gap: 40px;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        padding: 0 2% 0 8%;
+    }
+
+    .number-info__number {
+        font-weight: 600;
+        font-size: 2.25rem;
     }
 }
 
 @media screen and (max-width: 1250px) {
     /* Introduction section settings */
-
-    .introduction__image {
-        display: none;
-    }
 
     /* Video section */
     .container.video-section {
@@ -62,12 +78,61 @@
 }
 
 @media screen and (max-width: 1024px) {
+    /* General settings */
+    .container {
+        /* width: 100%; */
+        padding: 0 5%;
+    }
+    
+    /* Navigation settings */
+
+    .container.navigation-panel {
+        display: none;
+    }
+
+    .mobile-nav-controls {
+        display: flex;
+    }
+
+
+    .lang-selector {
+        position: unset;
+        width: 120px;
+    }
+
+    .lang-selector__list {
+        width: 120px;
+    }
+
+    /* Settings for introduction section */
+
+    .container.introduction {
+        height: fit-content;
+        padding: 0;
+    }
+
+    .introduction__content {
+        flex-basis: 100%;
+        flex-shrink: 0;
+        padding: 0;
+        height: fit-content;
+    }
+
+    .overlay__image {
+        display: flex;
+    }
+
+
     .services-list {
         display: none;
     }
 
     .services-list__mobile {
         display: flex;
+    }
+
+    .introduction__image {
+        display: none;
     }
 
 }

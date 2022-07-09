@@ -14,10 +14,12 @@ const servicesContainer = document.querySelector('.services-list');
 // const mainNavLinks = document.querySelectorAll('.main-nav__link');
 
 // About us link
-const aboutUs = document.querySelector('.about-us');
+const restoreIntroLinks = document.querySelectorAll('[data-restore-intro]');
 
 // Language selector
-const langSelector = document.querySelector('.lang-selector__list');
+// const langSelector = document.querySelectorAll('.lang-selector__list');
+const langSelector = document.querySelectorAll('[data-collapse-selector]');
+console.log(langSelector)
 
 /*--- Controls for Cookies section */
 closeCookiesBtn.forEach(element => {
@@ -53,7 +55,6 @@ function restoreIntro () {
 
 function collapseServicesList () {
     if (servicesContainer.classList.contains('not-index-page')) {
-        // servicesContainer.style.maxHeight = '1000px';
         servicesContainer.classList.toggle('collapsed');
     };
 };
@@ -62,20 +63,17 @@ function collapseServicesList () {
 // Event listener for services link to hide intro section
 servicesLink.addEventListener('click', hideIntro);
 servicesLink.addEventListener('click', collapseServicesList);
+restoreIntroLinks.forEach(element => {
+    element.addEventListener('mouseenter', restoreIntro);
+});
 
-
-// Event listener for restoring the intro section
-// mainNavLinks.forEach(element => {
-//     element.addEventListener('mouseenter', restoreIntro)
-// });
-
-aboutUs.addEventListener('mouseenter', restoreIntro);
 
 /*--- Language selector controls ---*/
 
 // Function to collapse language selector
-langSelector.addEventListener('click', () => {
-    langSelector.classList.toggle('collapsed');
-})
-
+langSelector.forEach(element => {
+    element.addEventListener('click', (e) => {
+        element.parentElement.classList.toggle('collapsed');
+    })
+});
 // Fulscreen photo controls
