@@ -1,3 +1,5 @@
+
+
 /*---- Media queries ----*/
 @media screen and (max-width: 1870px) { 
     /* Services list settings */
@@ -13,6 +15,12 @@
 
 
 @media screen and (max-width: 1350px) {
+    /* General settings */
+
+    [class$='heading'] {
+        font-size: 2rem;
+    }
+
     /* Navigation panel settings */
     .navigation-panel {
         grid-template-columns: minmax(130px, 12%) minmax(550px, 700px) minmax(125px, 160px);
@@ -29,15 +37,9 @@
         flex-shrink: 0;
         padding-right: 20px;
     }
-
-    .introduction__heading {
-        font-weight: 700;
-        font-size: 2rem;
-        line-height: 49px;
-    }
     
-    .introduction__heading.accent--blue {
-        font-size: 2rem;
+    .introduction__heading .accent--blue {
+        font-size: 2.25rem;
     }
 
     /* Section with numbers settings */
@@ -52,6 +54,11 @@
     .number-info__number {
         font-weight: 600;
         font-size: 2.25rem;
+    }
+
+    /* Services pages settings */ 
+    .subheading {
+        font-size: 1.25rem;
     }
 }
 
@@ -79,11 +86,48 @@
 
 @media screen and (max-width: 1024px) {
     /* General settings */
+    section.accent--light-blue {
+        padding-bottom: 20px;
+        padding-top: 20px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    section.no-bottom-margin {
+        margin-bottom: 0;
+    }
+
     .container {
-        /* width: 100%; */
         padding: 0 5%;
     }
     
+    .more-button {
+        width: 100%;
+    }
+
+    .more-button {
+        margin: 40px 0 20px 0;
+    }
+
+    .more-button__link {
+        margin: 0 auto
+    }
+
+    .carousel-controls {
+        margin-top: 0;
+    }
+    
+    [data-carousel-btn] {
+        display: none;
+    }
+
+    [class$='heading'] {
+        font-size: 2rem;
+        line-height: 2.5rem;
+    }
+
     /* Navigation settings */
 
     .container.navigation-panel {
@@ -118,21 +162,287 @@
         height: fit-content;
     }
 
-    .overlay__image {
-        display: flex;
+    .introduction__heading, 
+    .introduction__text {
+        padding: 0 5%;
     }
 
+    .overlay__image {
+        display: flex;
+        margin: 20px 0;
+    }
+
+    /* Settings for services list */
 
     .services-list {
         display: none;
     }
 
-    .services-list__mobile {
-        display: flex;
+    .mobile_services {
+        display: block;
+    }
+
+
+    .mobile-services {
+        display: block;
     }
 
     .introduction__image {
         display: none;
     }
 
+    /* Settings for number info */
+    .container.number-info {
+        display: none;
+    }
+
+    /* Settings for client's logos section */
+
+    .clients-logos__carousel {
+        margin-top: 0;
+        gap: 60px;
+    }
+
+    /* Settings for portfolio */
+
+    .container.portfolio {
+        flex-wrap: wrap;
+    }
+
+    .portfolio__content .more-button {
+        display: none;
+    }
+
+    .portfolio .mobile-button {
+        display: flex;
+    }
+
+    .portfolio__images {
+        display: inline-flex;
+        width: 100%;
+        padding-right: 0;
+    }
+
+    .portfolio__item {
+        flex-shrink: 0;
+        width: 40%;
+        max-height: 280px;
+        object-position: center;
+    }
+
+    /* Settings for reviews */
+    #atsauksmes {
+        background-color: #ffffff;
+        padding: 0;
+    }
+
+    .reviews__carousel {
+        padding-bottom: 40px;
+    }
+
+    .reviews__item {
+        background-color: #F5F8FE;
+        /* width: 30%; */
+        flex-shrink: 1;
+        padding: 20px 5px 20px 20px;
+        height: 300px;
+        width: 300px;
+    }
+
+    .reviews__content h3 {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    
+    .reviews__text {
+        font-size: 1.125rem;
+        text-align:left;
+    }
+    
+    .review__info {
+        position: absolute;
+        bottom: 45px;
+        min-width: 100%;
+    }
+    
+    .reviews__text--item-3 {
+        margin-top: 40px;
+    }
+    
+    .reviews__credidentials {
+        display: flex;
+        margin-bottom: 10px;
+    }
+    
+    .reviews__company-name h4 {
+        font-size: 1.375rem;
+        font-weight: 600;
+    }
+    
+    .reviews__company-name p {
+        font-size: 1.25rem;
+    }
+    
+    .review__photo {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 55px;
+        height: 55px;
+        border-radius: 50%;
+        margin-right: 20px;
+    }
+    
+    .review__photo h4 {
+        font-size: 1.25rem;
+        font-weight: 600;
+    }
+    
+    .reviews__link a {
+        font-size: 1.25rem;
+        text-decoration: underline;
+        color:#0D318D;
+    }
+
+    /* Porfolio page settings */
+
+    .content {
+        margin-bottom: 30px;
+    }
+
+    .portfolio-page .links {
+        font-size: 1.125rem;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 1.125rem;
+    }
+
+    .photo-carousel {
+        padding-bottom: 30px;
+    }
+
+    .photo-carousel__item {
+        width: 30%;
+        height: auto;
+    }
+
+    /* Services pages settings */ 
+    .subheading {
+        font-size: 1.25rem;
+    }
+
+    footer {
+        display: none;
+    }
+
+    /* Settings for fullsceen modal */
+
+    .modal__fullscreen img {
+        border-radius: 0;
+        width: 90%;
+        max-height: 70%;
+        object-fit: contain;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    /* General settings */
+    section {
+        margin-bottom: 20px;
+    }
+
+    [class$='heading'] {
+        font-size: 1.25rem;
+        line-height: 1.375rem;
+    }
+
+    h1[class$='heading'] {
+        font-size: 1.25rem;
+    }
+
+    .introduction__heading .accent--blue {
+        font-size: 1.375rem;
+        line-height: 1.5rem;
+    }
+
+    p,
+    [class$='text'] {
+        font-size: 1rem;
+        line-height: 1.375rem;
+    }
+
+    [class$='content'] {
+        min-width: auto;
+        padding: 0;
+    }
+
+    .more-button {
+        margin: 20px 0 20px 0;
+    }
+
+    .more-button__link {
+        width: 160px;
+        height: 50px;
+        font-size: 1rem;
+    }
+
+    /* Settings for client's logos section */
+
+    .clients-logos__carousel {
+        margin-top: 0;
+        gap: 40px;
+    }
+
+    /* Video section settings */
+    .video-section__video-container {
+        width: 100%;
+    }
+
+    .video-section__video {
+        width: 100%;
+        aspect-ratio: 16 / 9;
+        height: fit-content;
+    }
+
+
+    /* Mobile services list settings */
+
+    .services-list__mobile ul {
+        width: 100%;
+        font-size: 1.125rem;
+    }
+
+    /* Porfolio page settings */
+
+    .portfolio-page .links {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .description {
+        font-size: 1rem;
+    }
+
+    /* Services pages settings */ 
+    .subsection {
+        font-size: 1rem;
+    }
+
+    .subheading {
+        font-size: 1rem;
+    }
+
+    /* Settings for fullsceen modal */
+
+    
+    .modal__close {
+        position: fixed;
+        top: 2%;
+        right: 5%;
+        font-size: 5rem;
+        z-index: 100;
+        color: white;
+    }
 }

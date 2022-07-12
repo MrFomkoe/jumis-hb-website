@@ -6,10 +6,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css-reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/media-queries.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
     <link rel="stylesheet" href="../styles/portfolio.css">
     <link rel="stylesheet" href="../styles/fullscreen.css">
+    <link rel="stylesheet" href="../styles/media-queries.css">
     <title>Jumis-HB</title>
 </head>
 <body>
@@ -159,7 +159,7 @@
             <div class="container introduction">
                 <div class="introduction__content">
                     <h1 class="introduction__heading"> 
-                        <span class="introduction__heading accent--blue"> Viens sadarbības partneris</span><br>
+                        <span class="accent--blue"> Viens sadarbības partneris</span><br>
                         visiem saimnieciski-tehniskiem pakalpojumiem
                     </h1>
 
@@ -182,7 +182,7 @@
                     </div>
 
                     <p class="introduction__text">
-                        Uzņēmuma pamata koncepcija- apvienot dažādu nozaru speciālistus kompleksa īpašumu apsaimniekošanas pakalpojuma ietvaros   
+                        Uzņēmuma pamata koncepcija - apvienot dažādu nozaru speciālistus kompleksa īpašumu apsaimniekošanas pakalpojuma ietvaros   
                     </p>
 
                     <button class="introduction__button more-button">
@@ -388,7 +388,7 @@
 
 
         <!-- Section with video -->
-        <section class="accent--light-blue">
+        <section class="accent--light-blue no-bottom-margin">
             <div class="container video-section">
 
                 <!-- Container for text in video section -->
@@ -404,11 +404,14 @@
                     <iframe class="video-section__video" src="https://www.youtube.com/embed/LnGuf7ajUII" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
+        </section>
 
+        <!-- Section with mobile services list -->
+        <section class="accent--light-blue mobile-services">
             <div class="container services-list__mobile">
                 <ul>
                     <li> <a href="" class="services-list__item">
-                        Nekustamā īpašuma apsaimniekošana
+                        Ipašuma apsaimniekošana
                     </a> </li>
                     <li> <a href="" class="services-list__item">
                         Celtniecības-remonta darbi
@@ -434,47 +437,50 @@
 
         <!-- Section for porfolio -->
         <section>
-        <div class="container portfolio">
+            <div class="container portfolio">
 
-            <!-- Container for text in portfolion section -->
-            <div class="portfolio__content">
-                <h2 class="portfolio__heading"> Portfolio </h2>
-                <p class="portfolio__text">
-                    Dizaina projekts ir vairāk nekā tikai attēls, tā ir komforta zona, no kuras atkarīga pašsajūta un darba veiktspēja, lai iegūtu vēlamo rezultātu 
-                </p>
+                <!-- Container for text in portfolion section -->
+                <div class="portfolio__content">
+                    <h2 class="portfolio__heading"> Portfolio </h2>
+                    <p class="portfolio__text">
+                        Dizaina projekts ir vairāk nekā tikai attēls, tā ir komforta zona, no kuras atkarīga pašsajūta un darba veiktspēja, lai iegūtu vēlamo rezultātu 
+                    </p>
 
-                <button class="portfolio__button more-button">
+                    <button class="portfolio__button more-button">
+                        <a href="../lv/portfolio.html" class="portfolio__link more-button__link"> Vairāk </a>
+                    </button>
+                </div>
+
+                <!-- Container for images in portfolio section -->
+                <div class="portfolio__images" data-carousel>
+                    <div class="portfolio__item item-1" data-fullsreen-photo data-carousel__item data-active>
+                        <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-1.svg" alt="" >
+                    </div>
+                    <div class="portfolio__item item-2" data-fullsreen-photo data-carousel__item>
+                        <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-5.svg" alt="">
+                    </div>
+                    <div class="portfolio__item item-3" data-fullsreen-photo data-carousel__item>
+                        <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-3.svg" alt="">
+                    </div>
+                    <div class="portfolio__item item-4" data-fullsreen-photo data-carousel__item>
+                        <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-4.svg" alt="">
+                    </div>
+                    <div class="portfolio__item item-5" data-fullsreen-photo data-carousel__item>
+                        <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-2.svg" alt="">
+                    </div>
+                </div>
+                
+                <button class="portfolio__button more-button mobile-button">
                     <a href="../lv/portfolio.html" class="portfolio__link more-button__link"> Vairāk </a>
                 </button>
             </div>
-
-            <!-- Container for images in portfolio section -->
-            <div class="portfolio__images" data-carousel>
-                <div class="portfolio__item item-1" data-fullsreen-photo data-carousel__item data-active>
-                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-1.svg" alt="" >
-                </div>
-                <div class="portfolio__item item-2" data-fullsreen-photo data-carousel__item>
-                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-5.svg" alt="">
-                </div>
-                <div class="portfolio__item item-3" data-fullsreen-photo data-carousel__item>
-                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-3.svg" alt="">
-                </div>
-                <div class="portfolio__item item-4" data-fullsreen-photo data-carousel__item>
-                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-4.svg" alt="">
-                </div>
-                <div class="portfolio__item item-5" data-fullsreen-photo data-carousel__item>
-                    <img class="portfolio__image" src="../media/images/photos/main-portfolio/portfolio-2.svg" alt="">
-                </div>
-                
-            </div>
-        </div>
         </section>
 
         <!-- Section for clients reviews -->
         <section class="accent--light-blue" id="atsauksmes">
     
         <div class="container reviews">
-            <h2 class="reviews__headig"> Klientu atsauksmes </h2>
+            <h2 class="reviews__heading"> Klientu atsauksmes </h2>
 
             <div class="reviews__carousel" data-carousel>
 

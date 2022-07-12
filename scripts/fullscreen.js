@@ -10,10 +10,13 @@ photosToFullscreen.forEach((item) => {
     item.addEventListener('click', openModal);
 });
 
+function getCurrentIndex() {
+
+}
+
 function openModal (element) {
     let pressedImage = element.currentTarget;
     let pressedImageId = pressedImage.id;
-    console.log(pressedImageId);
 
     const carouselContainer = element.currentTarget.closest('[data-carousel]').cloneNode(true);
     carouselContainer.style.transition = 'none';
@@ -33,14 +36,12 @@ function openModal (element) {
             photo.classList.add('photo-carousel__item');
         });
     };
-
-    let currentIndex = currentPhotos.findIndex(item => {
+    console.log(currentIndex)
+    currentIndex = currentPhotos.findIndex(item => {
         if (item.id === pressedImageId) {
             return true
         }
-    })
-
-    console.log(currentIndex);
+    }) 
 
     // Defining slide width for scroll animation
     const slideWidth = currentPhotos[0].clientWidth;
@@ -66,6 +67,4 @@ function openModal (element) {
         fullsreenModal.classList.remove('modal__fullscreen--active');
         carouselContainer.remove();
     });
-
-    let left
 }

@@ -6,13 +6,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../styles/css-reset.css">
     <link rel="stylesheet" href="../styles/style.css">
-    <link rel="stylesheet" href="../styles/media-queries.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+    <link rel="stylesheet" href="../styles/portfolio.css">
+    <link rel="stylesheet" href="../styles/fullscreen.css">
     <link rel="stylesheet" href="../styles/services-styles.css">
-    <title>Document</title>
+    <link rel="stylesheet" href="../styles/media-queries.css">
+    <title>Jumis-HB</title>
 </head>
 <body>
-    <!-- Header section -->
+    <!-- Header section with navigation -->
     <header class="site-header">
 
         <!-- Section with all navigation controls -->
@@ -22,12 +24,12 @@
             <div class="logo">
                 logo
             </div>
-
+            
             <!-- Main navigation -->
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="../lv/index.html" class="main-nav__link link--bold about-us"> Par mums </a>
+                        <a href="../lv/index.html" class="main-nav__link link--bold" data-restore-intro> Par mums </a>
                     </li>
                     
                     <li class="main-nav__item main-nav__services-list link--bold">
@@ -36,11 +38,11 @@
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold" data-restore-intro>  Portfolio </a>
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                        <a href="#footer-navigation" class="main-nav__link link--bold" data-restore-intro> Kontakti </a>
                     </li>
                 </ul>
             </nav>
@@ -51,7 +53,7 @@
             <!-- Language selector -->
             <nav class="lang-selector">
                 <ul class="lang-selector__list">
-                    <li class="lang-selector__item">
+                    <li class="lang-selector__item" data-collapse-selector>
                             <span class="lang-selector__link link--bold"> LV </span> 
                             <span class="arrow-symbol arrow-down"></span>
                     </li>
@@ -70,6 +72,65 @@
                 </ul>
             </nav>
 
+        </div>
+
+        <!-- Mobile navigation controls -->
+        <div class="container mobile-navigation">
+            <div class="mobile-nav-controls">
+                <!-- Logo -->
+                <div class="logo">
+                    LOGO
+                </div>
+
+                <!-- Selector to call navigation -->
+                <div id="mobile-selector">
+                    <span>☰</span>
+                </div>
+
+                <!-- Language selector -->
+                <nav class="lang-selector">
+                    <ul class="lang-selector__list">
+                        <li class="lang-selector__item" data-collapse-selector>
+                                <span class="lang-selector__link link--bold"> LV </span> 
+                                <span class="arrow-symbol arrow-down"></span>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                EN
+                            </a>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                RU
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item">
+                        <a href="../lv/index.html" class="mobile-nav__link link--bold"> Par mums </a>
+                    </li>
+                    
+                    <li class="mobile-nav__item link--bold">
+                        <span> Pakalpojumi </span>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                    </li>
+                </ul>
+                <span class="mobile-nav__close">&times;</span>
+            </nav>
+            
         </div>
 
         <!-- Section with list of services -->
@@ -167,6 +228,7 @@
                 </div>
             </div>
         </section>
+
     </header>
 
     <!-- Main site content -->
@@ -182,7 +244,7 @@
                     </p>
 
                     <div class="subsection">
-                        <h3 class="heading">
+                        <h3 class="subheading">
                             SIA “Jumis HB” piedāvā:
                         </h3>
                         <ul>

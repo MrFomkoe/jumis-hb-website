@@ -19,7 +19,6 @@ const restoreIntroLinks = document.querySelectorAll('[data-restore-intro]');
 // Language selector
 // const langSelector = document.querySelectorAll('.lang-selector__list');
 const langSelector = document.querySelectorAll('[data-collapse-selector]');
-console.log(langSelector)
 
 /*--- Controls for Cookies section */
 closeCookiesBtn.forEach(element => {

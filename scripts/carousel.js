@@ -3,11 +3,11 @@ const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
 
 // Event listener for buttons
 carouselBtns.forEach(element => {
-    element.addEventListener('click', scrollImage);
+    element.addEventListener('click', scrollImageByButton );
 });
 
 // Function to scroll images
-function scrollImage (element) {
+function scrollImageByButton (element) {
     // Gets the actual button pressed
     let button = element.currentTarget;
     // Gets the parent container to have access to other DOM elements
@@ -37,8 +37,6 @@ function scrollImage (element) {
         if (newIndex < 0 || newIndex >= carouselSlides.length - 2) return;
     }
 
-    console.log(windowWidth)
-
     // Change of the "active slide"
     carouselSlides[newIndex].dataset.active = true;
     delete activeSlide.dataset.active;
@@ -48,3 +46,32 @@ function scrollImage (element) {
     // Animation for scroll
     carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
 }
+
+// Touch controls 
+let isDragging = false;
+let statePos = 0;
+let currentTranslate = 0;
+let prevTranslate = 0;
+let animationId;
+let currentIndex = 0;
+const carouselItems = document.querySelectorAll('[data-carousel__item]');
+
+carouselItems.forEach(item => {
+
+    // Get images from page
+    const carouselImage = item.querySelector('img');
+
+    // Disable context menu 
+    if (carouselImage != null) {
+        carouselImage.addEventListener('dragstart', (e) => e.preventDefault());
+        item.oncontextmenu = function (event) {
+            event.preventDefault();
+            event.stopPropagation();
+            return false;
+        }
+    };
+
+ 
+});
+
+
