@@ -46,11 +46,11 @@
 
 /*--- Image carousel controls ---*/
 
-.photo-carousel {
+.photo-carousel__inner {
     display: inline-flex;
     flex-wrap: nowrap;
     gap: 24px;
-} 
+}
 
 .photo-carousel__item {
     width: 525px;

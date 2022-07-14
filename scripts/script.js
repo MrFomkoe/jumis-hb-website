@@ -75,4 +75,27 @@ langSelector.forEach(element => {
         element.parentElement.classList.toggle('collapsed');
     })
 });
-// Fulscreen photo controls
+
+
+let mobileMenuSelector = document.getElementById('mobile-selector');
+
+mobileMenuSelector.addEventListener('click', showMoblieMenu);
+
+function showMoblieMenu (event) {
+    let selector = event.currentTarget;
+    
+    let mobileContainer = selector.closest('.mobile-navigation');
+    let mobileMenuCloseBtn = mobileContainer.querySelector('.mobile-nav__close');
+    let mobileMenu = mobileContainer.querySelector('.mobile-nav');
+    mobileMenu.style.top = '0';
+    
+    // window.onscroll = function(event) {
+    //     let TopScroll = window.pageYOffset || document.documentElement.scrollTop;
+    //     let LeftScroll = window.pageXOffset || document.documentElement.scrollLeft;
+    //     window.scrollTo(LeftScroll, TopScroll);
+    // }
+    
+    mobileMenuCloseBtn.addEventListener('click', () => {
+        mobileMenu.style.top = '-100%';
+    });
+}

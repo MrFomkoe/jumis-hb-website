@@ -18,9 +18,11 @@
     display: inline-flex;
 }
 
-.modal__fullscreen [data-carousel] {
+.modal__fullscreen [data-carousel__inner] {
     gap: 0;
+    display: flex;
 }
+
 
 .modal__fullscreen [data-carousel__item] {
     display: flex;

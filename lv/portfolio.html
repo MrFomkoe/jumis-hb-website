@@ -33,12 +33,12 @@
             <div class="logo">
                 logo
             </div>
-
+            
             <!-- Main navigation -->
             <nav class="main-nav">
                 <ul class="main-nav__list">
                     <li class="main-nav__item">
-                        <a href="../lv/index.html" class="main-nav__link link--bold about-us"> Par mums </a>
+                        <a href="../lv/index.html" class="main-nav__link link--bold" data-restore-intro> Par mums </a>
                     </li>
                     
                     <li class="main-nav__item main-nav__services-list link--bold">
@@ -47,11 +47,11 @@
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold" data-restore-intro>  Portfolio </a>
                     </li>
 
                     <li class="main-nav__item">
-                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                        <a href="#footer-navigation" class="main-nav__link link--bold" data-restore-intro> Kontakti </a>
                     </li>
                 </ul>
             </nav>
@@ -62,7 +62,7 @@
             <!-- Language selector -->
             <nav class="lang-selector">
                 <ul class="lang-selector__list">
-                    <li class="lang-selector__item">
+                    <li class="lang-selector__item" data-collapse-selector>
                             <span class="lang-selector__link link--bold"> LV </span> 
                             <span class="arrow-symbol arrow-down"></span>
                     </li>
@@ -81,6 +81,65 @@
                 </ul>
             </nav>
 
+        </div>
+
+        <!-- Mobile navigation controls -->
+        <div class="container mobile-navigation">
+            <div class="mobile-nav-controls">
+                <!-- Logo -->
+                <div class="logo">
+                    LOGO
+                </div>
+
+                <!-- Selector to call navigation -->
+                <div id="mobile-selector">
+                    <span>☰</span>
+                </div>
+
+                <!-- Language selector -->
+                <nav class="lang-selector">
+                    <ul class="lang-selector__list">
+                        <li class="lang-selector__item" data-collapse-selector>
+                                <span class="lang-selector__link link--bold"> LV </span> 
+                                <span class="arrow-symbol arrow-down"></span>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                EN
+                            </a>
+                        </li>
+
+                        <li class="lang-selector__item">
+                            <a href="" class="lang-selector__link link--bold">
+                                RU
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+
+            <nav class="mobile-nav">
+                <ul class="mobile-nav__list">
+                    <li class="mobile-nav__item">
+                        <a href="../lv/index.html" class="mobile-nav__link link--bold"> Par mums </a>
+                    </li>
+                    
+                    <li class="mobile-nav__item link--bold">
+                        <span> Pakalpojumi </span>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="../lv/portfolio.html" class="main-nav__link link--bold">  Portfolio </a>
+                    </li>
+
+                    <li class="mobile-nav__item">
+                        <a href="#footer-navigation" class="main-nav__link link--bold"> Kontakti </a>
+                    </li>
+                </ul>
+                <span class="mobile-nav__close">&times;</span>
+            </nav>
+            
         </div>
 
         <!-- Section with list of services -->
@@ -178,6 +237,7 @@
                 </div>
             </div>
         </section>
+
     </header>
 
     <main>
@@ -223,38 +283,40 @@
                 </div>
 
                 <div class="photo-carousel" data-carousel>
-                    <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_1.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_2.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_3.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_4.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_5.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_6.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_7.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_8.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_9.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_10.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/saga/saga_11.jpg" alt="">
+                    <div class="photo-carousel__inner" data-carousel__inner>
+                        <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_1.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_2.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_3.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_4.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_5.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_6.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_7.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_8.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_9.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_10.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/saga/saga_11.jpg" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -301,41 +363,43 @@
                 </div>
 
                 <div class="photo-carousel" data-carousel>
-                    <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_1.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_2.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_3.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_4.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_5.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_6.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_7.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_8.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_9.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_10.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_11.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_1/mukusalas_12.jpg" alt="">
+                    <div class="photo-carousel__inner" data-carousel__inner>
+                        <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_1.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_2.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_3.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_4.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_5.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_6.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_7.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_8.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_9.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_10.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_11.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_1/mukusalas_12.jpg" alt="">
+                        </div>
                     </div>
                 </div>
 
@@ -382,47 +446,49 @@
                 </div>
 
                 <div class="photo-carousel" data-carousel>
-                    <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_1.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_2.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_3.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_4.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_5.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_6.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_7.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_8.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_9.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_10.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_11.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_12.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_13.jpg" alt="">
-                    </div>
-                    <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
-                        <img src="../media/images/photos/mukusalas_2/mukusalas_2_14.jpg" alt="">
+                    <div class="photo-carousel__inner" data-carousel__inner>
+                        <div class="photo-carousel__item" data-carousel__item data-active data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_1.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_2.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_3.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_4.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_5.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_6.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_7.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_8.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_9.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_10.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_11.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_12.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_13.jpg" alt="">
+                        </div>
+                        <div class="photo-carousel__item" data-carousel__item data-fullsreen-photo>
+                            <img src="../media/images/photos/mukusalas_2/mukusalas_2_14.jpg" alt="">
+                        </div>
                     </div>
                 </div>
 
