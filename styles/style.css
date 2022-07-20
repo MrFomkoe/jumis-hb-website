@@ -810,7 +810,6 @@ footer.not-index-page {
 }
 
 .clients-logos__carousel__inner {
-    display: flex;
     gap: 200px;
     position: relative;
 }
