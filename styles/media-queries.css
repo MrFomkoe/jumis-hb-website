@@ -60,6 +60,12 @@
     .subheading {
         font-size: 1.25rem;
     }
+
+    /* Footer settings */
+
+    .footer-nav__logo {
+        display: none;
+    }
 }
 
 @media screen and (max-width: 1250px) {
@@ -128,6 +134,12 @@
         line-height: 2.5rem;
     }
 
+    /* Cookies settings */
+
+    .cookies { 
+        font-size: 1rem;
+    }
+
     /* Navigation settings */
 
     .container.navigation-panel {
@@ -148,7 +160,19 @@
         width: 120px;
     }
 
-    /* Settings for introduction section */
+    .footer-nav__mobile {
+        display: block;
+    }
+
+
+    .copyright,
+    .copyright a {
+        font-size: 0.75rem;
+        color: #ffffff;
+        padding-right: 0;
+    }
+
+    /* Settings for introduction section main page*/
 
     .container.introduction {
         height: fit-content;
@@ -205,6 +229,10 @@
     .clients-logos__carousel__inner {
         gap: 60px;
     }
+
+    .clients-logos__item {
+        width: 120px;
+    }
     
 
     /* Settings for portfolio */
@@ -251,56 +279,51 @@
 
     .reviews__item {
         background-color: #F5F8FE;
-        /* width: 30%; */
-        flex-shrink: 1;
-        padding: 20px 5px 20px 20px;
-        height: 300px;
+        padding: 1rem 0.25rem 1rem 1rem;
         width: 300px;
+        margin: 0;
+        height: auto;
     }
 
     .reviews__content h3 {
         font-size: 1.25rem;
         font-weight: 600;
+        height: auto;
     }
     
     .reviews__text {
         font-size: 1.125rem;
         text-align:left;
+        margin-top: 1rem;
     }
     
     .review__info {
-        position: absolute;
-        bottom: 45px;
-        min-width: 100%;
+        margin-top: 20px;
+        align-items: center;
+    }
+
+    .reviews__company-name {
+        display: flex;
+        align-items: center;
+    }
+
+    .reviews__company-name h4 {
+        font-size: 1.125rem;
+    }
+
+    .reviews__company-name p {
+        display: none;
+        
+    }
+
+    .review__photo {
+        background-color: #ffffff;
     }
     
-    .reviews__text--item-3 {
-        margin-top: 40px;
-    }
-    
-    .reviews__credidentials {
+    /* .reviews__credidentials {
         display: flex;
         margin-bottom: 10px;
-    }
-    
-    .reviews__company-name h4 {
-        font-size: 1.375rem;
-        font-weight: 600;
-    }
-    
-    .reviews__company-name p {
-        font-size: 1.25rem;
-    }
-    
-    .review__photo {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        width: 55px;
-        height: 55px;
-        border-radius: 50%;
-        margin-right: 20px;
-    }
+    } */
     
     .review__photo h4 {
         font-size: 1.25rem;
@@ -343,7 +366,13 @@
         font-size: 1.25rem;
     }
 
+    /* Footer settings */
+
     footer {
+        background-color: #0D318D;
+    }
+
+    .footer-nav {
         display: none;
     }
 
@@ -369,7 +398,7 @@
 
     [class$='heading'] {
         font-size: 1.25rem;
-        line-height: 1.375rem;
+        line-height: 1.5rem;
     }
 
     h1[class$='heading'] {
@@ -378,12 +407,12 @@
 
     .introduction__heading .accent--blue {
         font-size: 1.375rem;
-        line-height: 1.5rem;
+        line-height: 1.75rem;
     }
 
     p,
     [class$='text'] {
-        font-size: 1rem;
+        font-size: 1.125rem;
         line-height: 1.375rem;
     }
 
@@ -399,7 +428,7 @@
     .more-button__link {
         width: 160px;
         height: 50px;
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     /* Settings for client's logos section */
@@ -410,10 +439,6 @@
 
     .clients-logos__carousel__inner {
         gap: 40px;
-    }
-
-    .clients-logos__item {
-        width: 120px;
     }
     
 
@@ -449,11 +474,11 @@
 
     /* Services pages settings */ 
     .subsection {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     .subheading {
-        font-size: 1rem;
+        font-size: 1.125rem;
     }
 
     /* Settings for fullsceen modal */

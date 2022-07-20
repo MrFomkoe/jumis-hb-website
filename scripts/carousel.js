@@ -29,35 +29,51 @@ carouselItems.forEach(item => {
 // Adding touch event listeners to each carousel on webpage
 
 carousels.forEach(carousel => {
-    carousel.addEventListener('touchstart', touchScrollStart);
-    carousel.addEventListener('touchmove', touchScrollMove);
+    carousel.addEventListener('touchstart', touchScrollStart, {passive: true});
+    carousel.addEventListener('touchmove', touchScrollMove, {passive: true});
+    carousel.addEventListener('touchend', touchScrollEnd, {passive: true});
 });
 
 // Function to determine start position for carousel
 
 function touchScrollStart (e) {
     let innerContainer = e.currentTarget.querySelector('[data-carousel__inner]');
-    innerContainer.style.transition = '';
     dragged = true;
     startX = getPositionX(e) - innerContainer.offsetLeft;
 }
 
 function touchScrollMove (e) {
-    let carouselContainer = e.currentTarget;
+    let outerContainer = e.currentTarget;
     let innerContainer = e.currentTarget.querySelector('[data-carousel__inner]');
     if (!dragged) return;
     x = e.targetTouches[0].clientX;
-    
+    let widthToBeMoved = x - startX;
 
-    innerContainer.style.left = `${x - startX}px`;
+    // innerContainer.style.left = `${x - startX}px`;
 
-    // innerContainer.style.transform = `translateX(${x - startX}px)`;
-
-    checkBoundary(carouselContainer, innerContainer);
+    animationId = requestAnimationFrame(function () {
+        touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer);
+    })
 }
 
-function checkBoundary (carouselContainer, innerContainer) {
-    let outer = carouselContainer.getBoundingClientRect();
+function touchScrollEnd () {
+    dragged = false;
+    cancelAnimationFrame(animationId);
+}
+
+function touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer) {
+    innerContainer.style.left = `${widthToBeMoved}px`;
+    checkBoundary (outerContainer, innerContainer);
+    if (dragged) {
+        requestAnimationFrame(function() {
+            touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer);
+        });
+    };
+}
+
+
+function checkBoundary (outerContainer, innerContainer) {
+    let outer = outerContainer.getBoundingClientRect();
     let inner = innerContainer.getBoundingClientRect();
 
     if (parseInt(innerContainer.style.left) > 0) {
@@ -92,20 +108,20 @@ function changeImage (element, offset) {
         // Gets the parent container to have access to other DOM elements
         let container = element.currentTarget.closest('.container');
         // Carousel
-        let carouselContainer = container.querySelector('[data-carousel__inner]');
-        carouselContainer.style.transition = 'all 0.3s ease';
+        let innerContainer = container.querySelector('[data-carousel__inner]');
+        innerContainer.style.transition = 'none';
         // Individual slides
-        let carouselSlides = carouselContainer.querySelectorAll('[data-carousel__item]');
+        let carouselSlides = innerContainer.querySelectorAll('[data-carousel__item]');
         // Defining slide width for scroll animation
-        const slideWidth = getSlideWidth(carouselContainer, carouselSlides);
+        const slideWidth = getSlideWidth(innerContainer, carouselSlides);
     
         // Slide to be shown the first
-        const activeSlide = carouselContainer.querySelector('[data-active]'); 
+        const activeSlide = innerContainer.querySelector('[data-active]'); 
+
         // Index of the above slide
-    
         let currentIndex = [...carouselSlides].indexOf(activeSlide);
         let newIndex = currentIndex + offset;
-        console.log(currentIndex)
+
         // Check of indexes so it won't exceed/subceed amount of elements in nodelist
         let windowWidth = window.innerWidth;
         if ((slideWidth)/windowWidth >= 0.40) {
@@ -122,20 +138,19 @@ function changeImage (element, offset) {
     
         // Calculation of widht to be moved
         let widthToBeMoved = -slideWidth * newIndex;
-        // Animation for scroll
-        // carouselContainer.style.left = `${widthToBeMoved}px`;
-        carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
+
+        innerContainer.style.transition = 'all 0.3s ease';
+        innerContainer.style.transform = `translateX(${widthToBeMoved}px)`;
 }
 
-function getSlideWidth (carouselContainer, carouselSlides) {
+function getSlideWidth (innerContainer, carouselSlides) {
     let imageWidth = carouselSlides[0].clientWidth;
 
     // Defining gap between images
-    let slideGap = window.getComputedStyle(carouselContainer).getPropertyValue('gap');
+    let slideGap = window.getComputedStyle(innerContainer).getPropertyValue('gap');
     slideGap = parseInt(slideGap.replace(/\D/g,''));
 
     let slideWidth = imageWidth + slideGap;
     return slideWidth;
 }
 
-// Touch controls for fullscreen

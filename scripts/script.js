@@ -1,7 +1,7 @@
 /*--- Variables ---*/
 
 // Cookies section
-const cookies = document.querySelectorAll('.cookies');
+const cookiesPanel = document.querySelectorAll('.cookies');
 const closeCookiesBtn = document.querySelectorAll('.cookies__close');
 
 // Section with company introduction
@@ -26,7 +26,7 @@ closeCookiesBtn.forEach(element => {
 });
 
 function closeCookies () {
-    cookies.forEach(element => {
+    cookiesPanel.forEach(element => {
         element.style.display = 'none';
     });
 };
@@ -87,15 +87,36 @@ function showMoblieMenu (event) {
     let mobileContainer = selector.closest('.mobile-navigation');
     let mobileMenuCloseBtn = mobileContainer.querySelector('.mobile-nav__close');
     let mobileMenu = mobileContainer.querySelector('.mobile-nav');
+    let contactPageLink = mobileContainer.querySelector('[data-contact-link]');
     mobileMenu.style.top = '0';
-    
-    // window.onscroll = function(event) {
-    //     let TopScroll = window.pageYOffset || document.documentElement.scrollTop;
-    //     let LeftScroll = window.pageXOffset || document.documentElement.scrollLeft;
-    //     window.scrollTo(LeftScroll, TopScroll);
-    // }
     
     mobileMenuCloseBtn.addEventListener('click', () => {
         mobileMenu.style.top = '-100%';
     });
+
+    contactPageLink.addEventListener('click', () => {
+        mobileMenu.style.top = '-100%';
+    });
 }
+
+let mobileServicesBtn = document.querySelectorAll('[data-mobile-services]')
+
+
+mobileServicesBtn.forEach(btn => {
+    btn.addEventListener('click', showMoblieServices);
+});
+
+function showMoblieServices (event) {
+    let mobileServices = document.querySelector('.mobile-nav__services-list');
+    let mobileServicesClose = document.querySelector('.mobile-nav__services-list__close');
+    
+    console.log(mobileServices)
+
+
+    mobileServices.style.top = '0';
+    
+    mobileServicesClose.addEventListener('click', () => {
+        mobileServices.style.top = '-100%';
+    });
+}
+

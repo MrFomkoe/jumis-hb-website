@@ -67,7 +67,6 @@ img {
 [data-carousel__inner] {
     display: inline-flex;
     position: relative;
-    /* transition: all 0.3s ease; */
 }
 
 
@@ -198,12 +197,17 @@ header {
     display: none;
 }
 
+.mobile-nav-controls .logo {
+    width: 150px;
+    height: 60px;
+}
+
 
 
 #mobile-selector {
     
     position: relative;
-    width: 50%;
+    width: 35%;
     display: flex;
     justify-content: end;
     font-weight: 700;
@@ -211,8 +215,8 @@ header {
 
 #mobile-selector span {
     color: #0D318D;
-    margin-right: 10%;
-    font-size: 2.5rem;
+    padding-right: 10%;
+    font-size: 2rem;
     transform:scale(1.5,1.0);
 }
 
@@ -249,6 +253,48 @@ header {
     font-size: 3rem;
 }
 
+.mobile-nav__services-list {
+    transition: top 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: -100%;
+    left: 0;
+    z-index: 100;
+    background-color: #ffffff;
+    touch-action: none;
+}
+
+.mobile-nav__services-list .services-list__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    font-size: 1.25rem;
+    font-weight: 600;
+    background-color: #ffffff;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+    margin-bottom: 25px;
+}
+
+.mobile-nav__services-list__close {
+    position: absolute;
+    top: 10%;
+    right: 10%;
+    font-size: 3rem;
+}
+
+.mobile-nav__services-list .services-list__item:hover,
+.services-list__item:hover a {
+    background-color: #ffffff;
+    color: #000000;
+}
+
 /*---- Navigation ----*/
 
 .navigation-panel {
@@ -268,7 +314,7 @@ header {
     display: grid;
     column-gap: 40px;
     row-gap: 20px;
-    grid-template-columns: minmax(130px, 12%) minmax(550px, 700px) minmax(290px, auto) minmax(125px, 160px);
+    grid-template-columns: minmax(130px, 12%) minmax(550px, 700px) minmax(290px, auto) minmax(100px, 160px);
     grid-template-areas: 
         "logo main-nav email lang";
 }
@@ -280,6 +326,10 @@ header {
 
 .logo {
     grid-area: logo;
+    background-image: url("../media/images/photos/logos/jumis_logo.jpg");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
 }
 
 .main-nav {
@@ -385,6 +435,106 @@ header {
     background-color: #ffffff;
 }
 
+
+/*---- Footer settings ----*/
+
+footer.not-index-page {
+    position: relative;
+    top: 800px;
+}
+
+.footer-nav {
+    display: flex;
+    gap: 10px;
+    justify-content: space-between;
+    padding-right: 8%;
+    padding-top: 60px;
+}
+
+.footer-nav__block {
+    min-width: fit-content;
+    margin-top: 0;
+}
+
+.footer-nav__block.more-button {
+    align-self: flex-start;
+}
+
+.footer-nav__item {
+    margin-bottom: 1rem;
+}
+
+.item--bold {
+    font-weight: 600;
+    font-size: 1.375rem;
+}
+
+.footer-nav__link {
+    font-size: 1.25rem;
+}
+
+.footer-nav__link.link--bold {
+    font-size: 1.375rem;
+}
+
+.link-map {
+    text-decoration: underline;
+}
+
+.footer-nav__link:hover {
+    color: #0D318D;
+}
+
+.footer-nav__item .more-button {
+    display: none;
+}
+
+.footer-nav__mobile {
+    display: none;
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.footer-nav__mobile__list {
+    padding-top: 2.375rem;
+    padding-bottom: 8rem;
+}
+
+.footer-nav__mobile__item {
+    margin-bottom: 1.5rem;
+}
+
+.footer-nav__mobile__item a {
+    font-size: 1.25rem;
+    color: #ffffff;
+}
+
+.footer-nav__mobile__item.contacts > .footer-nav__link {
+    line-height: 2rem;
+    font-size: 1rem;
+}
+
+.footer-nav__logo {
+    width: 200px;
+    background-position: top;
+}
+
+.copyright {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.copyright span {
+    display: block;
+    padding-bottom: 2rem;
+    /* color: #000000; */
+}
+
+.copyright .developed-by {
+    font-size: 0.75rem;
+    padding-right: 8%;
+}
 
 
 
@@ -660,13 +810,14 @@ header {
 }
 
 .clients-logos__carousel__inner {
-    gap: 100px;
+    display: flex;
+    gap: 200px;
     position: relative;
 }
 
 .clients-logos__item {
     flex-shrink: 0;
-    width: 200px;
+    width: 250px;
     object-position: center;
 }
 
@@ -731,12 +882,14 @@ header {
 
 .portfolio__images__inner{
     display: grid;
-    gap: 1%;
-    padding-right: 10%;
-    grid-template-columns: 34% 18% 18% 10% 20%;
+    row-gap: 1%;
+    column-gap: 0.5%;
+    margin-right: 10%;
+    grid-template: 59% 40% / 32% 18% 18% 10% 20%;
     grid-template-areas: 
         "one two two two three"
         "one four four five five";
+
 }
 
 .portfolio__item {
@@ -786,18 +939,18 @@ header {
 }
 
 .reviews__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     flex-shrink: 0;
     background-color: #ffffff;
     width: 600px;
     height: 450px;
-    padding: 45px 80px 45px 20px;
+    padding: 2.5rem 2.5rem 2.5rem 1.25rem;
     border-radius: 10px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 }
 
-.reviews__content {
-    position: relative;
-}
 
 .reviews__content h3 {
     font-size: 1.375rem;
@@ -807,12 +960,6 @@ header {
 .reviews__text {
     font-size: 1.25rem;
     text-align: justify;
-}
-
-.review__info {
-    position: absolute;
-    bottom: 45px;
-    min-width: 100%;
 }
 
 .reviews__text--item-3 {
@@ -834,6 +981,7 @@ header {
 }
 
 .review__photo {
+    flex-shrink: 0;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -854,55 +1002,3 @@ header {
     color:#0D318D;
 }
 
-/*---- Footer settings ----*/
-
-footer.not-index-page {
-    position: relative;
-    top: 800px;
-}
-
-.footer-nav {
-    display: flex;
-    gap: 10px;
-    justify-content: space-between;
-    padding-right: 8%;
-    padding-top: 60px;
-}
-
-.footer-nav__block {
-    min-width: fit-content;
-    margin-top: 0;
-}
-
-.footer-nav__block.more-button {
-    align-self: flex-start;
-}
-
-.footer-nav__item {
-    margin-bottom: 1rem;
-}
-
-.item--bold {
-    font-weight: 600;
-    font-size: 1.375rem;
-}
-
-.footer-nav__link {
-    font-size: 1.25rem;
-}
-
-.footer-nav__link.link--bold {
-    font-size: 1.375rem;
-}
-
-.link-map {
-    text-decoration: underline;
-}
-
-.footer-nav__link:hover {
-    color: #0D318D;
-}
-
-.footer-nav__item .more-button {
-    display: none;
-}

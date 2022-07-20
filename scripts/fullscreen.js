@@ -61,13 +61,10 @@ function openModal (element) {
     let widthToBeMoved = -(slideWidth) * currentIndex;
     // Animation for scroll
     carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
-    setTimeout(() => {
-        carouselContainer.style.transition = 'all 0.3s ease-in-out';
-    }, 100);
 
-    carouselContainer.addEventListener('touchstart', changeImageByTouchStart);
-    carouselContainer.addEventListener('touchmove', changeImageByTouchMove);
-    let offset = carouselContainer.addEventListener('touchend', changeImageByTouchEnd);
+    carouselContainer.addEventListener('touchstart', changeImageByTouchStart, {passive: true});
+    carouselContainer.addEventListener('touchmove', changeImageByTouchMove, {passive: true});
+    carouselContainer.addEventListener('touchend', changeImageByTouchEnd, {passive: true});
 
     closeBtn.addEventListener('click', () => {
         fullsreenModal.classList.remove('modal__fullscreen--active');

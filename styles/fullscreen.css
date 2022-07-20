@@ -1,5 +1,4 @@
 .modal__fullscreen {
-    transition: all 0.2s ease;
     display: none;
     position: fixed;
     width: 100%;
