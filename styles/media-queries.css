@@ -69,25 +69,30 @@
 }
 
 @media screen and (max-width: 1250px) {
+    .cookies p { 
+        font-size: 1.125rem;
+    }
+
     /* Introduction section settings */
+
+    .introduction__text {
+        margin: 0;
+    }
 
     /* Video section */
     .container.video-section {
         flex-wrap: wrap;
     }
+
+    .video-section__text {
+        margin: 12px 0 0 0;
+    }
+
     .video-section__video-container {
         margin: 40px auto 0;
         padding: 0;
     }
 
-    /* Footer settings */
-    .footer-nav__item .more-button {
-        display: block;
-    }
-
-    .footer-nav__block.more-button {
-        display: none;
-    }
 }
 
 @media screen and (max-width: 1024px) {
@@ -136,8 +141,8 @@
 
     /* Cookies settings */
 
-    .cookies { 
-        font-size: 1rem;
+    .cookies p { 
+        font-size: 1rem !important;
     }
 
     /* Navigation settings */
@@ -241,8 +246,17 @@
         flex-wrap: wrap;
     }
 
+    .portfolio-page .content {
+        margin-bottom: 40px;
+    }
+
     .portfolio__content .more-button {
         display: none;
+    }
+
+    .portfolio__content {
+        flex-basis: 100%;
+        max-width: none;
     }
 
     .portfolio .mobile-button {
@@ -296,6 +310,10 @@
         text-align:left;
         margin-top: 1rem;
     }
+
+    .reviews__text_hide-btn {
+        display: inline;
+    }
     
     .review__info {
         margin-top: 20px;
@@ -320,10 +338,6 @@
         background-color: #ffffff;
     }
     
-    /* .reviews__credidentials {
-        display: flex;
-        margin-bottom: 10px;
-    } */
     
     .review__photo h4 {
         font-size: 1.25rem;
@@ -338,7 +352,7 @@
 
     /* Porfolio page settings */
 
-    .content {
+    .portfolio-page .content {
         margin-bottom: 30px;
     }
 
@@ -374,6 +388,10 @@
 
     .footer-nav {
         display: none;
+    }
+
+    .footer-nav__link:hover {
+        color: #ffffff;
     }
 
     /* Settings for fullsceen modal */
@@ -419,10 +437,6 @@
     [class$='content'] {
         min-width: auto;
         padding: 0;
-    }
-
-    .more-button {
-        margin: 20px 0 20px 0;
     }
 
     .more-button__link {
@@ -491,5 +505,12 @@
         font-size: 4rem;
         z-index: 100;
         color: white;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    .services-list__mobile .services-list__item {
+        width: 100%;
+        font-size: 1rem;
     }
 }

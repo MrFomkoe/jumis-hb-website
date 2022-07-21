@@ -118,5 +118,14 @@ function showMoblieServices (event) {
     mobileServicesClose.addEventListener('click', () => {
         mobileServices.style.top = '-100%';
     });
-}
+};
 
+let reviewsHideBtn = document.querySelectorAll('.reviews__text_hide-btn');
+
+reviewsHideBtn.forEach(btn => {
+    btn.addEventListener('click', (element) => {
+        let seeMore = element.currentTarget.previousElementSibling;
+        seeMore.style.display = 'inline';
+        btn.style.display = 'none';
+    });
+});
