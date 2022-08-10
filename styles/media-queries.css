@@ -73,12 +73,6 @@
         font-size: 1.125rem;
     }
 
-    /* Introduction section settings */
-
-    .introduction__text {
-        margin: 0;
-    }
-
     /* Video section */
     .container.video-section {
         flex-wrap: wrap;
@@ -194,6 +188,7 @@
     .introduction__heading, 
     .introduction__text {
         padding: 0 5%;
+        margin-bottom: 0;
     }
 
     .overlay__image {

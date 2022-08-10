@@ -5,12 +5,12 @@ const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
 let dragged = false;
 let startX;
 let x;
+let widthToBeScrolled;
 let animationId;
 let currentIndex = 0;
 const carouselItems = document.querySelectorAll('[data-carousel__item]');
 const carousels = document.querySelectorAll('[data-carousel]');
-
-
+let windowWidth = window.innerWidth;
 
 // Disabling context menu + image drag
 
@@ -32,28 +32,42 @@ carousels.forEach(carousel => {
     carousel.addEventListener('touchstart', touchScrollStart, {passive: true});
     carousel.addEventListener('touchmove', touchScrollMove, {passive: true});
     carousel.addEventListener('touchend', touchScrollEnd, {passive: true});
+
+    window.addEventListener('resize', () => {
+        windowWidth = window.innerWidth;
+        if (windowWidth <1024) {
+            carousel.addEventListener('mousedown', touchScrollStart, {passive: true});
+            carousel.addEventListener('mousemove', touchScrollMove, {passive: true});
+            carousel.addEventListener('mouseup', touchScrollEnd, {passive: true});
+            carousel.addEventListener('mouseleave', touchScrollEnd, {passive: true});
+        } else {
+            carousel.removeEventListener('mousedown', touchScrollStart, {passive: true});
+            carousel.removeEventListener('mousemove', touchScrollMove, {passive: true});
+            carousel.removeEventListener('mouseup', touchScrollEnd, {passive: true});
+            carousel.removeEventListener('mouseleave', touchScrollEnd, {passive: true});
+        }
+    });
 });
 
 // Function to determine start position for carousel
 
 function touchScrollStart (e) {
+    
     let innerContainer = e.currentTarget.querySelector('[data-carousel__inner]');
+    let outerContainer = e.currentTarget;
     dragged = true;
     startX = getPositionX(e) - innerContainer.offsetLeft;
+
+    animationId = requestAnimationFrame(function () {
+        touchScrollAnimation(innerContainer, outerContainer);
+    })
+
 }
 
 function touchScrollMove (e) {
-    let outerContainer = e.currentTarget;
-    let innerContainer = e.currentTarget.querySelector('[data-carousel__inner]');
     if (!dragged) return;
-    x = e.targetTouches[0].clientX;
-    let widthToBeMoved = x - startX;
-
-    // innerContainer.style.left = `${x - startX}px`;
-
-    animationId = requestAnimationFrame(function () {
-        touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer);
-    })
+    x = getPositionX(e);
+    widthToBeScrolled = x - startX;
 }
 
 function touchScrollEnd () {
@@ -61,12 +75,12 @@ function touchScrollEnd () {
     cancelAnimationFrame(animationId);
 }
 
-function touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer) {
-    innerContainer.style.left = `${widthToBeMoved}px`;
+function touchScrollAnimation(innerContainer, outerContainer) {
+    innerContainer.style.left = `${widthToBeScrolled}px`;
     checkBoundary (outerContainer, innerContainer);
     if (dragged) {
         requestAnimationFrame(function() {
-            touchScrollAnimation(innerContainer, widthToBeMoved, outerContainer);
+            touchScrollAnimation(innerContainer, outerContainer);
         });
     };
 }
@@ -84,10 +98,8 @@ function checkBoundary (outerContainer, innerContainer) {
 }
 
 function getPositionX (event) {
-    return event.targetTouches[0].clientX;
+    return event.type.includes('mouse') ? event.pageX : event.targetTouches[0].clientX;
 }
-
-
 
 
 // Button carousel controls 
@@ -123,7 +135,7 @@ function changeImage (element, offset) {
         let newIndex = currentIndex + offset;
 
         // Check of indexes so it won't exceed/subceed amount of elements in nodelist
-        let windowWidth = window.innerWidth;
+
         if ((slideWidth)/windowWidth >= 0.40) {
             if (newIndex < 0 || newIndex >= carouselSlides.length) return;
         } else if (((slideWidth)/windowWidth >= 0.30) && ((slideWidth)/windowWidth < 0.40)) {
@@ -138,6 +150,7 @@ function changeImage (element, offset) {
     
         // Calculation of widht to be moved
         let widthToBeMoved = -slideWidth * newIndex;
+
 
         innerContainer.style.transition = 'all 0.3s ease';
         innerContainer.style.transform = `translateX(${widthToBeMoved}px)`;

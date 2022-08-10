@@ -1,8 +1,22 @@
-/*--- Variables ---*/
-
 // Cookies section
 const cookiesPanel = document.querySelectorAll('.cookies');
 const closeCookiesBtn = document.querySelectorAll('.cookies__close');
+
+/*--- Controls for Cookies section */
+closeCookiesBtn.forEach(element => {
+    element.addEventListener('click', closeCookies);
+});
+
+function closeCookies () {
+    cookiesPanel.forEach(element => {
+        element.style.display = 'none';
+    });
+};
+
+
+/*--- Variables ---*/
+
+
 
 // Section with company introduction
 const introduction = document.querySelector('.introduction');
@@ -20,16 +34,6 @@ const restoreIntroLinks = document.querySelectorAll('[data-restore-intro]');
 // const langSelector = document.querySelectorAll('.lang-selector__list');
 const langSelector = document.querySelectorAll('[data-collapse-selector]');
 
-/*--- Controls for Cookies section */
-closeCookiesBtn.forEach(element => {
-    element.addEventListener('click', closeCookies);
-});
-
-function closeCookies () {
-    cookiesPanel.forEach(element => {
-        element.style.display = 'none';
-    });
-};
 
 
 /*--- Controls for introduction section ---*/
