@@ -74,10 +74,10 @@ carousels.forEach(carousel => {
     // Touch events
     carousel.addEventListener('touchstart', (event) => {
         touchStart(event, carouselProperties);
-    });
+    }, { passive: true });
     carousel.addEventListener('touchmove', (event) => {
         touchMove(event, carouselProperties);
-    });
+    }, { passive: true });
     carousel.addEventListener('touchend', (event) => {
         touchEnd(event, carouselProperties);
     });
