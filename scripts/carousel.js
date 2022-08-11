@@ -170,13 +170,16 @@ function openModal (item, index) {
 }
 
 function changeImageByButton (btn, carouselProperties) {
+    let slideWidth = getSlideWidth(carouselProperties);
+    let imagesInViewport = getimagesInViewport(carouselProperties, slideWidth)
+
     let offset = btn.classList.contains('arrow-right') ? 1 : -1;
     carouselProperties.currentIndex = carouselProperties.currentIndex += offset;
 
     if (carouselProperties.currentIndex < 0) {
         carouselProperties.currentIndex = 0;
-    }   else if (carouselProperties.currentIndex >= carouselProperties.slides.length - 1) {
-        carouselProperties.currentIndex = carouselProperties.slides.length - 1;
+    }   else if (carouselProperties.currentIndex >= carouselProperties.slides.length - imagesInViewport) {
+        carouselProperties.currentIndex = carouselProperties.slides.length - imagesInViewport;
     }
 
     setPositionByIndex(carouselProperties);
@@ -229,15 +232,37 @@ function setCarouselPosition(carouselProperties) {
     carouselProperties.innerContainer.style.transform = `translateX(${carouselProperties.currentTranslate}px)`;
 }
 
+function getSlideWidth (carouselProperties) {
+    let calcSlideWidth = carouselProperties.getSlideWidth(carouselProperties.slides);
+    return calcSlideWidth;
+}
 
+function getimagesInViewport (carouselProperties, slideWidth) {
+    let calcImagesInViewport = Math.floor(carouselProperties.outerContainer.getBoundingClientRect().width / slideWidth);
+    return calcImagesInViewport;
+}
 
 function getCurrentIndex(carouselProperties, scrolledBy) {
-    // let slideWidth = carouselProperties.slideWidth();
-    let slideWidth = carouselProperties.getSlideWidth(carouselProperties.slides);
+    let slideWidth = getSlideWidth(carouselProperties);
+    let imagesInViewport = getimagesInViewport(carouselProperties, slideWidth)
+    if (imagesInViewport <= 0) {
+        imagesInViewport = 1;
+    }
 
-    let offset =  Math.round(scrolledBy / -slideWidth);
+    // let offset =  Math.ceil(scrolledBy / -slideWidth);
+    let offset =  scrolledBy / -slideWidth;
+    if (offset < -0.2) {
+        offset = Math.floor(offset);
+        // offset = 0
+    } else if (offset > 0.2) {
+        offset = Math.ceil(offset);
+    } else if (offset > -0.19 || offset < 0.19) {
+        offset = Math.round(offset);
+    }
+
     let newIndex = carouselProperties.currentIndex + offset;
-    let imagesInViewport = Math.round(carouselProperties.outerContainer.getBoundingClientRect().width / slideWidth);
+
+    console.log(offset)
 
     if (newIndex < 0) {
         newIndex = 0;
@@ -248,7 +273,6 @@ function getCurrentIndex(carouselProperties, scrolledBy) {
 }
 
 function setPositionByIndex(carouselProperties) {
-    // carouselProperties.currentTranslate = carouselProperties.currentIndex * - carouselProperties.slideWidth();
     carouselProperties.currentTranslate = carouselProperties.currentIndex * - carouselProperties.getSlideWidth(carouselProperties.slides);
     carouselProperties.prevTranslate = carouselProperties.currentTranslate;
     setCarouselPosition(carouselProperties);
