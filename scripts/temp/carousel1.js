@@ -39,3 +39,31 @@ function scrollImage (element) {
     // Animation for scroll
     carouselContainer.style.transform = `translateX(${widthToBeMoved}px)`;
 }
+
+
+
+    // let carouselProperties = {
+    //     isDragging: false,
+    //     startPos: 0,
+    //     currentTranslate: 0,
+    //     prevTranslate: 0,
+    //     animationID: 0,
+    //     currentIndex: 0,
+
+    //     outerContainer: carousel,
+    //     outerOffset: carousel.offsetLeft,
+    //     innerContainer: carousel.querySelector("[data-carousel__inner]"),
+    //     slides: Array.from(carousel.querySelectorAll('[data-carousel__item]')),
+    //     slideWidth: function () {
+    //         // Defining image width
+    //         let imageWidth = this.slides[0].clientWidth;
+
+    //         // Defining gap between images
+    //         let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
+    //         slideGap = parseInt(slideGap.replace(/\D/g,''));
+            
+    //         // Defining and returning full width
+    //         let slideWidth = imageWidth + slideGap;
+    //         return slideWidth;
+    //     },
+    // }

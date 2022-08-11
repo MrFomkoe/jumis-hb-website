@@ -62,7 +62,7 @@ img {
 
 [data-carousel] {
     position: relative;
-
+    display: flex;
 }
 
 [data-carousel__inner] {
@@ -335,6 +335,12 @@ header {
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
+}
+
+.logo a {
+    display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .main-nav {
