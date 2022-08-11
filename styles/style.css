@@ -62,11 +62,15 @@ img {
 
 [data-carousel] {
     position: relative;
+
 }
 
 [data-carousel__inner] {
     display: inline-flex;
     position: relative;
+    transform: translateX(0);
+    will-change: transform;
+    transition: transform 0.2s ease-out;
 }
 
 

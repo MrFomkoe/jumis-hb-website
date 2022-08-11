@@ -1,16 +1,11 @@
 // Defining all button for all carousels on the webpage
-const carouselBtns = document.querySelectorAll('[data-carousel-btn]')
 
-// Touch controls 
-let dragged = false;
-let startX;
-let x;
-let widthToBeScrolled;
-let animationId;
-let currentIndex = 0;
 const carouselItems = document.querySelectorAll('[data-carousel__item]');
 const carousels = document.querySelectorAll('[data-carousel]');
+
+// Checking window width
 let windowWidth = window.innerWidth;
+
 
 // Disabling context menu + image drag
 
@@ -21,149 +16,151 @@ carouselItems.forEach(item => {
         item.oncontextmenu = function (event) {
             event.preventDefault();
             event.stopPropagation();
-            return false;
+            return false; 
         }
     };
 });
 
-// Adding touch event listeners to each carousel on webpage
 
 carousels.forEach(carousel => {
-    carousel.addEventListener('touchstart', touchScrollStart, {passive: true});
-    carousel.addEventListener('touchmove', touchScrollMove, {passive: true});
-    carousel.addEventListener('touchend', touchScrollEnd, {passive: true});
+    let carouselProperties = {
+        isDragging: false,
+        startPos: 0,
+        currentTranslate: 0,
+        prevTranslate: 0,
+        animationID: 0,
+        currentIndex: 0,
+
+        outerContainer: carousel,
+        outterOffset: carousel.offsetLeft,
+        innerContainer: carousel.querySelector("[data-carousel__inner]"),
+        slides: Array.from(carousel.querySelectorAll('[data-carousel__item]')),
+        slideWidth: function () {
+            // Defining image width
+            let imageWidth = this.slides[0].clientWidth;
+
+            // Defining gap between images
+            let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
+            slideGap = parseInt(slideGap.replace(/\D/g,''));
+            
+            // Defining and returning full width
+            let slideWidth = imageWidth + slideGap;
+            return slideWidth;
+        },
+    }
+    console.log(carouselProperties.slides)
+    const carouselBtns = carousel.closest('.container').querySelectorAll('[data-carousel-btn]')
+    carouselBtns.forEach(btn => {
+        btn.addEventListener('click', ()=> {
+            changeImageByButton(btn, carouselProperties)
+        });
+    });
+
+    // Touch events
+    carousel.addEventListener('touchstart', (event) => {
+        touchStart(event, carouselProperties);
+    });
+    carousel.addEventListener('touchmove', (event) => {
+        touchMove(event, carouselProperties);
+    });
+    carousel.addEventListener('touchend', (event) => {
+        touchEnd(event, carouselProperties);
+    });
+
+    // Mouse events
+    carousel.addEventListener('mousedown', (event) => {
+        touchStart(event, carouselProperties);
+    });
+    carousel.addEventListener('mousemove', (event) => {
+        touchMove(event, carouselProperties);
+    });
+    carousel.addEventListener('mouseup', (event) => {
+        touchEnd(event, carouselProperties);
+    });
 
     window.addEventListener('resize', () => {
-        windowWidth = window.innerWidth;
-        if (windowWidth <1024) {
-            carousel.addEventListener('mousedown', touchScrollStart, {passive: true});
-            carousel.addEventListener('mousemove', touchScrollMove, {passive: true});
-            carousel.addEventListener('mouseup', touchScrollEnd, {passive: true});
-            carousel.addEventListener('mouseleave', touchScrollEnd, {passive: true});
-        } else {
-            carousel.removeEventListener('mousedown', touchScrollStart, {passive: true});
-            carousel.removeEventListener('mousemove', touchScrollMove, {passive: true});
-            carousel.removeEventListener('mouseup', touchScrollEnd, {passive: true});
-            carousel.removeEventListener('mouseleave', touchScrollEnd, {passive: true});
-        }
+        setPositionByIndex(carouselProperties);
     });
 });
 
-// Function to determine start position for carousel
+function changeImageByButton (btn, carouselProperties) {
+    let offset = btn.classList.contains('arrow-right') ? 1 : -1;
+    carouselProperties.currentIndex = carouselProperties.currentIndex += offset;
 
-function touchScrollStart (e) {
+    if (carouselProperties.currentIndex < 0) {
+        carouselProperties.currentIndex = 0;
+    }   else if (carouselProperties.currentIndex >= carouselProperties.slides.length - 1) {
+        carouselProperties.currentIndex = carouselProperties.slides.length - 1;
+    }
+
+    setPositionByIndex(carouselProperties);
+}
+
+function touchStart(event, carouselProperties) {
+    carouselProperties.startPos = getPositionX(event) - carouselProperties.outterOffset;
+    carouselProperties.isDragging = true;
+    carouselProperties.animationID = requestAnimationFrame(function() {
+        scrollAnimation(carouselProperties)
+    });
+}
+
+function touchMove (event, carouselProperties) {
+    if (carouselProperties.isDragging) {
+        const currentPosition = getPositionX(event) - carouselProperties.outterOffset;
+        carouselProperties.currentTranslate = parseInt(carouselProperties.prevTranslate + currentPosition - carouselProperties.startPos);
+    }
+}
+
+function touchEnd(event, carouselProperties) {
+    cancelAnimationFrame(carouselProperties.animationID);
+    carouselProperties.isDragging = false;
     
-    let innerContainer = e.currentTarget.querySelector('[data-carousel__inner]');
-    let outerContainer = e.currentTarget;
-    dragged = true;
-    startX = getPositionX(e) - innerContainer.offsetLeft;
+    const scrolledBy = carouselProperties.currentTranslate - carouselProperties.prevTranslate;
+    carouselProperties.prevTranslate = carouselProperties.currentTranslate;
+    
 
-    animationId = requestAnimationFrame(function () {
-        touchScrollAnimation(innerContainer, outerContainer);
-    })
+    carouselProperties.currentIndex = getCurrentIndex(carouselProperties, scrolledBy);
+    setPositionByIndex(carouselProperties);
+    
+};
 
+function getPositionX(event) {
+    return event.type.includes('mouse') ? 
+            event.pageX : 
+            event.targetTouches[0].clientX;
 }
 
-function touchScrollMove (e) {
-    if (!dragged) return;
-    x = getPositionX(e);
-    widthToBeScrolled = x - startX;
-}
-
-function touchScrollEnd () {
-    dragged = false;
-    cancelAnimationFrame(animationId);
-}
-
-function touchScrollAnimation(innerContainer, outerContainer) {
-    innerContainer.style.left = `${widthToBeScrolled}px`;
-    checkBoundary (outerContainer, innerContainer);
-    if (dragged) {
+function scrollAnimation(carouselProperties) {
+    setCarouselPosition(carouselProperties);
+    if (carouselProperties.isDragging) {
         requestAnimationFrame(function() {
-            touchScrollAnimation(innerContainer, outerContainer);
+            scrollAnimation(carouselProperties)
         });
     };
 }
 
+function setCarouselPosition(carouselProperties) {
+    carouselProperties.innerContainer.style.transform = `translateX(${carouselProperties.currentTranslate}px)`;
+}
 
-function checkBoundary (outerContainer, innerContainer) {
-    let outer = outerContainer.getBoundingClientRect();
-    let inner = innerContainer.getBoundingClientRect();
 
-    if (parseInt(innerContainer.style.left) > 0) {
-        innerContainer.style.left = `0px`;
-    } else if (inner.right < outer.right) {
-        innerContainer.style.left = `-${inner.width - outer.width}px`
+
+function getCurrentIndex(carouselProperties, scrolledBy) {
+    let slideWidth = carouselProperties.slideWidth();
+    let offset =  Math.round(scrolledBy / -slideWidth);
+    let newIndex = carouselProperties.currentIndex + offset;
+    let imagesInViewport = Math.round(carouselProperties.outerContainer.getBoundingClientRect().width / slideWidth) - 1;
+
+    if (newIndex < 0) {
+        newIndex = 0;
+    }   else if (newIndex >= carouselProperties.slides.length - imagesInViewport) {
+        newIndex = carouselProperties.slides.length - imagesInViewport;
     }
+    return newIndex; 
 }
 
-function getPositionX (event) {
-    return event.type.includes('mouse') ? event.pageX : event.targetTouches[0].clientX;
+function setPositionByIndex(carouselProperties) {
+    carouselProperties.currentTranslate = carouselProperties.currentIndex * - carouselProperties.slideWidth();
+    carouselProperties.prevTranslate = carouselProperties.currentTranslate;
+    setCarouselPosition(carouselProperties);
 }
-
-
-// Button carousel controls 
-carouselBtns.forEach(element => {
-    element.addEventListener('click', changeImageByButton );
-});
-
-// Function to scroll images
-function changeImageByButton (element) {
-    // Gets the actual button pressed
-    let button = element.currentTarget;
-    // Offset to scroll to next or prev slide
-    let offset = button.classList.contains('arrow-right') ? 1 : -1;
-    changeImage(element, offset);
-}
-
-function changeImage (element, offset) {
-        // Gets the parent container to have access to other DOM elements
-        let container = element.currentTarget.closest('.container');
-        // Carousel
-        let innerContainer = container.querySelector('[data-carousel__inner]');
-        innerContainer.style.transition = 'none';
-        // Individual slides
-        let carouselSlides = innerContainer.querySelectorAll('[data-carousel__item]');
-        // Defining slide width for scroll animation
-        const slideWidth = getSlideWidth(innerContainer, carouselSlides);
-    
-        // Slide to be shown the first
-        const activeSlide = innerContainer.querySelector('[data-active]'); 
-
-        // Index of the above slide
-        let currentIndex = [...carouselSlides].indexOf(activeSlide);
-        let newIndex = currentIndex + offset;
-
-        // Check of indexes so it won't exceed/subceed amount of elements in nodelist
-
-        if ((slideWidth)/windowWidth >= 0.40) {
-            if (newIndex < 0 || newIndex >= carouselSlides.length) return;
-        } else if (((slideWidth)/windowWidth >= 0.30) && ((slideWidth)/windowWidth < 0.40)) {
-            if (newIndex < 0 || newIndex >= carouselSlides.length - 1) return;
-        } else {
-            if (newIndex < 0 || newIndex >= carouselSlides.length - 2) return;
-        }
-    
-        // Change of the "active slide"
-        carouselSlides[newIndex].dataset.active = true;
-        delete activeSlide.dataset.active;
-    
-        // Calculation of widht to be moved
-        let widthToBeMoved = -slideWidth * newIndex;
-
-
-        innerContainer.style.transition = 'all 0.3s ease';
-        innerContainer.style.transform = `translateX(${widthToBeMoved}px)`;
-}
-
-function getSlideWidth (innerContainer, carouselSlides) {
-    let imageWidth = carouselSlides[0].clientWidth;
-
-    // Defining gap between images
-    let slideGap = window.getComputedStyle(innerContainer).getPropertyValue('gap');
-    slideGap = parseInt(slideGap.replace(/\D/g,''));
-
-    let slideWidth = imageWidth + slideGap;
-    return slideWidth;
-}
-
