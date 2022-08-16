@@ -19,7 +19,35 @@ carouselItems.forEach(item => {
     };
 });
 
-class properties {
+// class properties {
+//     constructor (isDragging, startPos, currentTranslate, prevTranslate, animationID, currentIndex, outerContainer, outerOffset, innerContainer, slides) {
+//         this.isDragging = isDragging;
+//         this.startPos = startPos;
+//         this.currentTranslate = currentTranslate;
+//         this.prevTranslate = prevTranslate;
+//         this.animationID = animationID;
+//         this.currentIndex = currentIndex;
+//         this.outerContainer = outerContainer;
+//         this.outerOffset = outerOffset;
+//         this.innerContainer = innerContainer;
+//         this.slides = slides;
+//         this.slideWidth = this.getSlideWidth(slides);
+//     }
+//     getSlideWidth(slides) {
+//         // Defining image width
+//         let imageWidth = slides[0].clientWidth;
+
+//         // Defining gap between images
+//         let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
+//         slideGap = parseInt(slideGap.replace(/\D/g,''));
+        
+//         // Defining and returning full width
+//         let slideWidth = imageWidth + slideGap;
+//         return slideWidth;
+//     }
+// }
+
+class Properties {
     constructor (isDragging, startPos, currentTranslate, prevTranslate, animationID, currentIndex, outerContainer, outerOffset, innerContainer, slides) {
         this.isDragging = isDragging;
         this.startPos = startPos;
@@ -31,25 +59,23 @@ class properties {
         this.outerOffset = outerOffset;
         this.innerContainer = innerContainer;
         this.slides = slides;
-        this.slideWidth = this.getSlideWidth(slides);
-    }
-    getSlideWidth(slides) {
-        // Defining image width
-        let imageWidth = slides[0].clientWidth;
+        this.slideWidth = function () {
+            let imageWidth = this.slides[0].clientWidth;
 
-        // Defining gap between images
-        let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
-        slideGap = parseInt(slideGap.replace(/\D/g,''));
-        
-        // Defining and returning full width
-        let slideWidth = imageWidth + slideGap;
-        return slideWidth;
+            // Defining gap between images
+            let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
+            slideGap = parseInt(slideGap.replace(/\D/g,''));
+            
+            // Defining and returning full width
+            let slideWidth = imageWidth + slideGap;
+            return slideWidth;
+        }
     }
 }
 
 
 carousels.forEach(carousel => {
-    let carouselProperties = new properties (
+    let carouselProperties = new Properties (
         false, // isDragging
         0, // startPos
         0, // currentTranslate
@@ -61,7 +87,7 @@ carousels.forEach(carousel => {
         carousel.querySelector("[data-carousel__inner]"), // innerContainer
         Array.from(carousel.querySelectorAll('[data-carousel__item]')), // slides
     )
-
+    
 
 
     const carouselBtns = carousel.closest('.container').querySelectorAll('[data-carousel-btn]')
@@ -85,7 +111,7 @@ carousels.forEach(carousel => {
 
     window.addEventListener('resize', () => {
         setPositionByIndex(carouselProperties);
-        
+        console.log('resized')
     });
 
     // Settings for fullscreen image selector
@@ -105,7 +131,7 @@ function openModal (item, index) {
         const fullsreenModal = document.querySelector('.modal__fullscreen');
         const closeBtn = fullsreenModal.querySelector('.modal__close');
 
-        let carouselProperties = new properties (
+        let carouselProperties = new Properties (
             false, // isDragging
             0, // startPos
             0, // currentTranslate
@@ -118,6 +144,7 @@ function openModal (item, index) {
             Array.from(container.querySelectorAll('[data-carousel__item]')), // slides
         )
         carouselProperties.currentIndex = index;
+        
 
         let currentPhotos = carouselProperties.slides;
         let innerContainer = carouselProperties.innerContainer;
@@ -167,6 +194,9 @@ function openModal (item, index) {
             container.remove();
         });
         
+        window.addEventListener('resize', () => {
+            setPositionByIndex(carouselProperties);
+        });
 }
 
 function changeImageByButton (btn, carouselProperties) {
@@ -233,7 +263,7 @@ function setCarouselPosition(carouselProperties) {
 }
 
 function getSlideWidth (carouselProperties) {
-    let calcSlideWidth = carouselProperties.getSlideWidth(carouselProperties.slides);
+    let calcSlideWidth = carouselProperties.slideWidth();
     return calcSlideWidth;
 }
 
@@ -273,7 +303,7 @@ function getCurrentIndex(carouselProperties, scrolledBy) {
 }
 
 function setPositionByIndex(carouselProperties) {
-    carouselProperties.currentTranslate = carouselProperties.currentIndex * - carouselProperties.getSlideWidth(carouselProperties.slides);
+    carouselProperties.currentTranslate = carouselProperties.currentIndex * - carouselProperties.slideWidth();
     carouselProperties.prevTranslate = carouselProperties.currentTranslate;
     setCarouselPosition(carouselProperties);
 }
