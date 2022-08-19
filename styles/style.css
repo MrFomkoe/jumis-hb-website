@@ -199,6 +199,7 @@ header {
     justify-content: space-between;
     align-items: center;
     display: none;
+    cursor: pointer;
 }
 
 .mobile-nav-controls .logo {
@@ -250,7 +251,12 @@ header {
     gap: 40px;
 }
 
+.mobile-nav__item {
+    cursor: pointer;
+}
+
 .mobile-nav__close {
+    cursor: pointer;
     position: absolute;
     top: 10%;
     right: 10%;
@@ -273,6 +279,7 @@ header {
 }
 
 .mobile-nav__services-list .services-list__item {
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -287,6 +294,7 @@ header {
 }
 
 .mobile-nav__services-list__close {
+    cursor: pointer;
     position: absolute;
     top: 10%;
     right: 10%;
