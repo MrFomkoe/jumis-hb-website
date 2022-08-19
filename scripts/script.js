@@ -1,28 +1,22 @@
 /*--- Variables ---*/
 
-
-
 // Section with company introduction
 const introduction = document.querySelector('.introduction');
 // Link "services"
 const servicesLink = document.querySelector('.main-nav__services-list');
 // Container with list of services
-const servicesContainer = document.querySelector('.services-list');
-// All other links in navigation
-// const mainNavLinks = document.querySelectorAll('.main-nav__link');
-
+const servicesContainer = document.querySelector('.services-list')
 // About us link
 const restoreIntroLinks = document.querySelectorAll('[data-restore-intro]');
 
 // Language selector
-// const langSelector = document.querySelectorAll('.lang-selector__list');
 const langSelector = document.querySelectorAll('[data-collapse-selector]');
 
 
 
 /*--- Controls for introduction section ---*/
 
-// Function that hides introduction section
+// Function that hides introduction section when "Pakalpojumi" link is pressed
 function hideIntro () {
     if (!introduction) {
         return
@@ -40,6 +34,7 @@ function restoreIntro () {
     introduction.parentElement.style.marginBottom = '60px';
 };
 
+// Collapsong services list
 function collapseServicesList () {
     if (servicesContainer.classList.contains('not-index-page')) {
         servicesContainer.classList.toggle('collapsed');
@@ -64,11 +59,12 @@ langSelector.forEach(element => {
     })
 });
 
-
+// Defining mobile selector
 let mobileMenuSelector = document.getElementById('mobile-selector');
-
+// Adding listener
 mobileMenuSelector.addEventListener('click', showMoblieMenu);
 
+// Function to show mobile menu
 function showMoblieMenu (event) {
     let selector = event.currentTarget;
     
@@ -87,29 +83,30 @@ function showMoblieMenu (event) {
     });
 }
 
+// Defining additional "Pakalpojumi" button
 let mobileServicesBtn = document.querySelectorAll('[data-mobile-services]')
 
-
+// Adding listener for services list in mobile view
 mobileServicesBtn.forEach(btn => {
     btn.addEventListener('click', showMoblieServices);
 });
 
+// Function to show services list in mobile view
 function showMoblieServices (event) {
     let mobileServices = document.querySelector('.mobile-nav__services-list');
     let mobileServicesClose = document.querySelector('.mobile-nav__services-list__close');
     
-    console.log(mobileServices)
-
-
     mobileServices.style.top = '0';
-    
+
     mobileServicesClose.addEventListener('click', () => {
         mobileServices.style.top = '-100%';
     });
 };
 
+// "Skatit vairak" buttons for  reviews section in mobile view
 let reviewsHideBtn = document.querySelectorAll('.reviews__text_hide-btn');
 
+// Listener to show additional text in rieviews section
 reviewsHideBtn.forEach(btn => {
     btn.addEventListener('click', (element) => {
         let seeMore = element.currentTarget.previousElementSibling;
