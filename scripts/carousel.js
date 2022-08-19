@@ -1,9 +1,8 @@
-// Defining all button for all carousels on the webpage
-
-const carouselItems = document.querySelectorAll('[data-carousel__item]');
+// All sliders on a page
 const carousels = document.querySelectorAll('[data-carousel]');
 
-
+// All images within all sliders
+const carouselItems = document.querySelectorAll('[data-carousel__item]');
 
 // Disabling context menu + image drag
 
@@ -19,42 +18,14 @@ carouselItems.forEach(item => {
     };
 });
 
-// class properties {
-//     constructor (isDragging, startPos, currentTranslate, prevTranslate, animationID, currentIndex, outerContainer, outerOffset, innerContainer, slides) {
-//         this.isDragging = isDragging;
-//         this.startPos = startPos;
-//         this.currentTranslate = currentTranslate;
-//         this.prevTranslate = prevTranslate;
-//         this.animationID = animationID;
-//         this.currentIndex = currentIndex;
-//         this.outerContainer = outerContainer;
-//         this.outerOffset = outerOffset;
-//         this.innerContainer = innerContainer;
-//         this.slides = slides;
-//         this.slideWidth = this.getSlideWidth(slides);
-//     }
-//     getSlideWidth(slides) {
-//         // Defining image width
-//         let imageWidth = slides[0].clientWidth;
-
-//         // Defining gap between images
-//         let slideGap = window.getComputedStyle(this.innerContainer).getPropertyValue('gap');
-//         slideGap = parseInt(slideGap.replace(/\D/g,''));
-        
-//         // Defining and returning full width
-//         let slideWidth = imageWidth + slideGap;
-//         return slideWidth;
-//     }
-// }
-
 class Properties {
-    constructor (isDragging, startPos, currentTranslate, prevTranslate, animationID, currentIndex, outerContainer, outerOffset, innerContainer, slides) {
-        this.isDragging = isDragging;
-        this.startPos = startPos;
-        this.currentTranslate = currentTranslate;
-        this.prevTranslate = prevTranslate;
-        this.animationID = animationID;
-        this.currentIndex = currentIndex;
+    constructor (outerContainer, outerOffset, innerContainer, slides) {
+        this.isDragging = false;
+        this.startPos = 0;
+        this.currentTranslate = 0;
+        this.prevTranslate = 0;
+        this.animationID = 0;
+        this.currentIndex = 0;
         this.outerContainer = outerContainer;
         this.outerOffset = outerOffset;
         this.innerContainer = innerContainer;
@@ -76,12 +47,6 @@ class Properties {
 
 carousels.forEach(carousel => {
     let carouselProperties = new Properties (
-        false, // isDragging
-        0, // startPos
-        0, // currentTranslate
-        0, // prevTranslate
-        0, // animationID
-        0, // currentIndex
         carousel, // outerContainer
         carousel.offsetLeft, // outerOffset
         carousel.querySelector("[data-carousel__inner]"), // innerContainer
@@ -132,12 +97,6 @@ function openModal (item, index) {
         const closeBtn = fullsreenModal.querySelector('.modal__close');
 
         let carouselProperties = new Properties (
-            false, // isDragging
-            0, // startPos
-            0, // currentTranslate
-            0, // prevTranslate
-            0, // animationID
-            0, // currentIndex
             container, // outerContainer
             container.offsetLeft, // outterOffset
             container.querySelector("[data-carousel__inner]"), // innerContainer

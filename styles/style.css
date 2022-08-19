@@ -393,9 +393,10 @@ header {
 /*---- Language selector ----*/
 
 .lang-selector {
+    display: none; /* temporary not displayed */
     position: relative;
     z-index: 20;
-
+    user-select: none;
 }
 
 .lang-selector__list {
