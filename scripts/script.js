@@ -1,19 +1,3 @@
-// Cookies section
-const cookiesPanel = document.querySelectorAll('.cookies');
-const closeCookiesBtn = document.querySelectorAll('.cookies__close');
-
-/*--- Controls for Cookies section */
-closeCookiesBtn.forEach(element => {
-    element.addEventListener('click', closeCookies);
-});
-
-function closeCookies () {
-    cookiesPanel.forEach(element => {
-        element.style.display = 'none';
-    });
-};
-
-
 /*--- Variables ---*/
 
 

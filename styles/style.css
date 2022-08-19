@@ -981,6 +981,7 @@ footer.not-index-page {
 .reviews__credidentials {
     display: flex;
     margin-bottom: 10px;
+    align-items: center;
 }
 
 .reviews__company-name h4 {
@@ -988,9 +989,6 @@ footer.not-index-page {
     font-weight: 600;
 }
 
-.reviews__company-name p {
-    font-size: 1.25rem;
-}
 
 .review__photo {
     flex-shrink: 0;
